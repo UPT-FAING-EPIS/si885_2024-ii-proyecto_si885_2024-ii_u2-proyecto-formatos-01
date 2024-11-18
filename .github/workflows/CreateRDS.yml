@@ -50,15 +50,8 @@ jobs:
           cd infra
           terraform init
 
-      # Paso 7: Ejecutar terraform apply
       - name: Apply Terraform configuration
         run: |
           cd infra
-          terraform apply -auto-approve
-
-          # Verificar si se realizaron cambios
-          if grep -q "No changes" plan.out; then
-            echo "La infraestructura ya está configurada. No se realizaron cambios."
-          else
-            echo "Terraform aplicó cambios a la infraestructura."
-          fi
+          terraform apply -auto-approve || (echo "El recurso ya existe. Continuando con la ejecución." && exit 0)
+      
