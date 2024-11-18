@@ -50,8 +50,20 @@ jobs:
           cd infra
           terraform init
 
+      # Paso 7: Ejecutar Terraform Plan para previsualizar cambios
+      - name: Plan Terraform execution
+        run: |
+          cd infra
+          terraform plan -out=plan.tfplan
+
+      # Paso 8: Aplicar Terraform solo si hay cambios
       - name: Apply Terraform configuration
         run: |
           cd infra
-          terraform apply -auto-approve || (echo "El recurso ya existe. Continuando con la ejecución." && exit 0)
-      
+          terraform show -json plan.tfplan | jq '.' > plan-output.json
+          if grep -q '"change":' plan-output.json; then
+            echo "Se detectaron cambios. Aplicando Terraform..."
+            terraform apply -auto-approve plan.tfplan
+          else
+            echo "No hay cambios en la infraestructura."
+          fi
