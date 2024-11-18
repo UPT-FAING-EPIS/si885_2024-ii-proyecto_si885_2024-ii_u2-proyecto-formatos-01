@@ -8,7 +8,7 @@ on:
 jobs:
   execute-sql-script:
     runs-on: ubuntu-latest
-  
+
     steps:
       # Paso 1: Instalar AWS CLI
       - name: Install AWS CLI
@@ -26,10 +26,10 @@ jobs:
 
       # Paso 3: Ejecutar el comando aws sts get-caller-identity
       - name: Get AWS Caller Identity
-        run: aws sts get-caller-identity
-        
+        run: |
+          aws sts get-caller-identity
 
-      # Paso 5: Verificar si la instancia de RDS existe
+      # Paso 4: Verificar si la instancia de RDS existe
       - name: Check if RDS instance exists
         run: |
           INSTANCE_EXISTS=$(aws rds describe-db-instances --db-instance-identifier mydb-instance --query "DBInstances[0].DBInstanceIdentifier" --output text)
@@ -41,7 +41,7 @@ jobs:
             echo "RDS instance exists. Proceeding to execute SQL script."
           fi
 
-      # Paso 3: Obtener el endpoint de la instancia de RDS y esperar a que esté disponible
+      # Paso 5: Obtener el endpoint de la instancia de RDS y esperar a que esté disponible
       - name: Wait for RDS to be available and get endpoint
         run: |
           DB_ENDPOINT=$(aws rds describe-db-instances --db-instance-identifier mydb-instance --query "DBInstances[0].Endpoint.Address" --output text)
@@ -55,11 +55,12 @@ jobs:
           
           echo "RDS instance is available."
 
-      # Paso 4: Ejecutar el script SQL
+      # Paso 6: Ejecutar el script SQL
       - name: Execute SQL script
         run: |
           echo "Executing SQL script..."
-          mysql --host=$DB_ENDPOINT --user=admin --password=$MYSQL_PASSWORD mydatabase < artefactos/datos.sql
+          # Suprimir advertencias de MySQL
+          mysql --host=$DB_ENDPOINT --user=admin --password=$MYSQL_PASSWORD mydatabase < artefactos/datos.sql 2>/dev/null
           echo "SQL script executed successfully."
           
     env:
