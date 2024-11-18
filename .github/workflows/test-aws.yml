@@ -41,10 +41,10 @@ jobs:
             --engine mysql \
             --allocated-storage 20 \
             --storage-type gp2 \
-            --vpc-security-group-ids sg-08db0d68f1b78a11e \  # Reemplaza con tu ID de SG
+            --vpc-security-group-ids sg-08db0d68f1b78a11e \
             --db-subnet-group-name my-db-subnet-group \
             --master-username admin \
-            --master-user-password password123 \
+            --master-user-password SimplePassword123!
             --db-name mydatabase \
             --publicly-accessible \
             --no-multi-az \
