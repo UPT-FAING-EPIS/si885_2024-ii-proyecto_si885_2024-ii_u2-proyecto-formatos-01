@@ -3,28 +3,28 @@ provider "aws" {
   region = "us-east-1"  # Puedes cambiar la región si es necesario
 }
 
-# Crear una VPC con CIDR similar a la que mencionas
-resource "aws_vpc" "my_vpc" {
-  cidr_block           = "172.31.0.0/16"
+# Crear una nueva VPC con CIDR diferente
+resource "aws_vpc" "my_new_vpc" {
+  cidr_block           = "10.0.0.0/16"  # Cambié el CIDR para la nueva VPC
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
-    Name = "my-vpc"
+    Name = "my-new-vpc"
   }
 }
 
-# Crear un Internet Gateway y asociarlo con la VPC
-resource "aws_internet_gateway" "my_igw" {
-  vpc_id = aws_vpc.my_vpc.id
+# Crear un Internet Gateway y asociarlo con la nueva VPC
+resource "aws_internet_gateway" "my_new_igw" {
+  vpc_id = aws_vpc.my_new_vpc.id
   tags = {
-    Name = "my-igw"
+    Name = "my-new-igw"
   }
 }
 
-# Crear una Subnet pública
+# Crear una Subnet pública en la nueva VPC
 resource "aws_subnet" "public_subnet" {
-  vpc_id                  = aws_vpc.my_vpc.id
-  cidr_block              = "172.31.1.0/24"  # Cambié el CIDR por 172.31.1.0/24
+  vpc_id                  = aws_vpc.my_new_vpc.id
+  cidr_block              = "10.0.1.0/24"  # Cambié el CIDR por 10.0.1.0/24
   availability_zone       = "us-east-1a"
   map_public_ip_on_launch = true
   tags = {
@@ -32,10 +32,10 @@ resource "aws_subnet" "public_subnet" {
   }
 }
 
-# Crear una Subnet privada
+# Crear una Subnet privada en la nueva VPC
 resource "aws_subnet" "private_subnet" {
-  vpc_id                  = aws_vpc.my_vpc.id
-  cidr_block              = "172.31.2.0/24"  # Cambié el CIDR por 172.31.2.0/24
+  vpc_id                  = aws_vpc.my_new_vpc.id
+  cidr_block              = "10.0.2.0/24"  # Cambié el CIDR por 10.0.2.0/24
   availability_zone       = "us-east-1b"
   map_public_ip_on_launch = false
   tags = {
@@ -43,11 +43,11 @@ resource "aws_subnet" "private_subnet" {
   }
 }
 
-# Crear un Security Group para RDS
+# Crear un Security Group para RDS en la nueva VPC
 resource "aws_security_group" "rds_sg" {
   name        = "rds-security-group"
   description = "Security group for RDS instance"
-  vpc_id      = aws_vpc.my_vpc.id
+  vpc_id      = aws_vpc.my_new_vpc.id
 
   # Permitir acceso a MySQL (puerto 3306) desde cualquier IP
   ingress {
@@ -70,14 +70,14 @@ resource "aws_security_group" "rds_sg" {
   }
 }
 
-# Crear un DB Subnet Group para RDS
+# Crear un DB Subnet Group para RDS en la nueva VPC
 resource "aws_db_subnet_group" "my_db_subnet_group" {
   name        = "my-db-subnet-group"
   subnet_ids  = [aws_subnet.public_subnet.id, aws_subnet.private_subnet.id]
   description = "Subnet group for RDS instance"
 }
 
-# Crear una instancia de RDS MySQL
+# Crear una instancia de RDS MySQL en la nueva VPC
 resource "aws_db_instance" "mydb_instance" {
   identifier            = "mydb-instance"
   engine                = "mysql"
@@ -98,9 +98,4 @@ resource "aws_db_instance" "mydb_instance" {
     Name = "mydb-instance"
   }
 }
-
-# Output: Capturar el endpoint de la instancia RDS
-#output "rds_endpoint" {
-#  value = aws_db_instance.mydb_instance.endpoint
-#}
 
