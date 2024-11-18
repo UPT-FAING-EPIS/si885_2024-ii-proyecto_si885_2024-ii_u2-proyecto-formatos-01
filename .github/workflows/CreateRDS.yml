@@ -19,8 +19,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y awscli
-      
-   
 
       # Paso 3: Instalar Terraform
       - name: Install Terraform
@@ -41,17 +39,18 @@ jobs:
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
           aws configure set region us-east-1
-     # Paso 8: Ejecutar el comando aws sts get-caller-identity
+
+      # Paso 5: Ejecutar el comando aws sts get-caller-identity
       - name: Get AWS Caller Identity
         run: aws sts get-caller-identity
         
-      # Paso 5: Ejecutar terraform init
+      # Paso 6: Ejecutar terraform init
       - name: Initialize Terraform
         run: |
           cd infra
           terraform init
 
-      # Paso 6: Verificar si los recursos ya existen antes de aplicar
+      # Paso 7: Verificar si los recursos ya existen antes de aplicar
       - name: Check if resources already exist
         run: |
           cd infra
@@ -65,10 +64,8 @@ jobs:
             echo "No existen recursos previos. Continuando con terraform apply."
           fi
 
-      # Paso 7: Ejecutar terraform apply solo si no existen los recursos
+      # Paso 8: Ejecutar terraform apply solo si no existen los recursos
       - name: Apply Terraform configuration if resources don't exist
         run: |
           cd infra
           terraform apply -auto-approve
-
-
