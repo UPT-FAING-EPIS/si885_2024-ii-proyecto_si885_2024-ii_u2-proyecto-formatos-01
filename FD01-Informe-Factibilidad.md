@@ -80,7 +80,7 @@ Versión *{1.0}*
 
 1.1. Nombre del proyecto
    
-    "Herramienta de Seguimiento y Evaluación del Desempeño de Red y Hardware en Computadoras UPT"
+    "Herramienta de Seguimiento y Evaluación del Desempeño en Redes de Computadoras UPT"
     
 1.2. Duración del proyecto
 
