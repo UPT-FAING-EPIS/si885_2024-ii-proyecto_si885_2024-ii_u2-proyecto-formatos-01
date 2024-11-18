@@ -44,6 +44,9 @@ jobs:
       # Paso 6: Ejecutar el script SQL
       - name: Execute SQL script
         run: |
+          # Mostrar el directorio actual
+          echo "Current directory: $(pwd)"
+      
           # Verificar si el archivo de script SQL existe
           if [ ! -f ../artefactos/datos.sql ]; then
             echo "File ../artefactos/datos.sql not found!"
