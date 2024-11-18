@@ -45,6 +45,15 @@ jobs:
         run: |
           cd infra
           terraform init
+          
+      - name: Verificar si los recursos ya existen
+        run: |
+          terraform plan -detailed-exitcode || true
+          if [ $? -eq 0 ]; then
+            echo "Los recursos ya están en el estado deseado. Finalizando tarea con éxito."
+            exit 0
+          fi
+
 
       # Paso 6: Ejecutar terraform apply
       - name: Apply Terraform configuration
