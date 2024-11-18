@@ -46,18 +46,26 @@ jobs:
         run: |
           # Mostrar el directorio actual
           echo "Current directory: $(pwd)"
+          
+          # Listar los archivos en el directorio actual
+          echo "Listing files in the current directory:"
+          ls -al
+          
+          # Mostrar la estructura de directorios
+          echo "Showing directory structure:"
+          tree -L 2  # Puedes ajustar el nivel de profundidad con el parámetro -L
       
           # Verificar si el archivo de script SQL existe
-          if [ ! -f ../artefactos/datos.sql ]; then
-            echo "File ../artefactos/datos.sql not found!"
+          if [ ! -f ../../artefactos/datos.sql ]; then
+            echo "File ../../artefactos/datos.sql not found!"
             exit 1
           else
-            echo "File ../artefactos/datos.sql found, proceeding with execution."
+            echo "File ../../artefactos/datos.sql found, proceeding with execution."
           fi
       
           echo "Executing SQL script..."
           # Suprimir advertencias de MySQL
-          mysql --host=$DB_ENDPOINT --user=admin --password=$MYSQL_PASSWORD mydatabase < ../artefactos/datos.sql 2>/dev/null
+          mysql --host=$DB_ENDPOINT --user=admin --password=$MYSQL_PASSWORD mydatabase < ../../artefactos/datos.sql 2>/dev/null
           echo "SQL script executed successfully."
 
 
