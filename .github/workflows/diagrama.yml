@@ -155,7 +155,7 @@ jobs:
           if [ -f "infra_diagram.png" ]; then
               git add infra_diagram.png
               git commit -m "Actualizar diagrama de infraestructura [skip ci]" || echo "No hay cambios para commit"
-              git push origin DesarrolloApiBack --force
+              git push origin diagramaTF --force
           else
               echo "Error: infra_diagram.png no se generó."
               exit 1
