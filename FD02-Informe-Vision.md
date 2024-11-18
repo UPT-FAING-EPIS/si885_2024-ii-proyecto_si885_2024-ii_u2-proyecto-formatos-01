@@ -308,12 +308,12 @@ e) Estandaraes de calidad y seguridad	](#_toc394513800)42
     Escalabilidad: El sistema debe ser escalable para soportar el crecimiento de la infraestructura tecnológica de la universidad, permitiendo la incorporación de nuevos laboratorios y equipos sin comprometer el rendimiento.
 
 ## 8. Precedencia y Prioridad
-    El desarrollo del sistema de monitoreo y evaluación de red y hardware debe priorizar los componentes más críticos para su correcta implementación y operación. El enfoque principal será asegurar que las funcionalidades esenciales estén disponibles en la primera fase de desarrollo, y posteriormente se añadirán características adicionales.
+    El desarrollo del sistema de monitoreo y evaluación de red debe priorizar los componentes más críticos para su correcta implementación y operación. El enfoque principal será asegurar que las funcionalidades esenciales estén disponibles en la primera fase de desarrollo, y posteriormente se añadirán características adicionales.
 
 | **Roles**         | **Nro.** | **Requerimiento Funcional**          | **Descripción**                                                                                                      |
 |-------------------|----------|--------------------------------------|----------------------------------------------------------------------------------------------------------------------|
 | **Administrador**  | 1        | Autenticación segura                 | Implementar un sistema de autenticación para proteger el acceso al sistema y los datos.                               |
-| **Administrador**  | 2        | Almacenamiento de datos              | Almacenar los datos recolectados sobre el rendimiento de hardware y red en una base de datos segura.                  |
+| **Administrador**  | 2        | Almacenamiento de datos              | Almacenar los datos recolectados sobre el rendimiento de la red en una base de datos segura.                  |
 | **Administrador**  | 3        | Generación de informes personalizados| Permitir a los administradores crear informes detallados sobre el rendimiento y uso de los recursos.                  |
 | **Soporte Técnico**| 4        | Optimización del soporte técnico     | Usar los datos recolectados para mejorar la eficiencia del soporte técnico mediante diagnósticos rápidos.             |
 | **Administrador**  | 5        | Exportación de datos para Tableau    | Exportar los datos almacenados en formatos compatibles con herramientas de análisis como Tableau.                     |
