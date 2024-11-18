@@ -1,4 +1,4 @@
-name: Execute SQL Script on RDS
+name: Ejecutar Script Python en RDS
 
 on:
   push:
@@ -6,71 +6,34 @@ on:
       - main
 
 jobs:
-  execute-sql-script:
+  ejecutar-script-python:
     runs-on: ubuntu-latest
 
     steps:
-      # Paso 1: Instalar AWS CLI
-      - name: Install AWS CLI
+      # Paso 1: Hacer checkout del código
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Paso 2: Configurar Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      # Paso 3: Instalar dependencias
+      - name: Instalar dependencias desde requirements.txt
         run: |
-          echo "Current directory: $(pwd)"
-          ls
-          sudo apt-get update
-          sudo apt-get install -y awscli
+          cd artefactos
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-      # Paso 2: Configurar las credenciales de AWS
-      - name: Configure AWS credentials
+      # Paso 4: Ejecutar el script de Python
+      - name: Ejecutar script Python de conexión RDS
         run: |
-          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
-          aws configure set region us-east-1
-
-      # Paso 3: Ejecutar el comando aws sts get-caller-identity
-      - name: Get AWS Caller Identity
-        run: |
-          aws sts get-caller-identity
-
-      # Paso 4: Verificar si la instancia de RDS existe
-      - name: Check if RDS instance exists
-        run: |
-          INSTANCE_EXISTS=$(aws rds describe-db-instances --db-instance-identifier mydb-instance --query "DBInstances[0].DBInstanceIdentifier" --output text)
-          
-          if [ "$INSTANCE_EXISTS" != "mydb-instance" ]; then
-            echo "RDS instance does not exist. Skipping SQL execution."
-            exit 0
-          else
-            echo "RDS instance exists. Proceeding to execute SQL script."
-          fi
-
-      # Paso 6: Ejecutar el script SQL
-      - name: Execute SQL script
-        run: |
-          # Mostrar el directorio actual
-          echo "Current directory: $(pwd)"
-          
-          # Listar los archivos en el directorio actual
-          echo "Listing files in the current directory:"
-          ls -al
-          
-          # Mostrar la estructura de directorios
-          echo "Showing directory structure:"
-          tree -L 2  # Puedes ajustar el nivel de profundidad con el parámetro -L
-      
-          # Verificar si el archivo de script SQL existe
-          if [ ! -f ../../artefactos/datos.sql ]; then
-            echo "File ../../artefactos/datos.sql not found!"
-            exit 1
-          else
-            echo "File ../../artefactos/datos.sql found, proceeding with execution."
-          fi
-      
-          echo "Executing SQL script..."
-          # Suprimir advertencias de MySQL
-          mysql --host=$DB_ENDPOINT --user=admin --password=$MYSQL_PASSWORD mydatabase < ../../artefactos/datos.sql 2>/dev/null
-          echo "SQL script executed successfully."
-
-
-          
-    env:
-      MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+          cd artefactos
+          python conexionRDS.py
+        env:
+          DB_HOST: ${{ secrets.DB_ENDPOINT }}  
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_PORT: ${{ secrets.DB_PORT }}
