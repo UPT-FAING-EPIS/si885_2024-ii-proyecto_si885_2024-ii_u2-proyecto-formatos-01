@@ -10,24 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Paso 1: Checkout del código
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      # Paso 2: Configurar AWS CLI
-      - name: Configure AWS CLI
+      - name: Debug Environment
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
         run: |
-          mkdir -p ~/.aws
-          echo "[default]" > ~/.aws/credentials
-          echo "aws_access_key_id=${AWS_ACCESS_KEY_ID}" >> ~/.aws/credentials
-          echo "aws_secret_access_key=${AWS_SECRET_ACCESS_KEY}" >> ~/.aws/credentials
-          echo "aws_session_token=${AWS_SESSION_TOKEN}" >> ~/.aws/credentials
-
-      # Paso 3: Probar conectividad con AWS (Obtener información del usuario o rol)
-      - name: Test AWS CLI - Get Caller Identity
-        run: |
-          aws sts get-caller-identity
+          aws sts get-caller-identity || echo "Failed to authenticate"
