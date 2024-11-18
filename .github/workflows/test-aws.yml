@@ -28,11 +28,19 @@ jobs:
           aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
           aws configure set region us-east-1
 
-      # Paso 4: Ejecutar el comando aws sts get-caller-identity (verificación de identidad)
+      # Paso 4: Ejecutar el comando aws sts get-caller-identity
       - name: Get AWS Caller Identity
         run: aws sts get-caller-identity
 
-      # Paso 5: Crear la base de datos RDS
+      # Paso 5: Crear DB Subnet Group
+      - name: Create DB Subnet Group
+        run: |
+          aws rds create-db-subnet-group \
+            --db-subnet-group-name my-db-subnet-group \
+            --db-subnet-group-description "My DB Subnet Group" \
+            --subnet-ids subnet-xxxxxxxx subnet-yyyyyyyy
+
+      # Paso 6: Crear la base de datos RDS
       - name: Create RDS Instance
         run: |
           aws rds create-db-instance \
@@ -41,10 +49,10 @@ jobs:
             --engine mysql \
             --allocated-storage 20 \
             --storage-type gp2 \
-            --vpc-security-group-ids sg-08db0d68f1b78a11e \
+            --vpc-security-group-ids sg-08db0d68f1b78a11e \  # Reemplaza con tu ID de SG
             --db-subnet-group-name my-db-subnet-group \
             --master-username admin \
-            --master-user-password SimplePassword123!
+            --master-user-password SimplePassword123! \
             --db-name mydatabase \
             --publicly-accessible \
             --no-multi-az \
