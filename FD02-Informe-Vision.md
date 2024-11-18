@@ -177,7 +177,7 @@ e) Estandaraes de calidad y seguridad	](#_toc394513800)42
 
 ### 2.2 Definición del problema <span id="definicion-del-problema" class="anchor"></span>
 
-| **LA FALTA** | La ausencia de un sistema automatizado de monitoreo de red en las computadoras del laboratorio conlleva a dificultades para detectar problemas de rendimiento, ineficiencias en la gestión de recursos y mantenimiento reactivo. |
+| **LA FALTA** | La ausencia de un sistema automatizado de monitoreo de red en las computadoras del laboratorio conlleva a dificultades para detectar problemas de rendimiento, ineficiencias en la gestión de recursos y mantenimiento reactivo.  |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **LA NECESIDAD** | La necesidad de un monitoreo continuo y detallado se vuelve crucial para asegurar la eficiencia operativa, la optimización de recursos y la reducción de tiempos de inactividad, mejorando la calidad del soporte técnico. |
 | **EL PROBLEMA** | La falta de un sistema de monitoreo automatizado provoca una falta de visibilidad sobre el uso de recursos, lo que puede llevar a un uso ineficiente de las computadoras, mayor consumo de energía, y un soporte técnico reactivo. |
