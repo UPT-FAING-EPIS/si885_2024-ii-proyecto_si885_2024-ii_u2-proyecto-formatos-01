@@ -40,28 +40,31 @@ jobs:
           aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
           aws configure set region us-east-1
 
-     # Paso 5: Ejecutar terraform init
+      # Paso 5: Ejecutar terraform init
       - name: Initialize Terraform
         run: |
           cd infra
           terraform init
 
-         # Paso 6: Ejecutar terraform apply y verificar la salida en un solo paso
-      - name: Apply Terraform configuration and validate result
-        id: terraform_apply
+      # Paso 6: Verificar si los recursos ya existen antes de aplicar
+      - name: Check if resources already exist
         run: |
           cd infra
-          # Ejecutar terraform apply y guardar la salida en result.log
-          terraform apply -auto-approve | tee result.log
-      
-          # Verificar si la salida contiene los mensajes esperados
-          if grep -q "already exists for VPC" result.log || grep -q "Apply complete!" result.log; then
-            echo "La infraestructura ya existe o se aplicó correctamente. Tarea validada."
+          terraform plan -out=plan.out
+
+          # Buscar si la salida de terraform plan contiene recursos que ya existen
+          if grep -q "already exists" plan.out; then
+            echo "Los recursos ya existen. No es necesario crear nuevos."
+            exit 0  # Salir sin aplicar cambios
           else
-            echo "Error inesperado. Terraform no se aplicó correctamente."
-            exit 1
+            echo "No existen recursos previos. Continuando con terraform apply."
           fi
 
+      # Paso 7: Ejecutar terraform apply solo si no existen los recursos
+      - name: Apply Terraform configuration if resources don't exist
+        run: |
+          cd infra
+          terraform apply -auto-approve
 
       # Paso 8: Ejecutar el comando aws sts get-caller-identity
       - name: Get AWS Caller Identity
