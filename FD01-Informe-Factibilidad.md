@@ -149,7 +149,7 @@ Versión *{1.0}*
    
          Evaluación del Software:
          • Sistemas Operativos: La UPT utiliza sistemas operativos como Windows y distribuciones de Linux. Ambos sistemas son compatibles con los scripts y herramientas de monitoreo que se planea utilizar.
-         • Aplicaciones de Monitoreo: Se contempla el uso de herramientas de código abierto como Nagios, Zabbix o Grafana para la recolección, monitoreo y visualización del rendimiento de la red y del hardware. Estas aplicaciones son compatibles con los sistemas operativos en uso y pueden integrarse fácilmente en la infraestructura existente.
+         • Aplicaciones de Monitoreo: Se contempla el uso de herramientas de código abierto como Nagios, Zabbix o Grafana para la recolección, monitoreo y visualización del rendimiento de la red. Estas aplicaciones son compatibles con los sistemas operativos en uso y pueden integrarse fácilmente en la infraestructura existente.
    
          Infraestructura de Red:
          • Conectividad a Internet: La UPT cuenta con conectividad a internet mediante fibra óptica, ofreciendo alta velocidad y estabilidad para la transferencia de datos en tiempo real.
