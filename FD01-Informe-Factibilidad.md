@@ -123,7 +123,7 @@ Versión *{1.0}*
 
     3.1. Planteamiento del problema
 
-      La Universidad Privada de Tacna (UPT) enfrenta desafíos significativos en la gestión del rendimiento de su red y hardware de computadoras. En el entorno actual, los administradores de TI lidian con la falta de herramientas adecuadas para monitorear y evaluar el estado y desempeño de los recursos tecnológicos. La ausencia de una solución integral limita la capacidad para identificar y solucionar problemas de manera proactiva, afectando la operación eficiente de la red y el rendimiento de las computadoras.
+      La Universidad Privada de Tacna (UPT) enfrenta desafíos significativos en la gestión del rendimiento de su red. En el entorno actual, los administradores de TI lidian con la falta de herramientas adecuadas para monitorear y evaluar el estado y desempeño de los recursos tecnológicos. La ausencia de una solución integral limita la capacidad para identificar y solucionar problemas de manera proactiva, afectando la operación eficiente de la red.
 
    Actualmente, la supervisión del rendimiento se realiza de manera fragmentada y manual, lo que resulta en un seguimiento inadecuado de los recursos tecnológicos. Esto genera dificultades para mantener las computadoras en un nivel óptimo de operación y para asegurar un funcionamiento continuo de la red. Además, la falta de análisis detallado y de datos en tiempo real impide una gestión efectiva del rendimiento y la identificación de patrones de uso, lo que podría llevar a problemas recurrentes no detectados a tiempo.
 
