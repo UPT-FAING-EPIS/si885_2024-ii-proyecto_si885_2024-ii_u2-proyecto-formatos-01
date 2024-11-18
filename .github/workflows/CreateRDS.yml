@@ -47,23 +47,28 @@ jobs:
           else
             echo "DB Subnet Group 'my-db-subnet-group' already exists, skipping creation."
           fi
-
-      # Paso 7: Crear la instancia de RDS
-      - name: Create RDS Instance
+          
+      # Paso 7: Verificar si la instancia de RDS ya existe
+      - name: Check if RDS instance exists
         run: |
-          aws rds create-db-instance \
-            --db-instance-identifier mydb-instance \
-            --db-instance-class db.t3.micro \
-            --engine mysql \
-            --engine-version 5.7 \
-            --allocated-storage 20 \
-            --storage-type gp2 \
-            --vpc-security-group-ids sg-08db0d68f1b78a11e \
-            --db-subnet-group-name my-db-subnet-group \
-            --master-username admin \
-            --master-user-password "MySecurePassword123!" \
-            --db-name mydatabase \
-            --publicly-accessible \
-            --no-multi-az \
-            --backup-retention-period 7
-
+          INSTANCE_EXISTS=$(aws rds describe-db-instances --db-instance-identifier mydb-instance --query "DBInstances[0].DBInstanceIdentifier" --output text)
+          if [ "$INSTANCE_EXISTS" != "mydb-instance" ]; then
+            echo "RDS instance does not exist. Proceeding to create it."
+            aws rds create-db-instance \
+              --db-instance-identifier mydb-instance \
+              --db-instance-class db.t3.micro \
+              --engine mysql \
+              --engine-version 5.7 \
+              --allocated-storage 20 \
+              --storage-type gp2 \
+              --vpc-security-group-ids sg-08db0d68f1b78a11e \
+              --db-subnet-group-name my-db-subnet-group \
+              --master-username admin \
+              --master-user-password "MySecurePassword123!" \
+              --db-name mydatabase \
+              --publicly-accessible \
+              --no-multi-az \
+              --backup-retention-period 7
+          else
+            echo "RDS instance 'mydb-instance' already exists. Skipping creation."
+          fi
