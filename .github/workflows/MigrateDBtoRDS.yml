@@ -33,7 +33,7 @@ jobs:
           cd artefactos
           python conexionRDS.py
         env:
-          DB_HOST: ${{ secrets.DB_ENDPOINT }}  
+          DB_ENDPOINT: ${{ secrets.DB_ENDPOINT }}  
           DB_USER: ${{ secrets.DB_USER }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_PORT: ${{ secrets.DB_PORT }}
