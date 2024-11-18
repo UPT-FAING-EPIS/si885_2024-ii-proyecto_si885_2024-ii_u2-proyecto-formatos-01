@@ -1,24 +1,23 @@
-output "rds_endpoint" {
-  description = "El endpoint de la instancia RDS"
-  value       = aws_db_instance.mydb_instance.endpoint
-}
-
-output "rds_port" {
-  description = "El puerto de la instancia RDS"
-  value       = aws_db_instance.mydb_instance.port
-}
-
 output "vpc_id" {
-  description = "El ID de la VPC creada"
-  value       = aws_vpc.my_vpc.id
+  value = aws_vpc.new_vpc.id
 }
 
-output "public_subnet_id" {
-  description = "El ID de la subred pública"
-  value       = aws_subnet.public_subnet.id
+output "subnet_1_id" {
+  value = aws_subnet.subnet_1.id
 }
 
-output "private_subnet_id" {
-  description = "El ID de la subred privada"
-  value       = aws_subnet.private_subnet.id
+output "subnet_2_id" {
+  value = aws_subnet.subnet_2.id
+}
+
+output "subnet_3_id" {
+  value = aws_subnet.subnet_3.id
+}
+
+output "subnet_4_id" {
+  value = aws_subnet.subnet_4.id
+}
+
+output "subnet_5_id" {
+  value = aws_subnet.subnet_5.id
 }
