@@ -13,6 +13,14 @@ resource "aws_vpc" "my_vpc" {
   }
 }
 
+# Crear un Internet Gateway y asociarlo con la VPC
+resource "aws_internet_gateway" "my_igw" {
+  vpc_id = aws_vpc.my_vpc.id
+  tags = {
+    Name = "my-igw"
+  }
+}
+
 # Crear una Subnet pública en la VPC
 resource "aws_subnet" "my_subnet_1" {
   vpc_id     = aws_vpc.my_vpc.id
