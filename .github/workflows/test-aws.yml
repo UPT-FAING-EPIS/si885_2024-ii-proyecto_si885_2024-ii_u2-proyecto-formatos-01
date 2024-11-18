@@ -56,7 +56,7 @@ jobs:
             --vpc-security-group-ids sg-08db0d68f1b78a11e \  # Reemplaza con tu ID de SG
             --db-subnet-group-name my-db-subnet-group \
             --master-username admin \
-            --master-user-password SimplePassword123! \
+            --master-user-password "SimplePassword123!" \
             --db-name mydatabase \
             --publicly-accessible \
             --no-multi-az \
