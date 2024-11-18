@@ -45,22 +45,25 @@ jobs:
         run: |
           cd infra
           terraform init
-          
+
+      # Paso 6: Verificar si los recursos ya existen
       - name: Verificar si los recursos ya existen
+        id: check-resources
         run: |
+          cd infra
           terraform plan -detailed-exitcode || true
           if [ $? -eq 0 ]; then
             echo "Los recursos ya están en el estado deseado. Finalizando tarea con éxito."
-            exit 0
+            echo "skip-apply=true" >> $GITHUB_ENV
           fi
 
-
-      # Paso 6: Ejecutar terraform apply
+      # Paso 7: Ejecutar terraform apply si es necesario
       - name: Apply Terraform configuration
+        if: env.skip-apply != 'true'
         run: |
           cd infra
           terraform apply -auto-approve
 
-      # Paso 7: Ejecutar el comando aws sts get-caller-identity
+      # Paso 8: Ejecutar el comando aws sts get-caller-identity
       - name: Get AWS Caller Identity
         run: aws sts get-caller-identity
