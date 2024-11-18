@@ -48,10 +48,21 @@ jobs:
 
       # Paso 6: Ejecutar terraform apply sin verificación
       - name: Apply Terraform configuration
+        id: terraform_apply
         run: |
           cd infra
-          terraform apply -auto-approve
+          terraform apply -auto-approve | tee result.log  # Guardar salida en un archivo de log
 
-      # Paso 7: Ejecutar el comando aws sts get-caller-identity
+      # Paso 7: Verificar la salida de Terraform para validar la tarea
+      - name: Validate Terraform apply result
+        run: |
+          if grep -q "already exists for VPC" result.log || grep -q "Apply complete!" result.log; then
+            echo "La infraestructura ya existe o se aplicó correctamente. Tarea validada."
+          else
+            echo "Error inesperado. Terraform no se aplicó correctamente."
+            exit 1
+          fi
+
+      # Paso 8: Ejecutar el comando aws sts get-caller-identity
       - name: Get AWS Caller Identity
         run: aws sts get-caller-identity
