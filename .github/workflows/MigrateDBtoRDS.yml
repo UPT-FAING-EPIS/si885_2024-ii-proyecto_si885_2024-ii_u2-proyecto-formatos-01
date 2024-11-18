@@ -8,16 +8,28 @@ on:
 jobs:
   execute-sql-script:
     runs-on: ubuntu-latest
-
+  
     steps:
       # Paso 1: Instalar AWS CLI
       - name: Install AWS CLI
         run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install
+          sudo apt-get update
+          sudo apt-get install -y awscli
 
-      # Paso 2: Verificar si la instancia de RDS existe
+      # Paso 2: Configurar las credenciales de AWS
+      - name: Configure AWS credentials
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
+          aws configure set region us-east-1
+
+      # Paso 3: Ejecutar el comando aws sts get-caller-identity
+      - name: Get AWS Caller Identity
+        run: aws sts get-caller-identity
+        
+
+      # Paso 5: Verificar si la instancia de RDS existe
       - name: Check if RDS instance exists
         run: |
           INSTANCE_EXISTS=$(aws rds describe-db-instances --db-instance-identifier mydb-instance --query "DBInstances[0].DBInstanceIdentifier" --output text)
