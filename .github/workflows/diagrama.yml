@@ -16,8 +16,8 @@ jobs:
       - name: Checkout the Terraform repository
         uses: actions/checkout@v3
         with:
-          repository: UPT-FAING-EPIS/proyecto-si885-2024-ii-u2-tg01apazachuracutcutiescohuallpas/tree/main/infra
-          path: terraform_repo
+          repository: UPT-FAING-EPIS/proyecto-si885-2024-ii-u2-tg01apazachuracutcutiescohuallpas
+          path: infra
           ref: main
 
       - name: Set up Python
