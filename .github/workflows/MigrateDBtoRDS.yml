@@ -10,7 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Paso 1: Verificar si la instancia de RDS existe
+      # Paso 1: Instalar AWS CLI
+      - name: Install AWS CLI
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
+
+      # Paso 2: Verificar si la instancia de RDS existe
       - name: Check if RDS instance exists
         run: |
           INSTANCE_EXISTS=$(aws rds describe-db-instances --db-instance-identifier mydb-instance --query "DBInstances[0].DBInstanceIdentifier" --output text)
@@ -22,7 +29,7 @@ jobs:
             echo "RDS instance exists. Proceeding to execute SQL script."
           fi
 
-      # Paso 2: Obtener el endpoint de la instancia de RDS y esperar a que esté disponible
+      # Paso 3: Obtener el endpoint de la instancia de RDS y esperar a que esté disponible
       - name: Wait for RDS to be available and get endpoint
         run: |
           DB_ENDPOINT=$(aws rds describe-db-instances --db-instance-identifier mydb-instance --query "DBInstances[0].Endpoint.Address" --output text)
@@ -36,7 +43,7 @@ jobs:
           
           echo "RDS instance is available."
 
-      # Paso 3: Ejecutar el script SQL
+      # Paso 4: Ejecutar el script SQL
       - name: Execute SQL script
         run: |
           echo "Executing SQL script..."
