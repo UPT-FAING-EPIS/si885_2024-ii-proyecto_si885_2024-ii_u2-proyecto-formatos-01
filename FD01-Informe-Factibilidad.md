@@ -8,7 +8,7 @@
 
 **Escuela Profesional de Ingeniería de Sistemas**
 
-**Proyecto *"Herramienta de Seguimiento y Evaluación del Desempeño de Red y Hardware en Computadoras UPT"***
+**Proyecto *"Herramienta de Seguimiento y Evaluación del Desempeño de Red en Computadoras UPT"***
 
 Curso: Inteligencia de Negocios
 
