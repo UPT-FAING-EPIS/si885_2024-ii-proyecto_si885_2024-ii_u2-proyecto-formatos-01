@@ -20,9 +20,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y awscli
       
-      # Paso 8: Ejecutar el comando aws sts get-caller-identity
-      - name: Get AWS Caller Identity
-        run: aws sts get-caller-identity
+   
 
       # Paso 3: Instalar Terraform
       - name: Install Terraform
@@ -43,7 +41,10 @@ jobs:
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
           aws configure set region us-east-1
-
+     # Paso 8: Ejecutar el comando aws sts get-caller-identity
+      - name: Get AWS Caller Identity
+        run: aws sts get-caller-identity
+        
       # Paso 5: Ejecutar terraform init
       - name: Initialize Terraform
         run: |
