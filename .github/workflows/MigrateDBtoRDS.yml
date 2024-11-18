@@ -41,19 +41,6 @@ jobs:
             echo "RDS instance exists. Proceeding to execute SQL script."
           fi
 
-      # Paso 5: Obtener el endpoint de la instancia de RDS y esperar a que esté disponible
-      - name: Wait for RDS to be available and get endpoint
-        run: |
-          DB_ENDPOINT=$(aws rds describe-db-instances --db-instance-identifier mydb-instance --query "DBInstances[0].Endpoint.Address" --output text)
-          
-          # Esperar a que MySQL esté disponible
-          echo "Waiting for RDS instance to be available..."
-          until mysqladmin --host=$DB_ENDPOINT --user=admin --password=$MYSQL_PASSWORD ping --silent; do
-            echo "Waiting for MySQL service to be available..."
-            sleep 30
-          done
-          
-          echo "RDS instance is available."
 
       # Paso 6: Ejecutar el script SQL
       - name: Execute SQL script
