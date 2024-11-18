@@ -97,4 +97,8 @@ resource "aws_db_instance" "mydb_instance" {
   tags = {
     Name = "mydb-instance"
   }
-}
+  # capturar el endpoint de la instancia RDS:
+  }
+  output "rds_endpoint" {
+    value = aws_db_instance.mydb_instance.endpoint
+  }
