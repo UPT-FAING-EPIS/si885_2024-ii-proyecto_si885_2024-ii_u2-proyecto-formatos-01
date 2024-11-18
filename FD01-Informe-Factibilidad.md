@@ -130,9 +130,9 @@ Versión *{1.0}*
    Para abordar estas deficiencias, es esencial desarrollar una herramienta de seguimiento y evaluación que permita un análisis detallado y en tiempo real del desempeño de la red. Esta solución permitirá a los administradores de TI tomar decisiones informadas, identificar problemas potenciales antes de que se conviertan en fallos graves, y proponer mejoras basadas en datos concretos, optimizando así el rendimiento general de la infraestructura tecnológica de la UPT.
 
 
-    3.2. Consideraciones de hardware y software
+    3.2. Consideraciones de software
 
-   Para el proyecto "Herramienta de Seguimiento y Evaluación del Desempeño de Red y Hardware en Computadoras UPT", se utilizará Python 3.12.5 por su estabilidad y compatibilidad, y Tableau 2021.4 para visualizaciones avanzadas. Estas tecnologías, ampliamente reconocidas y estandarizadas en la industria, ofrecerán un entorno de desarrollo robusto y confiable.
+   Para el proyecto "Herramienta de Seguimiento y Evaluación del Desempeño de Red en Computadoras UPT", se utilizará Python 3.12.5 por su estabilidad y compatibilidad, y Tableau 2021.4 para visualizaciones avanzadas. Estas tecnologías, ampliamente reconocidas y estandarizadas en la industria, ofrecerán un entorno de desarrollo robusto y confiable.
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
