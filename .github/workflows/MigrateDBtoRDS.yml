@@ -13,6 +13,7 @@ jobs:
       # Paso 1: Instalar AWS CLI
       - name: Install AWS CLI
         run: |
+          echo "Current directory: $(pwd)"
           sudo apt-get update
           sudo apt-get install -y awscli
 
