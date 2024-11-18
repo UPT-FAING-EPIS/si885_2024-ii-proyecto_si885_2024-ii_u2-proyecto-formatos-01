@@ -10,10 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Debug Environment
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+      # Paso 1: Configurar AWS CLI con credenciales directamente
+      - name: Configure AWS CLI
+        run: |
+          mkdir -p ~/.aws
+          echo "[default]" > ~/.aws/credentials
+          echo "aws_access_key_id=ASIASVSVZFFBWOVOW4ZH" >> ~/.aws/credentials
+          echo "aws_secret_access_key=O3d0ievPCxehXe6R9FzNQKWR6EjFOaXoCqIW8u96" >> ~/.aws/credentials
+          echo "aws_session_token=IQoJb3JpZ2luX2VjELn//////////wEaCXVzLXdlc3QtMiJHMEUCIQDp0WDMk9jEGSM95DYtPOq4N4yXVKc8rZ6deNCY62WWtQIgNi8rbYW34Xsuyx0vC3xtpXAzc9JeR2rrBK9lp8p2WVEqswIIUhABGgwxODM3ODk3NTg3ODciDFGcPSPrWucZCM1FDiqQAkCIZziNL+t1v03kjiTaB5QoBx2lnvxeyUpBsu0VTJy7m/HUAfVj/0zpzI/ffW5sG9ucMJ+msP4s2c0SzSrQdrOUciJ67SjMGXh32/qb+pSixwJlx1TwfSGA7TgZvFVMI5YxtaUE4BsTFnBIfUevgBFCr1nUVM2ZZ2sVi6zJbD9Ys0TB27Gi/9npjxsdsCqyIZKK+meYi7wPo0XLzvhv+zgQrLy1Sg9VvBWD1W+T5Zv+3C0XuFnKb+yzMPKYJNhACBdUdhpjaS76ql0Txgdn79dCgsScJqfZZWfHKxqsqp+zUXGEk3NGDrXX6VzerJL9IIpvT7OMINQGaS3VTShYWcvq35XANMBsxNO5h+2iDdH2MLem6rkGOp0BdTti3h4GNdcuVvtQnC5YnK/YPJbZBAlFsj1Mt9+7tWftekPdUoVJHkLuI1FbpsGoie3bXuSeqOXgYCkSBK7CSy3zDI1BzuulHCafySu8xE6mHQ9xnPmx2zLbBOS//R+7RDo9MJhPHMKGqXod1yoWOBr84kMm6Vg60aWvMsDCRVfe3MEd5Bhw9xEpQmFvixGU+DcOibAg3Hmy/unUiw==" >> ~/.aws/credentials
+
+      # Paso 2: Probar conectividad con AWS
+      - name: Test AWS CLI - Get Caller Identity
         run: |
           aws sts get-caller-identity || echo "Failed to authenticate"
