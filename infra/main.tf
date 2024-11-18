@@ -1,22 +1,12 @@
-variable "aws_access_key_id" {
-  description = "AWS Access Key ID"
-  type        = string
-}
-
-variable "aws_secret_access_key" {
-  description = "AWS Secret Access Key"
-  type        = string
-}
-
-variable "aws_session_token" {
-  description = "AWS Session Token"
-  type        = string
-}
-
 provider "aws" {
-  access_key       = var.aws_access_key_id
-  secret_access_key = var.aws_secret_access_key
-  session_token     = var.aws_session_token
-  region           = "us-east-1"
-  output           = "json"
+  access_key     = var.AWS_ACCESS_KEY_ID
+  secret_access_key = var.AWS_SECRET_ACCESS_KEY
+  session_token  = var.AWS_SESSION_TOKEN
+  region         = "us-east-1"
+}
+
+resource "null_resource" "aws_sts_identity" {
+  provisioner "local-exec" {
+    command = "aws sts get-caller-identity"
+  }
 }
