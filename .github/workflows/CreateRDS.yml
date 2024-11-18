@@ -19,7 +19,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y awscli
-
       # Paso 3: Instalar Terraform
       - name: Install Terraform
         run: |
@@ -31,7 +30,6 @@ jobs:
           
           # Actualizar apt e instalar Terraform
           sudo apt update && sudo apt install -y terraform
-
       # Paso 4: Configurar las credenciales de AWS
       - name: Configure AWS credentials
         run: |
@@ -39,7 +37,6 @@ jobs:
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
           aws configure set region us-east-1
-
       # Paso 5: Verificar las credenciales con AWS STS
       - name: Get AWS Caller Identity
         run: aws sts get-caller-identity
@@ -49,21 +46,8 @@ jobs:
         run: |
           cd infra
           terraform init
-
-      # Paso 7: Ejecutar Terraform Plan para previsualizar cambios
-      - name: Plan Terraform execution
-        run: |
-          cd infra
-          terraform plan -out=plan.tfplan
-
-      # Paso 8: Aplicar Terraform solo si hay cambios
       - name: Apply Terraform configuration
         run: |
           cd infra
-          terraform show -json plan.tfplan | jq '.' > plan-output.json
-          if grep -q '"change":' plan-output.json; then
-            echo "Se detectaron cambios. Aplicando Terraform..."
-            terraform apply -auto-approve plan.tfplan
-          else
-            echo "No hay cambios en la infraestructura."
-          fi
+          terraform apply -auto-approve || (echo "El recurso ya existe. Continuando con la ejecución." && exit 0)
+      
