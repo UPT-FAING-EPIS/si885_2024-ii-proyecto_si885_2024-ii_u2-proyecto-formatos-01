@@ -7,7 +7,7 @@ on:
 
 jobs:
   aws-connectivity:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
       # Paso 1: Checkout del código
@@ -40,32 +40,25 @@ jobs:
           aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
           aws configure set region us-east-1
 
-      # Paso 5: Ejecutar el comando aws sts get-caller-identity
+      # Paso 5: Verificar las credenciales con AWS STS
       - name: Get AWS Caller Identity
         run: aws sts get-caller-identity
-        
-      # Paso 6: Ejecutar terraform init
+
+      # Paso 6: Inicializar Terraform
       - name: Initialize Terraform
         run: |
           cd infra
           terraform init
 
-      # Paso 7: Verificar si los recursos ya existen antes de aplicar
-      - name: Check if resources already exist
-        run: |
-          cd infra
-          terraform plan -out=plan.out
-
-          # Buscar si la salida de terraform plan contiene recursos que ya existen
-          if grep -q "already exists" plan.out; then
-            echo "Los recursos ya existen. No es necesario crear nuevos."
-            exit 0  # Salir sin aplicar cambios
-          else
-            echo "No existen recursos previos. Continuando con terraform apply."
-          fi
-
-      # Paso 8: Ejecutar terraform apply solo si no existen los recursos
-      - name: Apply Terraform configuration if resources don't exist
+      # Paso 7: Ejecutar terraform apply
+      - name: Apply Terraform configuration
         run: |
           cd infra
           terraform apply -auto-approve
+
+          # Verificar si se realizaron cambios
+          if grep -q "No changes" plan.out; then
+            echo "La infraestructura ya está configurada. No se realizaron cambios."
+          else
+            echo "Terraform aplicó cambios a la infraestructura."
+          fi
