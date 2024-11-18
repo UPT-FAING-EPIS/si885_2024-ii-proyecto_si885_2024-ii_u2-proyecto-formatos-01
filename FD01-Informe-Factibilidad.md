@@ -98,7 +98,7 @@ Versión *{1.0}*
 
 1.4.2 Objetivos Específicos
             
-    -Diseñar un script para la recolección de datos que monitorice el rendimiento de la red y del hardware (GPU y RAM) de cada computadora en los laboratorios. 
+    -Diseñar un script para la recolección de datos que monitorice el rendimiento de la red y de la memoria RAM de cada computadora en los laboratorios. 
     -Establecer un mecanismo eficiente para enviar los datos recopilados a una base de datos centralizada, asegurando un almacenamiento adecuado para su análisis posterior. 
     -Facilitar la comprensión de la información recopilada mediante la organización de datos que permitan su visualización clara y efectiva. 
     -Analizar el tráfico de red para identificar las horas de mayor actividad, facilitando la optimización del uso de recursos en los laboratorios.
