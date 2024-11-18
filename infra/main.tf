@@ -1,6 +1,6 @@
 # Proveedor AWS
 provider "aws" {
-  region = "us-east-1"  # Cambia la región según sea necesario
+  region = var.region  # Usar la variable definida para la región
 }
 
 # Crear una VPC
@@ -43,27 +43,6 @@ resource "aws_subnet" "my_subnet_2" {
   }
 }
 
-# Crear un Grupo de Seguridad dentro de la misma VPC
-resource "aws_security_group" "my_db_sg" {
-  name        = "my-db-sg"
-  vpc_id      = aws_vpc.my_vpc.id
-  description = "Security group for RDS DB instance"
-
-  ingress {
-    from_port   = 3306
-    to_port     = 3306
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]  # Puedes ajustar este rango si necesitas más seguridad
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
 # Crear un DB Subnet Group para RDS
 resource "aws_db_subnet_group" "my_db_subnet_group" {
   name        = "my-db-subnet-group"
@@ -73,18 +52,18 @@ resource "aws_db_subnet_group" "my_db_subnet_group" {
 
 # Crear una instancia de RDS MySQL
 resource "aws_db_instance" "mydb_instance" {
-  identifier           = "mydb-instance"
-  engine               = "mysql"
-  engine_version       = "5.7"
-  instance_class       = "db.t3.micro"
-  allocated_storage    = 20
-  storage_type         = "gp2"
+  identifier        = "mydb-instance"
+  engine            = "mysql"
+  engine_version    = "5.7"
+  instance_class    = var.instance_class  # Usar la variable para la clase de la instancia
+  allocated_storage = var.allocated_storage  # Usar la variable para el almacenamiento
+  storage_type      = "gp2"
   db_subnet_group_name = aws_db_subnet_group.my_db_subnet_group.name
-  vpc_security_group_ids = [aws_security_group.my_db_sg.id]  # Referencia al grupo de seguridad creado
-  username             = "admin"
-  password             = "MySecurePassword123!"
-  db_name              = "mydatabase"
-  publicly_accessible  = true
-  multi_az             = false
+  vpc_security_group_ids = ["sg-08db0d68f1b78a11e"]  # Asegúrate de usar el ID correcto del grupo de seguridad
+  username          = "admin"
+  password          = "MySecurePassword123!"
+  db_name           = "mydatabase"
+  publicly_accessible = true
+  multi_az          = false
   backup_retention_period = 7
 }
