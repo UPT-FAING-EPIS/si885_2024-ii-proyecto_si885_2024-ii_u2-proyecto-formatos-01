@@ -5,7 +5,7 @@ from mysql.connector import Error
 try:
     # Configuración de conexión con variables de entorno
     connection = mysql.connector.connect(
-        host=os.environ['DB_ENDPOINTT'],
+        host=os.environ['DB_ENDPOINT'],
         user=os.environ['DB_USER'],
         password=os.environ['DB_PASSWORD'],
         port=int(os.environ['DB_PORT'])
