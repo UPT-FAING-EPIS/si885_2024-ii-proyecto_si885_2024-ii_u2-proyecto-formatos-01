@@ -1,11 +1,11 @@
 # Proveedor AWS
 provider "aws" {
-  region = var.region
+  region = "us-east-1"  # Puedes cambiar la región si es necesario
 }
 
-# Crear una VPC
+# Crear una VPC con CIDR similar a la que mencionas
 resource "aws_vpc" "my_vpc" {
-  cidr_block           = "10.0.0.0/16"
+  cidr_block           = "172.31.0.0/16"
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
@@ -21,10 +21,10 @@ resource "aws_internet_gateway" "my_igw" {
   }
 }
 
-# Crear una Subnet pública en la VPC
+# Crear una Subnet pública
 resource "aws_subnet" "public_subnet" {
   vpc_id                  = aws_vpc.my_vpc.id
-  cidr_block              = "10.0.1.0/24"
+  cidr_block              = "172.31.1.0/24"  # Cambié el CIDR por 172.31.1.0/24
   availability_zone       = "us-east-1a"
   map_public_ip_on_launch = true
   tags = {
@@ -32,10 +32,10 @@ resource "aws_subnet" "public_subnet" {
   }
 }
 
-# Crear una Subnet privada en la VPC
+# Crear una Subnet privada
 resource "aws_subnet" "private_subnet" {
   vpc_id                  = aws_vpc.my_vpc.id
-  cidr_block              = "10.0.2.0/24"
+  cidr_block              = "172.31.2.0/24"  # Cambié el CIDR por 172.31.2.0/24
   availability_zone       = "us-east-1b"
   map_public_ip_on_launch = false
   tags = {
@@ -54,7 +54,7 @@ resource "aws_security_group" "rds_sg" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]  # Cambiar por una IP específica si es necesario
+    cidr_blocks = ["0.0.0.0/0"]  # Acceso público desde cualquier lugar
   }
 
   # Reglas de salida
@@ -62,7 +62,7 @@ resource "aws_security_group" "rds_sg" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["0.0.0.0/0"]  # Permitir tráfico saliente hacia cualquier dirección
   }
 
   tags = {
@@ -82,23 +82,25 @@ resource "aws_db_instance" "mydb_instance" {
   identifier            = "mydb-instance"
   engine                = "mysql"
   engine_version        = "5.7"
-  instance_class        = var.instance_class
-  allocated_storage     = var.allocated_storage
+  instance_class        = "db.t3.micro"  # Ajusta según el tipo de instancia que necesites
+  allocated_storage     = 20  # Ajusta el tamaño de almacenamiento según lo que necesites
   storage_type          = "gp2"
   db_subnet_group_name  = aws_db_subnet_group.my_db_subnet_group.name
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
   username              = "admin"
   password              = "MySecurePassword123!"
   db_name               = "mydatabase"
-  publicly_accessible   = true
+  publicly_accessible   = true  # Habilitar acceso público
   multi_az              = false
   backup_retention_period = 7
-  skip_final_snapshot   = true  # Opcional: evita crear un snapshot final al eliminar
+  skip_final_snapshot   = true  # Opcional: evitar crear un snapshot final al eliminar
   tags = {
     Name = "mydb-instance"
   }
-  # capturar el endpoint de la instancia RDS:
-  }
- #  output "rds_endpoint" {
- #    value = aws_db_instance.mydb_instance.endpoint
- #  }
+}
+
+# Output: Capturar el endpoint de la instancia RDS
+output "rds_endpoint" {
+  value = aws_db_instance.mydb_instance.endpoint
+}
+
