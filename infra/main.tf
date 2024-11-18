@@ -43,27 +43,48 @@ resource "aws_subnet" "my_subnet_2" {
   }
 }
 
+# Crear un Grupo de Seguridad dentro de la misma VPC
+resource "aws_security_group" "my_db_sg" {
+  name        = "my-db-sg"
+  vpc_id      = aws_vpc.my_vpc.id
+  description = "Security group for RDS DB instance"
+
+  ingress {
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]  # Puedes ajustar este rango si necesitas más seguridad
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
 # Crear un DB Subnet Group para RDS
 resource "aws_db_subnet_group" "my_db_subnet_group" {
-  name        = "my-db-subnet-group"  # Nombre correcto del DB Subnet Group
+  name        = "my-db-subnet-group"
   subnet_ids  = [aws_subnet.my_subnet_1.id, aws_subnet.my_subnet_2.id]
-  description = "My DB Subnet Group"  # Descripción del DB Subnet Group
+  description = "My DB Subnet Group"
 }
 
 # Crear una instancia de RDS MySQL
 resource "aws_db_instance" "mydb_instance" {
-  identifier        = "mydb-instance"
-  engine            = "mysql"
-  engine_version    = "5.7"
-  instance_class    = "db.t3.micro"
-  allocated_storage = 20
-  storage_type      = "gp2"
+  identifier           = "mydb-instance"
+  engine               = "mysql"
+  engine_version       = "5.7"
+  instance_class       = "db.t3.micro"
+  allocated_storage    = 20
+  storage_type         = "gp2"
   db_subnet_group_name = aws_db_subnet_group.my_db_subnet_group.name
-  vpc_security_group_ids = ["sg-08db0d68f1b78a11e"]  # Cambia el ID del grupo de seguridad según corresponda
-  username          = "admin"
-  password          = "MySecurePassword123!"
-  db_name           = "mydatabase"
-  publicly_accessible = true
-  multi_az          = false
+  vpc_security_group_ids = [aws_security_group.my_db_sg.id]  # Referencia al grupo de seguridad creado
+  username             = "admin"
+  password             = "MySecurePassword123!"
+  db_name              = "mydatabase"
+  publicly_accessible  = true
+  multi_az             = false
   backup_retention_period = 7
 }
