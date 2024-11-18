@@ -31,6 +31,10 @@ jobs:
       # Paso 4: Ejecutar el comando aws sts get-caller-identity
       - name: Get AWS Caller Identity
         run: aws sts get-caller-identity
+        
+      # Paso 4.1: Listar las subredes en la VPC
+      - name: List subnets in VPC
+        run: aws ec2 describe-subnets --filters "Name=vpc-id,Values=vpc-02ee44d7135379986" --query "Subnets[*].SubnetId"
 
       # Paso 5: Crear DB Subnet Group
       - name: Create DB Subnet Group
