@@ -41,8 +41,8 @@ jobs:
         run: |
           aws rds create-db-subnet-group \
             --db-subnet-group-name my-db-subnet-group \
-            --db-subnet-group-description "My DB Subnet Group" \
-            --subnet-ids subnet-xxxxxxxx subnet-yyyyyyyy
+            --db-subnet-group-description "My DB Subnet Group_PALBERT" \
+            --subnet-ids subnet-05f8faaf2df741c92 subnet-0243ce1624f80fa0a subnet-032d6270631e9647c subnet-0cef4fb9a685ed94b subnet-0042b0d22b619d60d subnet-07147c0253ed59f2a
 
       # Paso 6: Crear la base de datos RDS
       - name: Create RDS Instance
