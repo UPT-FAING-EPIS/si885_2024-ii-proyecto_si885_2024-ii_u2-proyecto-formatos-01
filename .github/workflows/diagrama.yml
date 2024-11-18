@@ -1,0 +1,168 @@
+name: Generate Infrastructure Diagram
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-diagram:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the main repository
+        uses: actions/checkout@v3
+
+      - name: Checkout the Terraform repository
+        uses: actions/checkout@v3
+        with:
+          repository: UPT-FAING-EPIS/proyecto-si885-2024-ii-u2-tg01apazachuracutcutiescohuallpas/tree/main/infra
+          path: terraform_repo
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+          python -m pip install --upgrade pip
+          pip install diagrams python-hcl2
+
+      - name: Generate Diagram from Terraform Files
+        run: |
+          echo '
+          import os
+          import hcl2
+          from diagrams import Diagram, Cluster, Edge
+          from diagrams.aws.compute import EC2, Lambda
+          from diagrams.aws.database import RDS, Elasticache
+          from diagrams.aws.network import ELB, ALB, Route53, APIGateway
+          from diagrams.aws.storage import S3
+          from diagrams.aws.security import Shield, WAF
+          from diagrams.aws.network import VPC, InternetGateway, NATGateway
+          from diagrams.onprem.monitoring import Grafana
+          from diagrams.onprem.database import MongoDB
+          from diagrams.programming.framework import React, Flutter
+          
+          # Diccionario para mantener referencia de recursos
+          resources = {}
+          
+          def create_or_get_resource(resource_type, name, resource_class):
+              key = f"{resource_type}_{name}"
+              if key not in resources:
+                  resources[key] = resource_class(name)
+              return resources[key]
+          
+          with Diagram("Infrastructure Diagram", show=False, filename="infra_diagram", outformat="png", direction="TB"):
+              
+              # Cluster principal de AWS
+              with Cluster("AWS Infrastructure"):
+                  
+                  # Frontend Cluster
+                  with Cluster("Frontend Applications"):
+                      react_app = React("React Frontend")
+                      flutter_app = Flutter("Flutter Frontend")
+                      
+                      with Cluster("S3 Buckets"):
+                          react_bucket = S3("react_app_bucket")
+                          flutter_bucket = S3("flutter_app_bucket")
+                  
+                  # Backend Cluster
+                  with Cluster("Backend Services"):
+                      api_gateway = APIGateway("API Gateway")
+                      
+                      with Cluster("Compute Resources"):
+                          docker_host = EC2("docker_host")
+                          security_group = Shield("allow_http")
+                  
+                  # Database Cluster
+                  with Cluster("Database Layer"):
+                      with Cluster("MongoDB Atlas"):
+                          mongo_project = MongoDB("project")
+                          mongo_cluster = MongoDB("cluster")
+                          mongo_user = MongoDB("database_user")
+              
+              # Monitoring Cluster
+              with Cluster("Monitoring"):
+                  grafana = Grafana("Grafana Cloud Stack")
+          
+              # Frontend Connections
+              react_app >> Edge(color="blue", style="dashed") >> react_bucket
+              flutter_app >> Edge(color="blue", style="dashed") >> flutter_bucket
+              
+              # API Gateway Connections
+              react_bucket >> Edge(color="green") >> api_gateway
+              flutter_bucket >> Edge(color="green") >> api_gateway
+              
+              # Backend Connections
+              api_gateway >> Edge(color="red") >> docker_host
+              security_group >> Edge(color="orange", style="dotted") >> docker_host
+              
+              # Database Connections
+              docker_host >> Edge(color="purple") >> mongo_cluster
+              mongo_project - Edge(color="gray") - mongo_cluster
+              mongo_cluster - Edge(color="gray") - mongo_user
+              
+              # Monitoring Connections
+              grafana >> Edge(color="yellow", style="dotted") >> docker_host
+              grafana >> Edge(color="yellow", style="dotted") >> mongo_cluster
+          
+          def process_terraform_files():
+              print("Recorriendo los archivos Terraform...")
+              for root, _, files in os.walk("terraform_repo"):
+                  for file in files:
+                      if file.endswith(".tf"):
+                          print(f"Procesando archivo: {file}")
+                          with open(os.path.join(root, file), "r") as f:
+                              try:
+                                  terraform_data = hcl2.load(f)
+                                  process_resources(terraform_data)
+                              except Exception as e:
+                                  print(f"Error al procesar {file}: {e}")
+          
+          def process_resources(terraform_data):
+              if "resource" not in terraform_data:
+                  return
+              
+              for resource in terraform_data["resource"]:
+                  for resource_type, instances in resource.items():
+                      for instance_name, _ in instances.items():
+                          print(f"Recurso encontrado: {resource_type} - {instance_name}")
+          
+          if __name__ == "__main__":
+              process_terraform_files()
+          ' > generate_diagram.py
+          python generate_diagram.py
+
+      - name: Check if diagram was created
+        run: |
+          if [ -f "infra_diagram.png" ]; then
+            echo "Diagrama generado exitosamente."
+          else
+            echo "Error: El archivo infra_diagram.png no fue generado."
+            exit 1
+          fi
+
+      - name: Commit and Push Diagram
+        run: |
+          git config --local user.name "AlbertApaza"
+          git config --local user.email "aa2021071075@virtual.upt.pe"
+          
+          if [ -f "infra_diagram.png" ]; then
+              git add infra_diagram.png
+              git commit -m "Actualizar diagrama de infraestructura [skip ci]" || echo "No hay cambios para commit"
+              git push origin DesarrolloApiBack --force
+          else
+              echo "Error: infra_diagram.png no se generó."
+              exit 1
+          fi
+
+      - name: Upload Diagram as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: infra_diagram
+          path: infra_diagram.png
