@@ -41,14 +41,22 @@ jobs:
             echo "RDS instance exists. Proceeding to execute SQL script."
           fi
 
-
       # Paso 6: Ejecutar el script SQL
       - name: Execute SQL script
         run: |
+          # Verificar si el archivo de script SQL existe
+          if [ ! -f artefactos/datos.sql ]; then
+            echo "File artefactos/datos.sql not found!"
+            exit 1
+          else
+            echo "File artefactos/datos.sql found, proceeding with execution."
+          fi
+      
           echo "Executing SQL script..."
           # Suprimir advertencias de MySQL
           mysql --host=$DB_ENDPOINT --user=admin --password=$MYSQL_PASSWORD mydatabase < artefactos/datos.sql 2>/dev/null
           echo "SQL script executed successfully."
+
           
     env:
       MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
