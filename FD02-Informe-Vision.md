@@ -329,7 +329,7 @@ e) Estandaraes de calidad y seguridad	](#_toc394513800)42
     Se deben utilizar protocolos seguros (HTTPS, TLS) para proteger la transmisión de datos entre los clientes y el servidor, asegurando la privacidad y seguridad de la información.
 
 ### c) Estándares de cumplimiento de la plataforma
-    El sistema debe ser compatible con los sistemas operativos y hardware existentes en la universidad, asegurando su correcto funcionamiento sin afectar el rendimiento de las computadoras.
+    El sistema debe ser compatible con los sistemas operativos existentes en la universidad, asegurando su correcto funcionamiento sin afectar el rendimiento de las computadoras.
 
 ### d) Estándares de calidad y seguridad
     El sistema debe garantizar la seguridad (control de acceso, encriptación) y la calidad de los datos recolectados, asegurando su precisión, integridad y disponibilidad para análisis y toma de decisiones.
