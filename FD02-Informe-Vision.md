@@ -363,7 +363,7 @@ e) Estandaraes de calidad y seguridad	](#_toc394513800)42
     
     -Recoger feedback de los usuarios: Es importante recoger el feedback de los usuarios, especialmente del personal de soporte técnico y los estudiantes, para entender cómo el sistema puede mejorar y adaptarse a sus necesidades. Esto puede ayudar a guiar futuras actualizaciones y mejoras.
     
-    -Actualizar la infraestructura según sea necesario: Si se detecta que la infraestructura actual no es suficiente para soportar el sistema de manera óptima, se deben planificar y ejecutar actualizaciones de hardware o software para garantizar un rendimiento eficiente.
+    -Actualizar la infraestructura según sea necesario: Si se detecta que la infraestructura actual no es suficiente para soportar el sistema de manera óptima, se deben planificar y ejecutar actualizaciones de software para garantizar un rendimiento eficiente.
     
     -Documentación exhaustiva: Asegúrate de que toda la documentación, tanto para los usuarios como para los técnicos, esté completa y actualizada. Esto facilitará la resolución de problemas y la formación de nuevos usuarios.
     
