@@ -39,7 +39,7 @@ jobs:
             echo "Error: El directorio 'infra' no existe."
             exit 1
           fi
-      
+
       - name: Crear archivo Python temporal con el código
         run: |
           cat << EOF > generate_diagram.py
@@ -116,8 +116,6 @@ jobs:
               generate_diagram()
           EOF
 
-
-      
       - name: Ejecutar script Python para generar diagrama
         run: |
           python generate_diagram.py
