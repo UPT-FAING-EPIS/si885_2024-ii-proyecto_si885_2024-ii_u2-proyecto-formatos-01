@@ -45,10 +45,10 @@ jobs:
           cat << EOF > generate_diagram.py
           import os
           import hcl2
-          from diagrams import Diagram, Cluster
+          from diagrams import Diagram, Cluster, Node
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
-          from diagrams.aws.network import VPC, SecurityGroup
+          from diagrams.aws.network import VPC
           
           # Diccionario para almacenar los recursos generados
           resources = {}
@@ -58,14 +58,14 @@ jobs:
               "aws_instance": EC2,
               "aws_db_instance": RDS,
               "aws_vpc": VPC,
-              "aws_security_group": SecurityGroup,
+              "aws_security_group": Node,  # Uso de Node como representación genérica
           }
           
           # Crear o recuperar un recurso
           def create_or_get_resource(resource_type, name):
               key = f"{resource_type}_{name}"
               if key not in resources:
-                  resource_class = resource_classes.get(resource_type, EC2)  # Por defecto, usa EC2 si no está definido
+                  resource_class = resource_classes.get(resource_type, Node)  # Por defecto, usa Node si no está definido
                   resources[key] = resource_class(name)
               return resources[key]
           
@@ -115,6 +115,7 @@ jobs:
               process_terraform_files(terraform_dir)
               generate_diagram()
           EOF
+
 
       
       - name: Ejecutar script Python para generar diagrama
