@@ -46,21 +46,21 @@ jobs:
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
           from diagrams.aws.network import VPC
-      
+          
           resources = {}
           resource_classes = {
               "aws_instance": EC2,
               "aws_db_instance": RDS,
               "aws_vpc": VPC
           }
-      
+          
           def create_or_get_resource(resource_type, name):
               key = f"{resource_type}_{name}"
               if key not in resources:
                   resource_class = resource_classes.get(resource_type, EC2)
                   resources[key] = resource_class(name)
               return resources[key]
-      
+          
           def process_terraform_files(terraform_dir):
               for root, _, files in os.walk(terraform_dir):
                   for file in files:
@@ -74,7 +74,7 @@ jobs:
                                   process_resources(terraform_data)
                               except Exception as e:
                                   print(f"Error al procesar {file}: {e}")
-      
+          
           def process_resources(terraform_data):
               if "resource" not in terraform_data:
                   print("No se encontraron recursos en el archivo Terraform.")
@@ -84,10 +84,17 @@ jobs:
                       if resource_type not in resource_classes:
                           print(f"Tipo de recurso no soportado: {resource_type}")
                           continue
-                      for instance_name, _ in instances.items():
+                      for instance_name, resource_details in instances.items():
                           print(f"Creando recurso: {instance_name}")
                           create_or_get_resource(resource_type, instance_name)
-      
+                          # Si deseas incluir más detalles como "instance_class" o "allocated_storage"
+                          if resource_type == "aws_db_instance":
+                              if "instance_class" in resource_details:
+                                  print(f"Clase de instancia: {resource_details['instance_class']}")
+                              if "allocated_storage" in resource_details:
+                                  print(f"Almacenamiento asignado: {resource_details['allocated_storage']}")
+                              # Aquí podrías agregar relaciones si quieres conectarlos visualmente
+          
           def generate_diagram():
               with Diagram("Infraestructura", show=False, outformat="png", filename="infra_diagram"):
                   with Cluster("VPC"):
@@ -97,11 +104,12 @@ jobs:
                               for other_key, other_node in resources.items():
                                   if "aws_db_instance" in other_key:
                                       ec2_instance >> other_node
-      
+          
           if __name__ == "__main__":
-              terraform_dir = "infra/infra"
+              terraform_dir = "infra"  # Asegúrate de que sea la ruta correcta a tus archivos Terraform
               process_terraform_files(terraform_dir)
               generate_diagram()
+
           EOF
       
       - name: Ejecutar script Python para generar diagrama
