@@ -7,7 +7,7 @@
 ## FACULTAD DE INGENIERÍA  
 ### Escuela Profesional de Ingeniería de Sistemas
 
-**Plataforma de análisis de datos de matriculados en la carrera de Ingeniería de Sistemas para la Universidad Privada de Tacna - PAMIS**
+**Sistema de Monitoreo y Gestión de Red para Laboratorios UPT (SIMGR-UPT)**
 
 Curso: *Inteligencia de Negocios*  
 Docente: *Mag. Patrick Cuadros Quiroga*
