@@ -27,8 +27,16 @@ jobs:
 
       - name: Verificar archivos Terraform
         run: |
-          echo "Archivos Terraform encontrados:"
-          find infra/infra -name "*.tf"
+          echo "Verificando los archivos Terraform..."
+          cd infra  # Navegar al directorio infra
+          if [ -d "infra" ]; then
+            echo "Archivos Terraform encontrados en infra/infra:"
+            find infra -name "*.tf"  # Encontrar los archivos .tf
+          else
+            echo "Error: El directorio 'infra/infra' no existe."
+            exit 1
+          fi
+
 
       - name: Generate Diagram from Terraform Files
         run: |
