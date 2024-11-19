@@ -27,7 +27,7 @@ Docente: *Mag. Patrick Cuadros Quiroga*
 
 ---
 
-# Sistema *{Nombre del Sistema}*
+# Sistema de Monitoreo y Gestión de Red para Laboratorios UPT (SIMGR-UPT)*
 
 **Documento de Especificación de Requerimientos de Software**
 
