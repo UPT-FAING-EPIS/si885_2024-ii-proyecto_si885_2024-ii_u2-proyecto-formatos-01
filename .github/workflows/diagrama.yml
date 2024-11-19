@@ -56,7 +56,7 @@ jobs:
               'aws_instance': EC2,
               'aws_db_instance': RDS,
               'aws_vpc': VPC,
-              'aws_security_group': SecurityGroup,  # Usamos SecurityGroup en lugar de Node para representar un grupo de seguridad
+              'aws_security_group': Node,  # Usamos Node como representación genérica para el Security Group
           }
       
           # Crear o recuperar un recurso
@@ -116,6 +116,7 @@ jobs:
                   process_terraform_files(terraform_dir, diagram)
                   generate_diagram()
           " > script.py
+
 
 
       - name: Ejecutar script Python para generar diagrama
