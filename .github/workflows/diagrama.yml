@@ -49,14 +49,14 @@ jobs:
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
           from diagrams.aws.network import VPC
-          from diagrams.aws.security import SecurityGroups  # Usamos 'SecurityGroups' en vez de 'SecurityGroup'
+          from diagrams.aws.security import SecurityGroup  # Usamos 'SecurityGroup' en vez de 'SecurityGroups'
           
           resources = {}
           resource_classes = {
               "aws_instance": EC2,
               "aws_db_instance": RDS,
               "aws_vpc": VPC,
-              "aws_security_group": SecurityGroups  # Cambiamos aquí a 'SecurityGroups'
+              "aws_security_group": SecurityGroup  # Cambiamos aquí a 'SecurityGroup'
           }
           
           def create_or_get_resource(resource_type, name):
@@ -113,6 +113,7 @@ jobs:
               terraform_dir = "infra"  # Asegúrate de que sea la ruta correcta a tus archivos Terraform
               process_terraform_files(terraform_dir)
               generate_diagram()
+
 
 
           EOF
