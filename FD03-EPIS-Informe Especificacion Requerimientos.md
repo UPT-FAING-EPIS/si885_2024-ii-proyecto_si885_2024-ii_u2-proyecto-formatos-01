@@ -306,7 +306,17 @@ Base para Innovaciones Futuras: Este proyecto establece un marco tecnológico s�
 
 # RECOMENDACIONES
 
-Listado de recomendaciones basadas en el análisis de requerimientos.
+Realizar Pruebas Piloto: Implementar el sistema inicialmente en uno o dos laboratorios para identificar problemas potenciales antes del despliegue completo. Esto permitirá optimizar la configuración y abordar cualquier desafío técnico.
+
+Capacitación del Personal: Brindar formación a los equipos de soporte técnico y TI en el uso y mantenimiento del sistema para garantizar una operación eficiente y una transición sin contratiempos.
+
+Monitoreo y Evaluación Inicial: Durante los primeros meses de operación, realizar un monitoreo constante del sistema para ajustar parámetros, optimizar su rendimiento y asegurar su estabilidad.
+
+Plan de Contingencia: Diseñar un plan de contingencia para mitigar riesgos durante la implementación y operación, asegurando la continuidad de las actividades de los laboratorios.
+
+Recoger Feedback de los Usuarios: Incorporar un mecanismo para recopilar comentarios de los usuarios finales (estudiantes, docentes y personal técnico) que permitan evaluar la eficacia del sistema y realizar mejoras continuas.
+
+Escalabilidad del Sistema: Planificar la futura integración del sistema en otros laboratorios y áreas tecnológicas de la universidad, asegurando que pueda crecer junto con las necesidades de la UPT.
 
 ---
 
