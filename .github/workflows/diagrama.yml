@@ -24,6 +24,11 @@ jobs:
           sudo apt-get install -y graphviz
           python -m pip install --upgrade pip
           pip install diagrams python-hcl2
+          
+      - name: Verificar dependencias
+        run: |
+          pip show diagrams python-hcl2
+          graphviz --version
 
       - name: Verificar archivos Terraform
         run: |
@@ -46,14 +51,14 @@ jobs:
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
           from diagrams.aws.network import VPC
-          from diagrams.aws.security import SecurityGroup
+          from diagrams.aws.security import SecurityGroups  # Usamos 'SecurityGroups' en vez de 'SecurityGroup'
           
           resources = {}
           resource_classes = {
               "aws_instance": EC2,
               "aws_db_instance": RDS,
               "aws_vpc": VPC,
-              "aws_security_group": SecurityGroup
+              "aws_security_group": SecurityGroups  # Cambiamos aquí a 'SecurityGroups'
           }
           
           def create_or_get_resource(resource_type, name):
