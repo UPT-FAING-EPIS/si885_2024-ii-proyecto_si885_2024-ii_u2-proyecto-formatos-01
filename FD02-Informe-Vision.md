@@ -239,7 +239,7 @@ Metodología: Utilización de un script en Python con la biblioteca psutil para 
 
 ### 4.1 Perspectiva del producto <span id="perspectiva-producto" class="anchor"></span>
 
-    El sistema de monitoreo proporcionará una solución integral para el seguimiento y evaluación del rendimiento de las computadoras de los laboratorios, facilitando la gestión proactiva de la infraestructura tecnológica.
+El sistema de monitoreo proporcionará una solución integral para el seguimiento y evaluación del rendimiento de las computadoras de los laboratorios, facilitando la gestión proactiva de la infraestructura tecnológica.
 
 ### 4.2 Resumen de capacidades <span id="resumen-capacidades" class="anchor"></span>
 
@@ -252,11 +252,11 @@ Metodología: Utilización de un script en Python con la biblioteca psutil para 
 
 ### 4.3 Suposiciones y dependencias <span id="suposiciones-dependencias" class="anchor"></span>
 
-    Acceso a la infraestructura: Se asume que el Área de TI proporcionará el acceso necesario a las computadoras y la red para la implementación del sistema de monitoreo.
+- Acceso a la infraestructura: Se asume que el Área de TI proporcionará el acceso necesario a las computadoras y la red para la implementación del sistema de monitoreo.
     
-    Estabilidad del sistema: Se asume que el script de monitoreo será lo suficientemente ligero para no afectar el rendimiento normal de las computadoras.
+- Estabilidad del sistema: Se asume que el script de monitoreo será lo suficientemente ligero para no afectar el rendimiento normal de las computadoras.
     
-    Disponibilidad de recursos: Se presupone que los recursos técnicos y humanos necesarios para el desarrollo e implementación del sistema estarán disponibles según lo planificado.
+- Disponibilidad de recursos: Se presupone que los recursos técnicos y humanos necesarios para el desarrollo e implementación del sistema estarán disponibles según lo planificado.
 
 ### 4.4 Costos y precios <span id="costos-precios" class="anchor"></span>
 
@@ -270,41 +270,41 @@ Metodología: Utilización de un script en Python con la biblioteca psutil para 
 
 ### 4.5 Licenciamiento e instalación <span id="licenciamiento-instalacion" class="anchor"></span>
 
-    Licenciamiento: La herramienta se distribuirá bajo una licencia de software libre para su uso interno en la universidad.
+Licenciamiento: La herramienta se distribuirá bajo una licencia de software libre para su uso interno en la universidad.
     
-    Instalación: La instalación del sistema se llevará a cabo en los laboratorios de informática, con soporte técnico a cargo del Área de TI, asegurando una implementación sin contratiempos.
+Instalación: La instalación del sistema se llevará a cabo en los laboratorios de informática, con soporte técnico a cargo del Área de TI, asegurando una implementación sin contratiempos.
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 ## 5. Características del producto <span id="caracteristicas-producto" class="anchor"></span>
 
-    Monitoreo en tiempo real: Seguimiento continuo del rendimiento de CPU, RAM, GPU, temperatura y consumo de red en las computadoras de los laboratorios.
+Monitoreo en tiempo real: Seguimiento continuo del rendimiento de CPU, RAM, GPU, temperatura y consumo de red en las computadoras de los laboratorios.
     
-    Evaluación del consumo de energía: Identificación de patrones de consumo energético para optimizar el rendimiento y prevenir sobrecalentamientos.
+Evaluación del consumo de energía: Identificación de patrones de consumo energético para optimizar el rendimiento y prevenir sobrecalentamientos.
     
-    Análisis de la red: Supervisión del uso de internet y ancho de banda, con la capacidad de identificar cuellos de botella y optimizar la conectividad.
+Análisis de la red: Supervisión del uso de internet y ancho de banda, con la capacidad de identificar cuellos de botella y optimizar la conectividad.
     
-    Generación de reportes automatizados: Creación de informes personalizados sobre el estado y uso de los recursos, facilitando la toma de decisiones informadas.
+Generación de reportes automatizados: Creación de informes personalizados sobre el estado y uso de los recursos, facilitando la toma de decisiones informadas.
     
-    Alertas automáticas: Notificaciones instantáneas en caso de detectar anomalías en el rendimiento, permitiendo una rápida intervención.
+Alertas automáticas: Notificaciones instantáneas en caso de detectar anomalías en el rendimiento, permitiendo una rápida intervención.
 
 ## 6. Restricciones <span id="restricciones" class="anchor"></span>
 
-    Acceso limitado a la infraestructura: El proyecto dependerá del acceso proporcionado por el Área de TI, lo que podría limitar la implementación y el monitoreo completo de los equipos.
+Acceso limitado a la infraestructura: El proyecto dependerá del acceso proporcionado por el Área de TI, lo que podría limitar la implementación y el monitoreo completo de los equipos.
     
-    Recursos computacionales: El script de monitoreo debe ser lo suficientemente ligero para no afectar negativamente el rendimiento de las computadoras durante su operación.
+Recursos computacionales: El script de monitoreo debe ser lo suficientemente ligero para no afectar negativamente el rendimiento de las computadoras durante su operación.
     
-    Compatibilidad de software: La herramienta debe ser compatible con el entorno operativo actual de la universidad, lo que podría restringir las tecnologías y plataformas que pueden ser utilizadas.
+Compatibilidad de software: La herramienta debe ser compatible con el entorno operativo actual de la universidad, lo que podría restringir las tecnologías y plataformas que pueden ser utilizadas.
 
 ## 7. Rangos de calidad <span id="rangos-calidad" class="anchor"></span>
 
-    Exactitud de los datos: Se requiere un nivel alto de precisión en la recopilación y procesamiento de datos para asegurar su utilidad y fiabilidad en la toma de decisiones.
+Exactitud de los datos: Se requiere un nivel alto de precisión en la recopilación y procesamiento de datos para asegurar su utilidad y fiabilidad en la toma de decisiones.
     
-    Disponibilidad del sistema: El sistema debe estar operativo al menos un 95% del tiempo para garantizar un monitoreo continuo y confiable.
+Disponibilidad del sistema: El sistema debe estar operativo al menos un 95% del tiempo para garantizar un monitoreo continuo y confiable.
     
-    Usabilidad: La interfaz del sistema debe ser intuitiva y fácil de usar para los técnicos y el personal del Área de TI.
+Usabilidad: La interfaz del sistema debe ser intuitiva y fácil de usar para los técnicos y el personal del Área de TI.
     
-    Escalabilidad: El sistema debe ser escalable para soportar el crecimiento de la infraestructura tecnológica de la universidad, permitiendo la incorporación de nuevos laboratorios y equipos sin comprometer el rendimiento.
+Escalabilidad: El sistema debe ser escalable para soportar el crecimiento de la infraestructura tecnológica de la universidad, permitiendo la incorporación de nuevos laboratorios y equipos sin comprometer el rendimiento.
 
 ## 8. Precedencia y Prioridad
     El desarrollo del sistema de monitoreo y evaluación de red debe priorizar los componentes más críticos para su correcta implementación y operación. El enfoque principal será asegurar que las funcionalidades esenciales estén disponibles en la primera fase de desarrollo, y posteriormente se añadirán características adicionales.
