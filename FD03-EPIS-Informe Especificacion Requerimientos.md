@@ -167,8 +167,75 @@ El rendimiento actual de la red en los laboratorios de la UPT enfrenta limitacio
 
 - **Funcionalidades relacionadas con otros aspectos de TI:** El sistema no abordará funcionalidades como la seguridad de la red o la gestión de software, ya que estos aspectos serán gestionados por otros sistemas especializados de la universidad.
 
-5. Viabilidad del Sistema
-6. Información obtenida del Levantamiento de Información
+#### 5. Viabilidad del Sistema
+
+##### 5.1. Viabilidad Técnica
+
+**Hardware Disponible**
+
+- **Equipos de desarrollo:** Se necesitan equipos capaces de ejecutar las herramientas necesarias para la creación y mantenimiento del sistema de monitoreo. Los requisitos mínimos incluyen:
+  - **Procesador:** Intel Core i5 o superior, que garantice un rendimiento eficiente en tareas de desarrollo y pruebas.
+  - **Memoria RAM:** Entre 8 y 16 GB DDR4, adecuada para ejecutar múltiples procesos en paralelo.
+  - **Almacenamiento:** Un disco SSD de al menos 256 GB para tiempos de respuesta rápidos y estabilidad operativa.
+  - **Tarjeta gráfica:** Uso de gráficos integrados en el procesador, suficiente para el desarrollo de aplicaciones estándar.
+
+**Software Disponible**
+
+- **Aplicaciones y Herramientas de Desarrollo:**
+  - **AWS (Amazon Web Services):** Proveedor de servicios en la nube utilizado para almacenamiento, análisis y despliegue del sistema.
+  - **Terravision:** Integración para la visualización y monitoreo de la red a través de representaciones geoespaciales.
+  - **Terraform:** Herramienta de infraestructura como código para la configuración y automatización del entorno de desarrollo en la nube.
+  - **Python con HCL2:** Lenguaje usado para procesar configuraciones de Terraform y ejecutar scripts personalizados que gestionen la interacción con AWS y la infraestructura de red.
+
+**Infraestructura de Red**
+
+- **Conectividad estable:** Es esencial contar con una conexión a internet confiable y de alta velocidad en los laboratorios para garantizar la ingesta continua de datos y el funcionamiento del sistema en tiempo real.
+- **Equipos de red gestionados:** Dispositivos como switches y routers con capacidades avanzadas que soporten el monitoreo de tráfico y permitan ajustes dinámicos según las necesidades detectadas.
+
+**Automatización y Configuración**
+
+- El uso de Terraform asegura la consistencia en la configuración de entornos de desarrollo, pruebas y producción, reduciendo errores manuales y acelerando los despliegues.
+- Scripts desarrollados en Python con HCL2 automatizan la interacción entre los nodos de monitoreo y el servidor central, optimizando la recolección y análisis de datos en tiempo real.
+
+##### 5.2. Viabilidad Económica
+
+El análisis de costos totaliza los recursos necesarios para el desarrollo e implementación del sistema, considerando los siguientes conceptos:
+
+| **Concepto** | **Costo Total (S/.)** |
+|--------------|-----------------------|
+| **Costos Generales** | 3,222.00 |
+| **Costos Operativos durante el Desarrollo** | 500.00 |
+| **Costos del Ambiente** | 450.00 |
+| **Costos del Personal** | 6,000.00 |
+| **Total** | 10,172.00 |
+
+Este presupuesto permite cubrir todos los aspectos esenciales del proyecto, asegurando una relación costo-beneficio favorable y sostenibilidad a largo plazo.
+
+##### 5.3. Viabilidad Operativa
+
+**Factibilidad Operativa**
+
+- **Optimización de Recursos:** La herramienta permitirá maximizar la utilización de los recursos tecnológicos al proporcionar datos detallados sobre el uso de la red en tiempo real. Esto ayudará a la universidad a planificar con mayor precisión el mantenimiento, la actualización o la redistribución de los recursos disponibles.
+  
+- **Mejora en la Toma de Decisiones:** Con acceso a información precisa sobre el desempeño de la infraestructura tecnológica, los administradores podrán adoptar decisiones informadas y basadas en datos, mejorando tanto la eficiencia operativa como la calidad del servicio ofrecido a estudiantes y docentes.
+  
+- **Facilidad de Uso e Integración:** Diseñada para ser intuitiva, la herramienta minimizará la curva de aprendizaje del personal técnico y administrativo, además de integrarse sin problemas con los sistemas existentes, reduciendo el impacto en las operaciones cotidianas.
+
+
+#### 6. Información obtenida del levantamiento de información
+
+Durante el levantamiento de información para el desarrollo del sistema, se identificaron los siguientes aspectos clave:
+
+**Necesidades de los Técnicos de Soporte:**
+
+- Requieren una herramienta centralizada para monitorear el estado de la red en tiempo real, con alertas automáticas que les permitan identificar problemas antes de que afecten a los usuarios.
+
+**Requerimientos de los Administradores:**
+
+- Necesitan reportes claros y personalizados sobre el rendimiento de la red para tomar decisiones informadas y planificar mantenimientos o actualizaciones futuras.
+
+Esta información valida la necesidad del sistema como una solución integral para optimizar el rendimiento y la gestión de la red en los laboratorios de la universidad.
+
 
 ### III. Análisis de Procesos
 
