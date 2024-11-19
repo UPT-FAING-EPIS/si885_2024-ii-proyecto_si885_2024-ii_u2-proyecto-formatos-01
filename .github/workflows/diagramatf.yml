@@ -1,60 +1,59 @@
-name: Terraform Infrastructure with Diagram Generation
+name: Infrastructure Diagram
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  terraform:
+  generate-diagram:
     runs-on: ubuntu-latest
 
     steps:
-      # Check out the code from the repository
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout the repository
+        uses: actions/checkout@v3
 
-      # Set up Terraform
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v2
+      - name: Set up Python
+        uses: actions/setup-python@v3
         with:
-          terraform_version: '1.5.0'
+          python-version: '3.9'
 
-      # Initialize Terraform
-      - name: Terraform Init
-        run: terraform init
-
-      # Generate Terraform Plan
-      - name: Terraform Plan
-        run: terraform plan
-
-      # Apply Terraform (auto-approve)
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
-
-      # Install dependencies for HCL2 (optional if needed for your diagram generation)
-      - name: Install HCL2 (if necessary)
+      - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y python3-pip
-          pip3 install hcl2
+          sudo apt-get install -y graphviz
+          python -m pip install --upgrade pip
+          pip install diagrams python-hcl2
 
-      # Generate the infrastructure diagram (replace with your diagram generation command)
-      - name: Generate Infrastructure Diagram
+      - name: Crear archivo Python temporal con el código
         run: |
-          # Example: generate the diagram with a command (replace with actual tool and command)
-          python3 generate_infrastructure_diagram.py
+          echo "
+          import os
+          import hcl2
+          from diagrams import Diagram, Cluster, Node
+          from diagrams.aws.compute import EC2
+          from diagrams.aws.database import RDS
+          from diagrams.aws.network import VPC
+          
+          # Crear un diagrama
+          with Diagram('AWS Infrastructure', show=False):
+              vpc = VPC('VPC')
+              with Cluster('App Layer'):
+                  ec2_instance = EC2('EC2 Instance')
+              with Cluster('Database Layer'):
+                  rds_instance = RDS('RDS Instance')
 
-      # Upload generated diagram as artifact (optional)
-      - name: Upload Infrastructure Diagram
-        uses: actions/upload-artifact@v2
+              vpc >> ec2_instance >> rds_instance
+
+          " > script.py
+
+      - name: Generar el diagrama
+        run: |
+          python script.py
+
+      - name: Subir el diagrama generado
+        uses: actions/upload-artifact@v3
         with:
           name: infrastructure-diagram
-          path: path/to/generated/diagram.png
+          path: diagram.png
 
-      # Clean up after apply (optional)
-      - name: Clean up Terraform
-        run: terraform destroy -auto-approve
