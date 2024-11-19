@@ -288,8 +288,19 @@ Esta información valida la necesidad del sistema como una solución integral pa
 
 # CONCLUSIONES
 
-Explicación de los resultados y conclusiones derivadas de la especificación de requerimientos.
+Viabilidad Integral del Proyecto: El análisis realizado demuestra que el proyecto es viable en términos técnicos, económicos, operativos, legales y sociales. La infraestructura existente de la UPT es suficiente para soportar el sistema, y los beneficios económicos y operativos superan ampliamente los costos asociados.
 
+Optimización de Recursos: La herramienta de monitoreo permitirá gestionar de manera eficiente los recursos tecnológicos de la universidad, asegurando un mejor rendimiento de las redes y computadoras en los laboratorios. Esto se traducirá en una reducción de tiempos de inactividad y un uso más efectivo de los equipos.
+
+Mejora de la Experiencia Educativa: Los estudiantes y docentes serán beneficiarios directos del proyecto al contar con una infraestructura tecnológica confiable y de alto desempeño, lo que contribuirá a mejorar la calidad del aprendizaje y la enseñanza.
+
+Toma de Decisiones Basada en Datos: El sistema proporcionará información detallada y en tiempo real sobre el rendimiento de los recursos tecnológicos, permitiendo al área de TI y a la administración tomar decisiones proactivas e informadas para optimizar la operación.
+
+Cumplimiento Normativo y Ético: El proyecto cumple con las normativas legales relacionadas con la protección de datos personales, garantizando la privacidad de la información recolectada. Además, fomenta un impacto positivo en la comunidad universitaria al priorizar la sostenibilidad y la eficiencia.
+
+Impacto en la Sostenibilidad: La implementación de la herramienta no solo optimizará el rendimiento operativo, sino que también contribuirá a la reducción del consumo energético y a la utilización responsable de los recursos tecnológicos, alineándose con las metas de sostenibilidad de la UPT.
+
+Base para Innovaciones Futuras: Este proyecto establece un marco tecnológico sólido que puede ser escalado e integrado en otras áreas de la universidad, abriendo oportunidades para futuros desarrollos tecnológicos y educativos.
 ---
 
 # RECOMENDACIONES
