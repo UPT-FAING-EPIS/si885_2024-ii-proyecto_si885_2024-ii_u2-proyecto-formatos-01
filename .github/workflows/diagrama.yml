@@ -145,7 +145,7 @@ jobs:
                   process_terraform_files(terraform_dir, diagram)
                   generate_diagram()
           
-              print("Diagrama generado con éxito.")
+              print("Diagrama generado con éxito.")  # Corregido con comillas
 
           " > script.py
 
