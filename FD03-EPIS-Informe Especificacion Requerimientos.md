@@ -61,9 +61,8 @@ Versión *{1.0}*
      - a) Diagrama del Proceso Actual – Diagrama de actividades
      - b) Diagrama del Proceso Propuesto – Diagrama de actividades Inicial
    - IV. Especificación de Requerimientos de Software  
-     - a) Cuadro de Requerimientos funcionales Inicial
+     - a) Cuadro de Requerimientos funcionales
      - b) Cuadro de Requerimientos No funcionales
-     - c) Cuadro de Requerimientos funcionales Final
      - d) Reglas de Negocio
    - V. Fase de Desarrollo  
      - 1. Perfiles de Usuario
@@ -245,7 +244,7 @@ Esta información valida la necesidad del sistema como una solución integral pa
 
 ### IV. Especificación de Requerimientos de Software
 
-1. Cuadro de Requerimientos funcionales Inicial
+1. Cuadro de Requerimientos funcionales
 
 
 |  ID   | Descripción                                                                                           | Prioridad |
@@ -271,9 +270,7 @@ Esta información valida la necesidad del sistema como una solución integral pa
 | RNF-06 | El almacenamiento debe incluir respaldo automático y procedimientos de recuperación ante fallos. |   Alta    |
 | RNF-07 | El consumo de recursos del sistema debe ser mínimo para no afectar el rendimiento de los equipos monitorizados. |  Media    |
 
-
-3. Cuadro de Requerimientos funcionales Final
-4. Reglas de Negocio
+3. Reglas de Negocio
 
 - Los datos recolectados deben ser accesibles únicamente por personal autorizado.
 - El sistema debe generar reportes automáticos en intervalos regulares (semanales).
