@@ -94,7 +94,6 @@ jobs:
                           # Aquí puedes añadir más detalles si es necesario, por ejemplo, con relaciones
           
           def generate_diagram():
-              # Configurar el diagrama dentro de un contexto
               with Diagram("Infraestructura", show=False, outformat="png", filename="infra_diagram"):
                   with Cluster("VPC"):
                       # Crear todos los recursos definidos
