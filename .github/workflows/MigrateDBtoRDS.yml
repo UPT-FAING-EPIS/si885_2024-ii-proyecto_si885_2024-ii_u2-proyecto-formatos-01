@@ -54,9 +54,20 @@ jobs:
         run: |
           cd artefactos
           python extraerxlxs.py
+        env:
+          DB_ENDPOINT: ${{ secrets.DB_ENDPOINT }}  
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+  
 
       # Paso 7: Ejecutar extraersql.py (sin credenciales)
       - name: Ejecutar extraersql.py
         run: |
           cd artefactos
           python extraersql.py
+        env:
+          DB_ENDPOINT: ${{ secrets.DB_ENDPOINT }}  
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_PORT: ${{ secrets.DB_PORT }}
