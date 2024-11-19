@@ -99,12 +99,7 @@ jobs:
           def generate_diagram():
               with Diagram('Infraestructura', show=False, outformat='png', filename='infra_diagram'):
                   with Cluster('VPC'):
-                      vpc = resources.get('aws_vpc_lab_vpc', None)
-                      if vpc:
-                          # Mostrar VPC
-                          vpc_instance = vpc
-                      else:
-                          vpc_instance = Node("VPC")  # Usar un Node con nombre de VPC, como cadena de texto
+                      vpc_instance = Node("VPC")  # Usar un Node con nombre de VPC, como cadena de texto
               
                       # Agregar todos los recursos relacionados con la VPC
                       for key, node in resources.items():
@@ -144,9 +139,6 @@ jobs:
                   process_terraform_files(terraform_dir, diagram)
                   generate_diagram()
 
-
-
-      
           " > script.py
 
 
