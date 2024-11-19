@@ -99,8 +99,8 @@ jobs:
           def generate_diagram():
               with Diagram('Infraestructura', show=False, outformat='png', filename='infra_diagram'):
                   with Cluster('VPC'):
-                      vpc_instance = Node("VPC")  # Usar un Node con nombre de VPC, como cadena de texto
-              
+                      vpc_instance = Node("VPC")  # Usar el texto "VPC" como etiqueta del nodo
+                      
                       # Agregar todos los recursos relacionados con la VPC
                       for key, node in resources.items():
                           if 'aws_instance' in key:
@@ -132,6 +132,7 @@ jobs:
                               for ec2_key, ec2_node in resources.items():
                                   if 'aws_instance' in ec2_key:
                                       sg_node >> ec2_node  # Relación SG -> EC2
+
           
           if __name__ == '__main__':
               terraform_dir = 'infra'  # Directorio que contiene los archivos Terraform
