@@ -107,7 +107,8 @@ La visión del proyecto es convertir los laboratorios de informática de la univ
 La misión del sistema es garantizar un monitoreo efectivo y continuo del rendimiento de la red en los laboratorios, proporcionando a los usuarios un acceso confiable a los recursos tecnológicos y optimizando la infraestructura para responder a las necesidades de aprendizaje.
 
 ### 4. Organigrama
---------------------------------------------------------------------------------------editar
+
+![Logo de Mi Empresa](./media/organigrama2.png)
 
 ### II. Visionamiento de la Empresa
 
