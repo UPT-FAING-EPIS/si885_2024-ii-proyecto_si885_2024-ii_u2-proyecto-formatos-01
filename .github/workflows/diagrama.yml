@@ -44,7 +44,6 @@ jobs:
         run: |
           cat << EOF > generate_diagram.py
           import os
-          import hcl2
           from diagrams import Diagram, Cluster, Node
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
@@ -114,6 +113,7 @@ jobs:
               terraform_dir = "infra"  # Directorio que contiene los archivos Terraform
               process_terraform_files(terraform_dir)
               generate_diagram()
+
           EOF
 
       - name: Ejecutar script Python para generar diagrama
