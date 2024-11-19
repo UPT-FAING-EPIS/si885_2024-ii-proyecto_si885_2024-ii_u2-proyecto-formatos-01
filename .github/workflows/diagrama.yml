@@ -101,6 +101,7 @@ jobs:
               generate_diagram()
     
 
+
       - name: Commit and Push Diagram
         run: |
           git config --local user.name "JesusHuallpa"
