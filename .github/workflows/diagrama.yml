@@ -110,6 +110,10 @@ jobs:
               terraform_dir = "infra"  # Directorio que contiene los archivos Terraform
               process_terraform_files(terraform_dir)
               generate_diagram()
+          ' > script.py
+          
+          python3 script.py
+
 
 
       - name: Ejecutar script Python para generar diagrama
