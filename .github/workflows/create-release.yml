@@ -3,18 +3,18 @@ name: Create Release
 on:
   push:
     tags:
-      - 'v*.*.*' # Actúa cuando se empuja un tag que sigue el formato semántico (ej., v1.0.0).
+      - 'v*.*.*' 
 
 jobs:
   release:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout del código
+
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Generar changelog (opcional)
+
     - name: Generate Changelog
       id: changelog
       run: |
@@ -22,7 +22,7 @@ jobs:
         echo "- Cambios recientes en esta versión:" >> changelog.txt
         git log --oneline $(git describe --tags --abbrev=0)..HEAD >> changelog.txt
 
-    # Crear el release
+
     - name: Create GitHub Release
       id: create_release
       uses: actions/create-release@v1
@@ -35,14 +35,14 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    # Generar artefacto (opcional)
+
     - name: Build Artifact
       run: |
         mkdir -p build
         echo "Contenido de ejemplo para el release" > build/artifact.txt
         zip -r build/artifact.zip build/
 
-    # Subir artefacto al release
+
     - name: Upload Release Assets
       uses: actions/upload-release-asset@v1
       with:
@@ -51,7 +51,7 @@ jobs:
         asset_name: artifact.zip
         asset_content_type: application/zip
 
-    # Notificar sobre el release (opcional)
+
     - name: Notify Release
       run: |
         echo "Release creado exitosamente: ${{ github.ref_name }}"
