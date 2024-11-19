@@ -136,15 +136,15 @@ Metodología: Utilización de un script en Python con la biblioteca psutil para 
 
 ### 1.3 Definiciones, Siglas y Abreviaturas <span id="definiciones" class="anchor"></span>
 
-    CPU: Unidad Central de Procesamiento (Central Processing Unit).
+- CPU: Unidad Central de Procesamiento (Central Processing Unit).
     
-    RAM: Memoria de Acceso Aleatorio (Random Access Memory).
+- RAM: Memoria de Acceso Aleatorio (Random Access Memory).
     
-    GPU: Unidad de Procesamiento Gráfico (Graphics Processing Unit).
+- GPU: Unidad de Procesamiento Gráfico (Graphics Processing Unit).
     
-    Mbps: Megabits por segundo, unidad de medida de velocidad de transferencia de datos en redes.
+- Mbps: Megabits por segundo, unidad de medida de velocidad de transferencia de datos en redes.
     
-    psutil: Biblioteca de Python para la recopilación de información del sistema y el monitoreo de recursos.
+- psutil: Biblioteca de Python para la recopilación de información del sistema y el monitoreo de recursos.
 
 ### 1.4 Referencias <span id="referencias" class="anchor"></span>
 
