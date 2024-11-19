@@ -41,6 +41,7 @@ jobs:
         run: |
           echo '
           import os
+          import hcl2
           from diagrams import Diagram, Cluster, Node
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
@@ -111,14 +112,10 @@ jobs:
               process_terraform_files(terraform_dir)
               generate_diagram()
           ' > script.py
-          
-          python3 script.py
-
-
 
       - name: Ejecutar script Python para generar diagrama
         run: |
-          python generate_diagram.py
+          python3 script.py
           echo "Diagrama generado con éxito."
 
       - name: Commit and Push Diagram
