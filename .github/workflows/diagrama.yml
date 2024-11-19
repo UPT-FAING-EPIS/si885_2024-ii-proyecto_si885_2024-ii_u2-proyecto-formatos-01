@@ -146,6 +146,7 @@ jobs:
                   process_terraform_files(terraform_dir, diagram)
                   generate_diagram()
 
+
       
           " > script.py
 
