@@ -48,23 +48,28 @@ jobs:
           from diagrams import Diagram, Cluster
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
-          from diagrams.aws.network import VPC
+          from diagrams.aws.network import VPC, SecurityGroup
           
+          # Diccionario para almacenar los recursos generados
           resources = {}
+          
+          # Diccionario que asocia tipos de recursos con clases de Diagrams
           resource_classes = {
               "aws_instance": EC2,
               "aws_db_instance": RDS,
               "aws_vpc": VPC,
-              # Eliminar o comentar SecurityGroup si no es necesario
+              "aws_security_group": SecurityGroup,
           }
           
+          # Crear o recuperar un recurso
           def create_or_get_resource(resource_type, name):
               key = f"{resource_type}_{name}"
               if key not in resources:
-                  resource_class = resource_classes.get(resource_type, EC2)
+                  resource_class = resource_classes.get(resource_type, EC2)  # Por defecto, usa EC2 si no está definido
                   resources[key] = resource_class(name)
               return resources[key]
           
+          # Procesar todos los archivos Terraform en el directorio
           def process_terraform_files(terraform_dir):
               for root, _, files in os.walk(terraform_dir):
                   for file in files:
@@ -74,11 +79,11 @@ jobs:
                           with open(file_path, "r") as f:
                               try:
                                   terraform_data = hcl2.load(f)
-                                  print(f"Datos de {file_path}: {terraform_data}")
                                   process_resources(terraform_data)
                               except Exception as e:
                                   print(f"Error al procesar {file}: {e}")
           
+          # Procesar los recursos definidos en un archivo Terraform
           def process_resources(terraform_data):
               if "resource" not in terraform_data:
                   print("No se encontraron recursos en el archivo Terraform.")
@@ -91,32 +96,26 @@ jobs:
                       for instance_name, resource_details in instances.items():
                           print(f"Creando recurso: {instance_name}")
                           create_or_get_resource(resource_type, instance_name)
-                          # Aquí puedes añadir más detalles si es necesario, por ejemplo, con relaciones
           
+          # Generar el diagrama de infraestructura
           def generate_diagram():
               with Diagram("Infraestructura", show=False, outformat="png", filename="infra_diagram"):
                   with Cluster("VPC"):
-                      # Crear todos los recursos definidos
                       for key, node in resources.items():
                           if "aws_instance" in key:
                               ec2_instance = node
                               for other_key, other_node in resources.items():
                                   if "aws_db_instance" in other_key:
                                       ec2_instance >> other_node
-                          # Si no necesitas representar 'SecurityGroup', omítelo aquí
-                          # elif "aws_security_group" in key:
-                          #     # Aquí puedes agregar relaciones de seguridad si es necesario
-                          #     pass
+                                  elif "aws_security_group" in other_key:
+                                      other_node >> ec2_instance  # Relación SG -> EC2
           
           if __name__ == "__main__":
-              terraform_dir = "infra"  # Asegúrate de que sea la ruta correcta a tus archivos Terraform
+              terraform_dir = "infra"  # Directorio que contiene los archivos Terraform
               process_terraform_files(terraform_dir)
               generate_diagram()
-
-
-
-
           EOF
+
       
       - name: Ejecutar script Python para generar diagrama
         run: |
