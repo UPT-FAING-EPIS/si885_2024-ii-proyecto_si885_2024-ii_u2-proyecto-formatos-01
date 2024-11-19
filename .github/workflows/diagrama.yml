@@ -18,17 +18,15 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install dependencies
+      - name: Install graphviz
         run: |
           sudo apt-get update
           sudo apt-get install -y graphviz
+
+      - name: Install dependencies
+        run: |
           python -m pip install --upgrade pip
           pip install diagrams python-hcl2
-          
-      - name: Verificar dependencias
-        run: |
-          pip show diagrams python-hcl2
-          graphviz --version
 
       - name: Verificar archivos Terraform
         run: |
@@ -123,7 +121,6 @@ jobs:
         run: |
           python generate_diagram.py
           echo "Diagrama generado con éxito."
-
 
       - name: Commit and Push Diagram
         run: |
