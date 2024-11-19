@@ -97,14 +97,33 @@ Este documento de especificación de requerimientos establece una descripción c
 
 ### I. Generalidades de la Empresa
 
-1. Nombre de la Empresa
-2. Visión
-3. Misión
-4. Organigrama
+### 1. Nombre de la Empresa
+Universidad Privada de Tacna
+
+### 2. Visión
+La visión del proyecto es convertir los laboratorios de informática de la universidad en un modelo de gestión eficiente de redes, mediante el uso de herramientas tecnológicas avanzadas que promuevan un entorno académico conectado, estable y proactivo.
+
+### 3. Misión
+La misión del sistema es garantizar un monitoreo efectivo y continuo del rendimiento de la red en los laboratorios, proporcionando a los usuarios un acceso confiable a los recursos tecnológicos y optimizando la infraestructura para responder a las necesidades de aprendizaje.
+
+### 4. Organigrama
+--------------------------------------------------------------------------------------editar
 
 ### II. Visionamiento de la Empresa
 
-1. Descripción del Problema
+#### 1. Descripción del Problema
+
+El rendimiento actual de la red en los laboratorios de la UPT enfrenta limitaciones significativas que impactan directamente en la experiencia de los usuarios:
+
+- **Falta de visibilidad y monitoreo proactivo:** No existe un sistema que permita rastrear el estado de la red en tiempo real, lo que dificulta identificar problemas como caídas o picos de consumo antes de que afecten el servicio.
+
+- **Resolución reactiva de incidentes:** La identificación de fallos se produce únicamente después de que los usuarios los reportan, lo que retrasa la respuesta y amplifica el impacto de los problemas.
+
+- **Desperdicio de recursos tecnológicos:** La asignación del ancho de banda no está optimizada, lo que genera ineficiencias en el uso de los recursos disponibles.
+
+- **Dificultades para identificar tendencias de uso:** Sin datos históricos organizados, es complejo analizar patrones que podrían prevenir problemas recurrentes o mejorar el rendimiento de la red.
+
+
 2. Objetivos de Negocios
 3. Objetivos de Diseño
 4. Alcance del proyecto
