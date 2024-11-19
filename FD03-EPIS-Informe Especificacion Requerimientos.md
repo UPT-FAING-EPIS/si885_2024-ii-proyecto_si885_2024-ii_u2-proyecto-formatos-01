@@ -306,19 +306,15 @@ Esta información valida la necesidad del sistema como una solución integral pa
 
 # CONCLUSIONES
 
-Viabilidad Integral del Proyecto: El análisis realizado demuestra que el proyecto es viable en términos técnicos, económicos, operativos, legales y sociales. La infraestructura existente de la UPT es suficiente para soportar el sistema, y los beneficios económicos y operativos superan ampliamente los costos asociados.
+El análisis realizado demuestra que el proyecto es completamente viable desde las perspectivas técnica, económica, operativa, legal y social. La infraestructura actual de la Universidad Privada de Tacna es suficiente para soportar la implementación del sistema, y los beneficios previstos, tanto económicos como operativos, superan ampliamente los costos asociados. La herramienta de monitoreo propuesta permitirá gestionar de manera eficiente los recursos tecnológicos, optimizando el rendimiento de las redes y computadoras en los laboratorios. Esto se traducirá en una reducción significativa de los tiempos de inactividad y un uso más efectivo de los equipos disponibles.
 
-Optimización de Recursos: La herramienta de monitoreo permitirá gestionar de manera eficiente los recursos tecnológicos de la universidad, asegurando un mejor rendimiento de las redes y computadoras en los laboratorios. Esto se traducirá en una reducción de tiempos de inactividad y un uso más efectivo de los equipos.
+Además, el sistema tendrá un impacto positivo en la experiencia educativa al proporcionar a estudiantes y docentes una infraestructura confiable y de alto desempeño. Esto no solo mejorará la calidad del aprendizaje y la enseñanza, sino que también fortalecerá la productividad académica en los laboratorios. Al generar información detallada y en tiempo real sobre el rendimiento de los recursos tecnológicos, el sistema permitirá al área de TI y a la administración tomar decisiones proactivas e informadas, impulsando así la eficiencia operativa y la planificación estratégica.
 
-Mejora de la Experiencia Educativa: Los estudiantes y docentes serán beneficiarios directos del proyecto al contar con una infraestructura tecnológica confiable y de alto desempeño, lo que contribuirá a mejorar la calidad del aprendizaje y la enseñanza.
+El cumplimiento con las normativas legales, como la Ley N° 29733 de Protección de Datos Personales, garantiza la privacidad y seguridad de la información recolectada, fortaleciendo el impacto ético y positivo del proyecto. Asimismo, el sistema contribuirá a los objetivos de sostenibilidad de la universidad al optimizar el consumo energético y promover el uso responsable de los recursos tecnológicos. Este enfoque no solo optimiza las operaciones actuales, sino que también establece una base sólida para futuras expansiones tecnológicas.
 
-Toma de Decisiones Basada en Datos: El sistema proporcionará información detallada y en tiempo real sobre el rendimiento de los recursos tecnológicos, permitiendo al área de TI y a la administración tomar decisiones proactivas e informadas para optimizar la operación.
+En resumen, este proyecto no solo resuelve las limitaciones actuales en el monitoreo de redes, sino que también abre oportunidades para desarrollos innovadores en otras áreas de la universidad. Su diseño escalable y flexible asegura que pueda adaptarse a las necesidades crecientes de la institución, posicionando a la UPT como un referente en la gestión eficiente y tecnológica de sus laboratorios.
 
-Cumplimiento Normativo y Ético: El proyecto cumple con las normativas legales relacionadas con la protección de datos personales, garantizando la privacidad de la información recolectada. Además, fomenta un impacto positivo en la comunidad universitaria al priorizar la sostenibilidad y la eficiencia.
 
-Impacto en la Sostenibilidad: La implementación de la herramienta no solo optimizará el rendimiento operativo, sino que también contribuirá a la reducción del consumo energético y a la utilización responsable de los recursos tecnológicos, alineándose con las metas de sostenibilidad de la UPT.
-
-Base para Innovaciones Futuras: Este proyecto establece un marco tecnológico sólido que puede ser escalado e integrado en otras áreas de la universidad, abriendo oportunidades para futuros desarrollos tecnológicos y educativos.
 
 ---
 
