@@ -37,10 +37,9 @@ Versión *{1.0}*
 
 ## CONTROL DE VERSIONES
 
-| Versión | Hecha por | Revisada por | Aprobada por | Fecha       | Motivo          |
-| ------- | --------- | ------------ | ------------ | ----------- | --------------- |
-| 1.0     | MPV       | ELV          | ARV          | 10/10/2020  | Versión Original |
-
+| Versión | Hecha por | Revisada por | Aprobada por | Fecha      | Motivo           |
+| :-----: | --------- | ------------ | ------------ | ---------- | ---------------- |
+| 1.0     | RCG       | AAC          | AAC          | 18/11/2024 | Versión Original |
 ---
 
 # INDICE GENERAL
