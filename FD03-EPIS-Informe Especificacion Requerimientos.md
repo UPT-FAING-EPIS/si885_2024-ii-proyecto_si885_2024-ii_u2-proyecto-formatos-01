@@ -84,7 +84,16 @@ Versión *{1.0}*
 
 ---
 
-# INTRODUCCION
+## I. Introducción <a id="introducción"></a>
+
+El desempeño de la red en los laboratorios de informática de la Universidad Privada de Tacna es un elemento crucial para garantizar la calidad del aprendizaje y la eficiencia operativa de las actividades académicas. Actualmente, los laboratorios enfrentan desafíos significativos relacionados con la falta de monitoreo en tiempo real, lo que dificulta la detección temprana de problemas y limita la capacidad de respuesta ante incidentes que afectan la conectividad.
+
+En este contexto, el desarrollo de un sistema de monitoreo de red se presenta como una solución integral para abordar estas limitaciones. Este sistema no solo permitirá supervisar continuamente el estado de la red en los laboratorios, sino que también facilitará la identificación de cuellos de botella, el análisis de tendencias de uso y la optimización del ancho de banda.
+
+La herramienta propuesta recopilará datos clave sobre el rendimiento de la red, como velocidad de conexión, latencia y consumo de recursos. A través de la ingesta de estos datos en tiempo real, el sistema generará alertas automáticas ante fallos o anomalías, brindando a los administradores información detallada para la toma de decisiones rápidas y fundamentadas.
+
+Este documento de especificación de requerimientos establece una descripción completa del sistema, detallando sus objetivos, alcance, funcionalidades y las necesidades técnicas que debe cumplir. Con esta base, se busca garantizar una implementación exitosa que responda a las expectativas de la institución y beneficie directamente a los estudiantes y docentes.
+
 
 ### I. Generalidades de la Empresa
 
