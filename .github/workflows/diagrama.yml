@@ -118,7 +118,6 @@ jobs:
           " > script.py
 
 
-
       - name: Ejecutar script Python para generar diagrama
         run: |
           python3 script.py
