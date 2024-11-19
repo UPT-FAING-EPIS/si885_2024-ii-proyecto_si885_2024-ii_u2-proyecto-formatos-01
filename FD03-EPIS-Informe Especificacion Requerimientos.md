@@ -3,25 +3,25 @@
 ![Logo de Mi Empresa](./media/logo-empresa.png)
 ![Logo de mi Cliente](./media/logo-cliente.png)
 
-**UNIVERSIDAD PRIVADA DE TACNA**
+# UNIVERSIDAD PRIVADA DE TACNA  
+## FACULTAD DE INGENIERÍA  
+### Escuela Profesional de Ingeniería de Sistemas
 
-**FACULTAD DE INGENIERIA**
+**Plataforma de análisis de datos de matriculados en la carrera de Ingeniería de Sistemas para la Universidad Privada de Tacna - PAMIS**
 
-**Escuela Profesional de Ingeniería de Sistemas**
+Curso: *Inteligencia de Negocios*  
+Docente: *Mag. Patrick Cuadros Quiroga*
 
-**Proyecto *{Nombre de Proyecto}***
+**Integrantes:**
 
-Curso: *{Nombre de Asignatura}*
+- Escobar Rejas, Carlos Andrés (2021070016)
+- Apaza Ccalle, Albert Kenyi (2021071075)
+- Cutipa Gutierrez, Ricardo (2021069827)
+- Churacutipa Blass, Erick (2020067578)
+- Huallpa Maron, Jesús Antonio (2021071085)
 
-Docente: *{Nombre de Docente}*
-
-Integrantes:
-
-***{Apellidos y nombres del estudiante (código universitario)}***
-
-**Tacna – Perú**
-
-***{Año}***
+**Tacna – Perú**  
+***2024***
 
 </center>
 
