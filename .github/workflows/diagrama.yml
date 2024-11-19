@@ -59,7 +59,7 @@ jobs:
           }
           
           # Crear o recuperar un recurso
-          def create_or_get_resource(resource_type, name):
+          def create_or_get_resource(resource_type, name, diagram):
               key = f'{resource_type}_{name}'
               if key not in resources:
                   resource_class = resource_classes.get(resource_type, Node)  # Por defecto, usa Node si no está definido
@@ -67,7 +67,7 @@ jobs:
               return resources[key]
           
           # Procesar todos los archivos Terraform en el directorio
-          def process_terraform_files(terraform_dir):
+          def process_terraform_files(terraform_dir, diagram):
               for root, _, files in os.walk(terraform_dir):
                   for file in files:
                       if file.endswith('.tf'):
@@ -76,12 +76,12 @@ jobs:
                           with open(file_path, 'r') as f:
                               try:
                                   terraform_data = hcl2.load(f)
-                                  process_resources(terraform_data)
+                                  process_resources(terraform_data, diagram)
                               except Exception as e:
                                   print(f'Error al procesar {file}: {e}')
           
           # Procesar los recursos definidos en un archivo Terraform
-          def process_resources(terraform_data):
+          def process_resources(terraform_data, diagram):
               if 'resource' not in terraform_data:
                   print('No se encontraron recursos en el archivo Terraform.')
                   return
@@ -92,7 +92,7 @@ jobs:
                           continue
                       for instance_name, resource_details in instances.items():
                           print(f'Creando recurso: {instance_name}')
-                          create_or_get_resource(resource_type, instance_name)
+                          create_or_get_resource(resource_type, instance_name, diagram)
           
           # Generar el diagrama de infraestructura
           def generate_diagram():
@@ -109,8 +109,9 @@ jobs:
           
           if __name__ == '__main__':
               terraform_dir = 'infra'  # Directorio que contiene los archivos Terraform
-              process_terraform_files(terraform_dir)
-              generate_diagram()
+              with Diagram('Infraestructura', show=False, outformat='png', filename='infra_diagram') as diagram:
+                  process_terraform_files(terraform_dir, diagram)
+                  generate_diagram()
 
 
 
