@@ -301,6 +301,7 @@ Cumplimiento Normativo y Ético: El proyecto cumple con las normativas legales r
 Impacto en la Sostenibilidad: La implementación de la herramienta no solo optimizará el rendimiento operativo, sino que también contribuirá a la reducción del consumo energético y a la utilización responsable de los recursos tecnológicos, alineándose con las metas de sostenibilidad de la UPT.
 
 Base para Innovaciones Futuras: Este proyecto establece un marco tecnológico sólido que puede ser escalado e integrado en otras áreas de la universidad, abriendo oportunidades para futuros desarrollos tecnológicos y educativos.
+
 ---
 
 # RECOMENDACIONES
