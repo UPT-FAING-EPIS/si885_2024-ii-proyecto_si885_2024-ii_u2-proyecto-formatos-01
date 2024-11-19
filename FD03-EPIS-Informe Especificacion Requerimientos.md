@@ -266,6 +266,10 @@ Esta información valida la necesidad del sistema como una solución integral pa
 3. Cuadro de Requerimientos funcionales Final
 4. Reglas de Negocio
 
+Los datos recolectados deben ser accesibles únicamente por personal autorizado.
+El sistema debe generar reportes automáticos en intervalos regulares (semanales).
+Las alertas deben activarse cuando el rendimiento de la red caiga por debajo de ciertos umbrales definidos.
+
 ### V. Fase de Desarrollo
 
 1. Perfiles de Usuario
