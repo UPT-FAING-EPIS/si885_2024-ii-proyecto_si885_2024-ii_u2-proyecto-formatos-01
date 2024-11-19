@@ -6,7 +6,8 @@ db_config = {
     'host': os.environ['DB_ENDPOINT'],
     'user': os.environ['DB_USER'],
     'password': os.environ['DB_PASSWORD'],
-    'port': int(os.environ['DB_PORT'])  # Convertir a entero el puerto
+    'port': int(os.environ['DB_PORT']),  # Convertir a entero el puerto
+    'database': 'mydatabase'  # Especificar la base de datos
 }
 
 # Función para crear la conexión con la base de datos
