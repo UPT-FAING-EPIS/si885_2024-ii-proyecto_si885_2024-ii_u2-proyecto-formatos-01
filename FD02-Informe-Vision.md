@@ -372,10 +372,3 @@ Escalabilidad: El sistema debe ser escalable para soportar el crecimiento de la 
     
 - Involucrar a los interesados en el proceso: Mantén una comunicación constante con todos los interesados del proyecto, asegurándote de que estén informados sobre el progreso y cualquier cambio significativo. Su participación activa puede facilitar la adopción del sistema y contribuir al éxito general del proyecto.
 
-<span id="_Toc52661357" class="anchor"></span>**BIBLIOGRAFIA**
-
-<div style="page-break-after: always; visibility: hidden">\pagebreak</div>
-
-<span id="_Toc52661358" class="anchor"></span>**WEBGRAFIA**
-
-<div style="page-break-after: always; visibility: hidden">\pagebreak</div>
