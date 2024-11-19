@@ -27,7 +27,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Paso 4: Ejecutar el script de Python
+      # Paso 4: Ejecutar el script de conexión RDS
       - name: Ejecutar script Python de conexión RDS
         run: |
           cd artefactos
@@ -37,3 +37,26 @@ jobs:
           DB_USER: ${{ secrets.DB_USER }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_PORT: ${{ secrets.DB_PORT }}
+
+      # Paso 5: Ejecutar table.py (con credenciales de RDS)
+      - name: Ejecutar table.py
+        run: |
+          cd artefactos
+          python table.py
+        env:
+          DB_ENDPOINT: ${{ secrets.DB_ENDPOINT }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+
+      # Paso 6: Ejecutar extraerxlxs.py (sin credenciales)
+      - name: Ejecutar extraerxlxs.py
+        run: |
+          cd artefactos
+          python extraerxlxs.py
+
+      # Paso 7: Ejecutar extraersql.py (sin credenciales)
+      - name: Ejecutar extraersql.py
+        run: |
+          cd artefactos
+          python extraersql.py
