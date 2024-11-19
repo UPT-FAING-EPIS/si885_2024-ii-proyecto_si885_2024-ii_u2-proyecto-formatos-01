@@ -46,8 +46,6 @@ jobs:
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
           from diagrams.aws.network import VPC
-          # Remover SecurityGroup y usar Node
-          # from diagrams.aws.security import SecurityGroup 
           
           # Diccionario para almacenar los recursos generados
           resources = {}
@@ -145,6 +143,7 @@ jobs:
               with Diagram('Infraestructura', show=False, outformat='png', filename='infra_diagram') as diagram:
                   process_terraform_files(terraform_dir, diagram)
                   generate_diagram()
+
 
 
       
