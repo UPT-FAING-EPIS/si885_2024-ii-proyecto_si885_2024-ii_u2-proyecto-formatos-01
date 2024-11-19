@@ -1,4 +1,4 @@
-name: Infrastructure Diagram
+name: Generate Infrastructure Diagram
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
           from diagrams.aws.network import VPC
           
           # Crear un diagrama
-          with Diagram('AWS Infrastructure', show=False):
+          with Diagram('AWS Infrastructure', show=False, filename='diagram'):
               vpc = VPC('VPC')
               with Cluster('App Layer'):
                   ec2_instance = EC2('EC2 Instance')
@@ -44,16 +44,22 @@ jobs:
                   rds_instance = RDS('RDS Instance')
 
               vpc >> ec2_instance >> rds_instance
-
           " > script.py
 
       - name: Generar el diagrama
         run: |
           python script.py
 
-      - name: Subir el diagrama generado
+      - name: Commit and Push Diagram
+        run: |
+          git config --local user.name "JesusHuallpa"
+          git config --local user.email "jh2021071085@virtual.upt.pe"
+          git add diagram.png
+          git commit -m "Add AWS infrastructure diagram"
+          git push
+
+      - name: Subir el diagrama generado como artefacto
         uses: actions/upload-artifact@v3
         with:
           name: infrastructure-diagram
           path: diagram.png
-
