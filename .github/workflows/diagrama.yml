@@ -41,7 +41,8 @@ jobs:
 
       - name: Generate Diagram from Terraform Files
         run: |
-          echo '
+          # Crear un archivo Python temporal con el código
+          cat << EOF > generate_diagram.py
           import os
           import hcl2
           from diagrams import Diagram, Cluster
@@ -99,8 +100,10 @@ jobs:
               terraform_dir = "infra/infra"
               process_terraform_files(terraform_dir)
               generate_diagram()
-    
+          EOF
 
+          # Ejecutar el script Python generado
+          python generate_diagram.py
 
       - name: Commit and Push Diagram
         run: |
