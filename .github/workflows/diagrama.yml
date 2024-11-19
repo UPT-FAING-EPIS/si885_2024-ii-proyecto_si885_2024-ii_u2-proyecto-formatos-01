@@ -46,7 +46,8 @@ jobs:
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
           from diagrams.aws.network import VPC
-          from diagrams.aws.security import SecurityGroup  # Agregar SecurityGroup si es necesario
+          # Remover SecurityGroup y usar Node
+          # from diagrams.aws.security import SecurityGroup 
           
           # Diccionario para almacenar los recursos generados
           resources = {}
@@ -56,8 +57,8 @@ jobs:
               'aws_instance': EC2,
               'aws_db_instance': RDS,
               'aws_vpc': VPC,
-              'aws_security_group': SecurityGroup,  # Representar como SecurityGroup
-              'aws_subnet': Node,  # Usar Node para Subnet, ya que no existe una clase Subnet específica
+              'aws_security_group': Node,  # Usar Node para representar como grupo de seguridad genérico
+              'aws_subnet': Node,  # Usar Node para Subnet
           }
           
           # Crear o recuperar un recurso
@@ -146,6 +147,8 @@ jobs:
                   generate_diagram()
       
           " > script.py
+
+
 
 
 
