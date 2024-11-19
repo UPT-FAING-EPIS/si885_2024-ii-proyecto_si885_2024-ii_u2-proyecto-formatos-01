@@ -188,6 +188,14 @@ El rendimiento actual de la red en los laboratorios de la UPT enfrenta limitacio
 | RF-04  | Exportar datos en formatos compatibles con Tableau (CSV, Excel).        | Alta      |
 
 2. Cuadro de Requerimientos No funcionales
+
+
+| ID     | Descripción                                                                              | Prioridad |
+| :----: | :--------------------------------------------------------------------------------------- | :-------: |
+| RNF-01 | El sistema debe ser compatible con Windows.                                      | Alta      |
+| RNF-02 | La interfaz debe ser intuitiva para facilitar el uso por parte de técnicos.              | Media     |
+| RNF-03 | Los datos recolectados deben estar protegidos mediante protocolos de seguridad . | Alta      |
+
 3. Cuadro de Requerimientos funcionales Final
 4. Reglas de Negocio
 
