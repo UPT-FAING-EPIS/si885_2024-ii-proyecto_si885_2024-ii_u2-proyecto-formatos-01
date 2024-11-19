@@ -31,7 +31,12 @@ jobs:
           sudo apt-get install -y graphviz
           python -m pip install --upgrade pip
           pip install diagrams python-hcl2
-
+          
+      - name: Verificar contenido del repositorio
+        run: |
+          echo "Contenido del repositorio:"
+          ls -R
+          
       - name: Generate Diagram from Terraform Files
         run: |
           echo '
