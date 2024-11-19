@@ -248,21 +248,29 @@ Esta información valida la necesidad del sistema como una solución integral pa
 1. Cuadro de Requerimientos funcionales Inicial
 
 
-| ID     | Descripción                                                             | Prioridad |
-| :----: | :---------------------------------------------------------------------- | :-------: |
-| RF-01  | Monitorear en tiempo real el uso de CPU, RAM, GPU, y tráfico de red.    | Alta      |
-| RF-02  | Generar reportes detallados sobre el rendimiento de los equipos.        | Media     |
-| RF-03  | Detectar y notificar anomalías en el rendimiento de los recursos tecnológicos. | Alta     |
-| RF-04  | Exportar datos en formatos compatibles con Tableau (CSV, Excel).        | Alta      |
+|  ID   | Descripción                                                                                           | Prioridad |
+| :---: | :---------------------------------------------------------------------------------------------------- | :-------: |
+| RF-01 | Monitorear en tiempo real el uso de CPU, RAM, GPU, tráfico de red y consumo energético de los equipos. |   Alta    |
+| RF-02 | Generar reportes detallados y personalizables sobre el rendimiento de los equipos y patrones de uso.   |   Alta    |
+| RF-03 | Detectar, notificar y registrar anomalías en el rendimiento de los recursos tecnológicos.              |   Alta    |
+| RF-04 | Exportar datos en formatos compatibles con Tableau (CSV, Excel) y JSON.                               |   Alta    |
+| RF-05 | Almacenar datos históricos para análisis a largo plazo y comparativas de rendimiento.                  |   Alta    |
+| RF-06 | Proporcionar un panel de control interactivo para visualizar datos clave en tiempo real.               |   Alta    |
+| RF-07 | Permitir la integración con otros sistemas de gestión de la universidad mediante API REST.             |  Media    |
 
 2. Cuadro de Requerimientos No funcionales
 
 
-| ID     | Descripción                                                                              | Prioridad |
-| :----: | :--------------------------------------------------------------------------------------- | :-------: |
-| RNF-01 | El sistema debe ser compatible con Windows.                                      | Alta      |
-| RNF-02 | La interfaz debe ser intuitiva para facilitar el uso por parte de técnicos.              | Media     |
-| RNF-03 | Los datos recolectados deben estar protegidos mediante protocolos de seguridad . | Alta      |
+|  ID   | Descripción                                                                                   | Prioridad |
+| :---: | :-------------------------------------------------------------------------------------------- | :-------: |
+| RNF-01 | El sistema debe ser compatible con sistemas operativos Windows y distribuciones de Linux.     |   Alta    |
+| RNF-02 | La interfaz debe ser intuitiva y accesible desde navegadores web modernos.                    |   Alta    |
+| RNF-03 | Los datos recolectados deben estar protegidos mediante protocolos de seguridad (HTTPS, TLS).  |   Alta    |
+| RNF-04 | La solución debe ser escalable para nuevos laboratorios sin comprometer el rendimiento.       |   Alta    |
+| RNF-05 | El tiempo de respuesta para operaciones críticas debe ser menor a 2 segundos.                 |   Alta    |
+| RNF-06 | El almacenamiento debe incluir respaldo automático y procedimientos de recuperación ante fallos. |   Alta    |
+| RNF-07 | El consumo de recursos del sistema debe ser mínimo para no afectar el rendimiento de los equipos monitorizados. |  Media    |
+
 
 3. Cuadro de Requerimientos funcionales Final
 4. Reglas de Negocio
