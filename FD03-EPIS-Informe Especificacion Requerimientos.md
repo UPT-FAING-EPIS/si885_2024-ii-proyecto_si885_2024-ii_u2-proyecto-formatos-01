@@ -137,8 +137,36 @@ El rendimiento actual de la red en los laboratorios de la UPT enfrenta limitacio
 - **Fortalecer la experiencia de los usuarios:** Garantizar que estudiantes y docentes cuenten con una red confiable y de alto rendimiento para sus actividades académicas, mejorando la calidad del aprendizaje y la productividad en los laboratorios.
 
 
-3. Objetivos de Diseño
-4. Alcance del proyecto
+#### 3. Objetivos de Diseño
+
+- **Ingesta continua de datos:** Diseñar una plataforma que permita la recopilación y procesamiento continuo de datos críticos sobre el rendimiento de la red, como velocidad de conexión y consumo de ancho de banda, asegurando que esta información esté disponible en tiempo real.
+
+- **Interactividad y facilidad de uso:** Crear una interfaz interactiva e intuitiva que facilite la navegación y gestión del sistema por parte de los técnicos responsables, independientemente de su nivel de experiencia técnica.
+
+- **Visualización de datos clara y precisa:** Incorporar gráficos dinámicos, tablas detalladas y reportes personalizados que presenten el estado de la red de forma comprensible y visualmente accesible, destacando métricas como velocidad y consumo.
+
+- **Personalización:** Proveer herramientas que permitan a los usuarios ajustar las visualizaciones según sus necesidades específicas, como intervalos de tiempo definidos o métricas relevantes para sus tareas.
+
+- **Accesibilidad y disponibilidad:** Asegurar que la plataforma funcione de manera óptima en entornos de escritorio y sea accesible desde ubicaciones con conexión a Internet, permitiendo el monitoreo y la gestión de la red en cualquier momento.
+
+
+#### 4. Alcance del proyecto
+
+**Inclusiones:**
+
+- **Recopilación y análisis de datos en tiempo real:** El sistema estará diseñado para recopilar y analizar datos relevantes sobre el rendimiento de la red en tiempo real. Esto incluirá parámetros clave como la velocidad de conexión y los niveles de uso del ancho de banda, proporcionando una visión completa y precisa del estado de la red en cualquier momento.
+
+- **Generación de alertas automáticas:** El sistema contará con capacidades para generar alertas automáticas cuando se detecten anomalías o caídas en el servicio. Esto permitirá a los administradores y técnicos tomar decisiones rápidas y proactivas para resolver problemas antes de que afecten significativamente a los usuarios.
+
+- **Creación de reportes visuales y exportables:** La plataforma incluirá herramientas para la creación de reportes visuales detallados, que incluirán gráficos y tablas sobre el rendimiento de la red, así como informes sobre incidentes. Estos reportes podrán ser exportados en formatos estándar como PDF o Excel, lo que facilitará la documentación y el análisis fuera de la plataforma.
+
+- **Dashboard interactivo:** Se implementará un dashboard interactivo que permitirá a los administradores y técnicos ver en tiempo real el estado de la red y las tendencias históricas del rendimiento. Este dashboard será fácil de navegar y proporcionará una visión clara de los puntos críticos de la red, permitiendo a los responsables tomar decisiones informadas y oportunas.
+
+**Exclusiones:**
+- **Administración de dispositivos o usuarios individuales fuera de los laboratorios:** El sistema se enfocará exclusivamente en el monitoreo de la red en los laboratorios de informática, sin incluir la administración de dispositivos o usuarios fuera de este ámbito.
+
+- **Funcionalidades relacionadas con otros aspectos de TI:** El sistema no abordará funcionalidades como la seguridad de la red o la gestión de software, ya que estos aspectos serán gestionados por otros sistemas especializados de la universidad.
+
 5. Viabilidad del Sistema
 6. Información obtenida del Levantamiento de Información
 
