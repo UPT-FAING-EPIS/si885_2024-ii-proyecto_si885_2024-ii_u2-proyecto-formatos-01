@@ -28,7 +28,7 @@ jobs:
       - name: Verificar archivos Terraform
         run: |
           echo "Verificando los archivos Terraform..."
-          cd proyecto-si885-2024-ii-u2-tg01apazachuracutcutiescohuallpas/infra  # Navegar al directorio correcto
+          cd infra  # Navegar al directorio correcto
           if [ -d "." ]; then  # Verifica si existe el directorio actual
             echo "Archivos Terraform encontrados en infra:"
             find . -name "*.tf"  # Buscar archivos .tf en el directorio actual
