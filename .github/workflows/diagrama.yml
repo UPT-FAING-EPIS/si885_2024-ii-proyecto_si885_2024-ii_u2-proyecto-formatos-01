@@ -97,44 +97,43 @@ jobs:
           
           # Generar el diagrama de infraestructura
           def generate_diagram():
-              with Diagram('Infraestructura', show=False, outformat='png', filename='infra_diagram'):
-                  with Cluster('VPC'):
-                      vpc_instance = Node("VPC")  # Usar el texto "VPC" como etiqueta del nodo
-                      
-                      # Agregar todos los recursos relacionados con la VPC
-                      for key, node in resources.items():
-                          if 'aws_instance' in key:
-                              ec2_instance = node
-                              ec2_instance >> vpc_instance  # Relación EC2 -> VPC
-                          elif 'aws_db_instance' in key:
-                              rds_instance = node
-                              rds_instance >> vpc_instance  # Relación RDS -> VPC
-                          elif 'aws_security_group' in key:
-                              sg_instance = node
-                              sg_instance >> vpc_instance  # Relación SG -> VPC
-                          elif 'aws_subnet' in key:
-                              subnet_instance = node
-                              subnet_instance >> vpc_instance  # Relación Subnet -> VPC
-          
-                      # Conectar instancias EC2 con la base de datos RDS
-                      for ec2_key, ec2_node in resources.items():
-                          if 'aws_instance' in ec2_key:
-                              for rds_key, rds_node in resources.items():
-                                  if 'aws_db_instance' in rds_key:
-                                      ec2_node >> rds_node  # Relación EC2 -> RDS
-          
-                      # Conectar el grupo de seguridad a las instancias
-                      for sg_key, sg_node in resources.items():
-                          if 'aws_security_group' in sg_key:
-                              for rds_key, rds_node in resources.items():
-                                  if 'aws_db_instance' in rds_key:
-                                      sg_node >> rds_node  # Relación SG -> RDS
-                              for ec2_key, ec2_node in resources.items():
-                                  if 'aws_instance' in ec2_key:
-                                      sg_node >> ec2_node  # Relación SG -> EC2
+            with Diagram('Infraestructura', show=False, outformat='png', filename='infra_diagram'):
+                with Cluster('VPC'):
+                    # Crear un nodo de VPC correctamente
+                    vpc_instance = VPC("VPC")
+        
+                    # Procesar los recursos definidos
+                    for key, node in resources.items():
+                        if 'aws_instance' in key:
+                            ec2_instance = node
+                            ec2_instance >> vpc_instance  # Relación EC2 -> VPC
+                        elif 'aws_db_instance' in key:
+                            rds_instance = node
+                            rds_instance >> vpc_instance  # Relación RDS -> VPC
+                        elif 'aws_security_group' in key:
+                            sg_instance = node
+                            sg_instance >> vpc_instance  # Relación SG -> VPC
+                        elif 'aws_subnet' in key:
+                            subnet_instance = node
+                            subnet_instance >> vpc_instance  # Relación Subnet -> VPC
+        
+                    # Conectar instancias EC2 con RDS
+                    for ec2_key, ec2_node in resources.items():
+                        if 'aws_instance' in ec2_key:
+                            for rds_key, rds_node in resources.items():
+                                if 'aws_db_instance' in rds_key:
+                                    ec2_node >> rds_node  # Relación EC2 -> RDS
+        
+                    # Conectar grupos de seguridad a otros recursos
+                    for sg_key, sg_node in resources.items():
+                        if 'aws_security_group' in sg_key:
+                            for rds_key, rds_node in resources.items():
+                                if 'aws_db_instance' in rds_key:
+                                    sg_node >> rds_node  # Relación SG -> RDS
+                            for ec2_key, ec2_node in resources.items():
+                                if 'aws_instance' in ec2_key:
+                                    sg_node >> ec2_node  # Relación SG -> EC2
 
-
-          
           if __name__ == '__main__':
               terraform_dir = 'infra'  # Directorio que contiene los archivos Terraform
               with Diagram('Infraestructura', show=False, outformat='png', filename='infra_diagram') as diagram:
