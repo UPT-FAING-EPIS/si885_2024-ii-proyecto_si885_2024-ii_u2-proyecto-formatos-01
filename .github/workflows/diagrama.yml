@@ -46,7 +46,6 @@ jobs:
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
           from diagrams.aws.network import VPC
-          from diagrams.aws.security import SecurityGroup
       
           # Diccionario para almacenar los recursos generados
           resources = {}
@@ -116,6 +115,7 @@ jobs:
                   process_terraform_files(terraform_dir, diagram)
                   generate_diagram()
           " > script.py
+
 
 
       - name: Ejecutar script Python para generar diagrama
