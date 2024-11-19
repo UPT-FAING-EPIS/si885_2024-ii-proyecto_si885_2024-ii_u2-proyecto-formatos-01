@@ -106,8 +106,8 @@ jobs:
                           # Mostrar VPC
                           vpc_instance = vpc
                       else:
-                          vpc_instance = Node("VPC")  # Si no se ha procesado, se crea uno genérico para la VPC
-          
+                          vpc_instance = Node("VPC")  # Usar un Node con nombre de VPC, como cadena de texto
+              
                       # Agregar todos los recursos relacionados con la VPC
                       for key, node in resources.items():
                           if 'aws_instance' in key:
@@ -122,14 +122,14 @@ jobs:
                           elif 'aws_subnet' in key:
                               subnet_instance = node
                               subnet_instance >> vpc_instance  # Relación Subnet -> VPC
-          
+              
                       # Conectar instancias EC2 con la base de datos RDS
                       for ec2_key, ec2_node in resources.items():
                           if 'aws_instance' in ec2_key:
                               for rds_key, rds_node in resources.items():
                                   if 'aws_db_instance' in rds_key:
                                       ec2_node >> rds_node  # Relación EC2 -> RDS
-          
+              
                       # Conectar el grupo de seguridad a las instancias
                       for sg_key, sg_node in resources.items():
                           if 'aws_security_group' in sg_key:
@@ -145,6 +145,7 @@ jobs:
               with Diagram('Infraestructura', show=False, outformat='png', filename='infra_diagram') as diagram:
                   process_terraform_files(terraform_dir, diagram)
                   generate_diagram()
+
       
           " > script.py
 
