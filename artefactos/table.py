@@ -1,22 +1,25 @@
-# table.py
-
 import mysql.connector
+import os  # Importar el módulo os para acceder a las variables de entorno
 
+# Configuración de la base de datos con las variables de entorno
 db_config = {
-    host=os.environ['DB_ENDPOINT'],
-    user=os.environ['DB_USER'],
-    password=os.environ['DB_PASSWORD'],
-    port=int(os.environ['DB_PORT'])
+    'host': os.environ['DB_ENDPOINT'],
+    'user': os.environ['DB_USER'],
+    'password': os.environ['DB_PASSWORD'],
+    'port': int(os.environ['DB_PORT'])  # Convertir a entero el puerto
 }
 
+# Función para crear la conexión con la base de datos
 def create_connection():
     cnxn = mysql.connector.connect(**db_config)
     return cnxn
 
+# Función para crear la tabla en la base de datos
 def create_table():
     cnxn = create_connection()
     cursor = cnxn.cursor()
 
+    # Crear la tabla si no existe
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS trafico_red (
             id INT,
