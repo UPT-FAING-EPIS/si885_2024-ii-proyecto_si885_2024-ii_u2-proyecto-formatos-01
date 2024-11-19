@@ -103,12 +103,15 @@ jobs:
 
       - name: Check if diagram was created
         run: |
+          echo "Verificando si el diagrama fue generado..."
+          ls -l  # List the contents of the current directory to confirm the file location
           if [ -f "infra_diagram.png" ]; then
             echo "Diagrama generado exitosamente."
           else
             echo "Error: El archivo infra_diagram.png no fue generado."
             exit 1
           fi
+
 
       - name: Commit and Push Diagram
         run: |
