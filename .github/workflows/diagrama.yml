@@ -144,10 +144,9 @@ jobs:
               with Diagram('Infraestructura', show=False, outformat='png', filename='infra_diagram') as diagram:
                   process_terraform_files(terraform_dir, diagram)
                   generate_diagram()
-          
-              print("Diagrama generado con éxito.")  # Corregido con comillas
-
+      
           " > script.py
+
 
 
 
