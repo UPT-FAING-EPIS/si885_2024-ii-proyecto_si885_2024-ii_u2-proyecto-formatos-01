@@ -272,9 +272,21 @@ Esta información valida la necesidad del sistema como una solución integral pa
 
 3. Reglas de Negocio
 
-- Los datos recolectados deben ser accesibles únicamente por personal autorizado.
-- El sistema debe generar reportes automáticos en intervalos regulares (semanales).
-- Las alertas deben activarse cuando el rendimiento de la red caiga por debajo de ciertos umbrales definidos.
+|  ID   | Descripción                                                                                                     | Prioridad |
+| :---: | :------------------------------------------------------------------------------------------------------------- | :-------: |
+| RN-01 | Solo el personal autorizado podrá acceder al sistema y a los datos recolectados mediante credenciales seguras.  |   Alta    |
+| RN-02 | Toda la información recolectada debe estar cifrada durante su transmisión y almacenamiento.                     |   Alta    |
+| RN-03 | Los reportes de rendimiento deben generarse automáticamente semanalmente, con posibilidad de generarlos bajo demanda. |   Alta    |
+| RN-04 | El sistema debe enviar notificaciones automáticas en caso de detectar anomalías críticas en el rendimiento.     |   Alta    |
+| RN-05 | El sistema debe permitir integración con otras plataformas mediante API REST garantizando seguridad de los datos. |   Media   |
+| RN-06 | Los datos recolectados deben respaldarse automáticamente diariamente en una ubicación segura.                    |   Alta    |
+| RN-07 | Los datos recolectados serán utilizados exclusivamente para la optimización de recursos y mejora del servicio.  |   Alta    |
+| RN-08 | El sistema permitirá configurar umbrales personalizados para alertas basadas en parámetros de rendimiento.      |   Media   |
+| RN-09 | El sistema debe ser escalable para incluir nuevos laboratorios o cambios en la infraestructura tecnológica.     |   Alta    |
+| RN-10 | Los reportes deben incluir recomendaciones para realizar mantenimiento preventivo en equipos que lo requieran.  |   Media   |
+| RN-11 | El sistema debe operar con consumo mínimo de recursos (CPU, RAM) para no afectar el rendimiento de los equipos. |   Alta    |
+| RN-12 | El sistema debe garantizar una disponibilidad operativa mínima del 95%.                                        |   Alta    |
+
 
 
 ### V. Fase de Desarrollo
