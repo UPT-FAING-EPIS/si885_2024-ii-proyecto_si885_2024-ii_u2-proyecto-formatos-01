@@ -10,9 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # Checkout del código
     - name: Checkout code
       uses: actions/checkout@v3
 
+    # Generar changelog (opcional)
+    - name: Generate Changelog
+      id: changelog
+      run: |
+        echo "**Changelog:**" > changelog.txt
+        echo "- Cambios recientes en esta versión:" >> changelog.txt
+        git log --oneline $(git describe --tags --abbrev=0)..HEAD >> changelog.txt
+
+    # Crear el release
     - name: Create GitHub Release
       id: create_release
       uses: actions/create-release@v1
@@ -21,16 +31,27 @@ jobs:
         release_name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
-        body: |
-          **Changelog:**
-          - Detalla aquí los cambios realizados.
+        body: ${{ steps.changelog.outputs.changelog || 'No se generaron cambios automáticamente.' }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+    # Generar artefacto (opcional)
+    - name: Build Artifact
+      run: |
+        mkdir -p build
+        echo "Contenido de ejemplo para el release" > build/artifact.txt
+        zip -r build/artifact.zip build/
+
+    # Subir artefacto al release
     - name: Upload Release Assets
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./build/artifact.zip # Cambia al archivo que desees subir.
+        asset_path: ./build/artifact.zip
         asset_name: artifact.zip
         asset_content_type: application/zip
+
+    # Notificar sobre el release (opcional)
+    - name: Notify Release
+      run: |
+        echo "Release creado exitosamente: ${{ github.ref_name }}"
