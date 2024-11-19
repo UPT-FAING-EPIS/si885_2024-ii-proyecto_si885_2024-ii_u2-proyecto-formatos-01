@@ -148,19 +148,19 @@ Metodología: Utilización de un script en Python con la biblioteca psutil para 
 
 ### 1.4 Referencias <span id="referencias" class="anchor"></span>
 
-    Documentación de psutil: https://psutil.readthedocs.io
+- Documentación de psutil: https://psutil.readthedocs.io
     
-    Guías de Python: https://docs.python.org
+- Guías de Python: https://docs.python.org
     
-    Manual de la Universidad Privada de Tacna: Normas y permisos para el uso de laboratorios.
+- Manual de la Universidad Privada de Tacna: Normas y permisos para el uso de laboratorios.
 
 ### 1.5 Visión General <span id="vision-general" class="anchor"></span>
 
-    Implementación del script: El script en Python se ejecutará en las computadoras de los laboratorios, capturando datos necesarios para el análisis de rendimiento y consumo de recursos.
+- Implementación del script: El script en Python se ejecutará en las computadoras de los laboratorios, capturando datos necesarios para el análisis de rendimiento y consumo de recursos.
     
-    Análisis de datos: Evaluar los datos recopilados para identificar tendencias, problemas recurrentes y áreas que requieren optimización.
+- Análisis de datos: Evaluar los datos recopilados para identificar tendencias, problemas recurrentes y áreas que requieren optimización.
     
-    Informe de resultados: Presentar un informe detallado con los hallazgos y recomendaciones, facilitando la toma de decisiones para optimizar el uso de los recursos en las computadoras de la universidad.
+- Informe de resultados: Presentar un informe detallado con los hallazgos y recomendaciones, facilitando la toma de decisiones para optimizar el uso de los recursos en las computadoras de la universidad.
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
@@ -168,11 +168,11 @@ Metodología: Utilización de un script en Python con la biblioteca psutil para 
 
 ### 2.1 Oportunidad de negocio <span id="oportunidad-de-negocio" class="anchor"></span>
 
-    Optimización de recursos: Mejorar la eficiencia operativa y reducir los costos asociados con el mantenimiento y soporte técnico de los laboratorios de computación.
+- Optimización de recursos: Mejorar la eficiencia operativa y reducir los costos asociados con el mantenimiento y soporte técnico de los laboratorios de computación.
     
-    Mejora en la experiencia educativa: Asegurar que los estudiantes cuenten con un entorno de laboratorio confiable y de alto rendimiento, lo que contribuye a una mejor experiencia de aprendizaje.
+- Mejora en la experiencia educativa: Asegurar que los estudiantes cuenten con un entorno de laboratorio confiable y de alto rendimiento, lo que contribuye a una mejor experiencia de aprendizaje.
     
-    Sostenibilidad: Contribuir a la reducción del consumo energético y al uso eficiente de los recursos tecnológicos en la universidad.
+- Sostenibilidad: Contribuir a la reducción del consumo energético y al uso eficiente de los recursos tecnológicos en la universidad.
 
 ### 2.2 Definición del problema <span id="definicion-del-problema" class="anchor"></span>
 
