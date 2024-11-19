@@ -100,7 +100,7 @@ jobs:
               with Diagram('Infraestructura', show=False, outformat='png', filename='infra_diagram'):
                   with Cluster('VPC'):
                       # Crear el nodo de VPC con una etiqueta válida
-                      vpc_instance = VPC("Virtual Private Cloud")
+                      vpc_instance = VPC('Virtual_Private_Cloud')
           
                       # Procesar los recursos definidos
                       for key, node in resources.items():
