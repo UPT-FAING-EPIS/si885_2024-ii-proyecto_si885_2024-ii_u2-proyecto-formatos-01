@@ -115,11 +115,11 @@ e) Estandaraes de calidad y seguridad	](#_toc394513800)42
 **<u>Informe de Visión</u>**
 
 
-## 1. Introducción
+## 1. Introducción <span id="introduccion" class="anchor"></span>
 
 Este documento de visión presenta el proyecto "Herramienta de Seguimiento y Evaluación del Desempeño de Red en Computadoras UPT", cuyo objetivo es mejorar la gestión y optimización de los recursos tecnológicos en los laboratorios de la Universidad Privada de Tacna. La herramienta permitirá un monitoreo continuo y análisis detallado del rendimiento de la red, proporcionando datos críticos para la toma de decisiones en la administración de la infraestructura tecnológica.
 
-### 1.1 Propósito
+### 1.1 Propósito <span id="proposito" class="anchor"></span>
 
 Recopilar y analizar datos del sistema: Obtener información detallada sobre el uso de recursos de las computadoras en los laboratorios de la universidad, con el fin de identificar patrones y áreas de mejora.
     
@@ -128,12 +128,11 @@ Evaluar el rendimiento y el consumo: Identificar el consumo de energía y el ren
 Optimización del soporte: Proporcionar datos útiles para mejorar el soporte técnico, el mantenimiento preventivo y correctivo de las computadoras, y asegurar su óptimo funcionamiento.
 
 ### 1.2 Alcance <span id="alcance" class="anchor"></span>
-
-    Área de estudio: Computadoras en los laboratorios de la Universidad Privada de Tacna.
+Área de estudio: Computadoras en los laboratorios de la Universidad Privada de Tacna.
     
-    Datos a recopilar: Temperatura durante las sesiones, número de sesiones, consumo de internet (Mbps), número de clics, programas más utilizados, y software con mayor consumo de recursos (CPU, RAM, GPU).
+Datos a recopilar: Temperatura durante las sesiones, número de sesiones, consumo de internet (Mbps), número de clics, programas más utilizados, y software con mayor consumo de recursos (CPU, RAM, GPU).
     
-    Metodología: Utilización de un script en Python con la biblioteca psutil para recopilar datos de rendimiento y actividad, que serán almacenados y analizados para generar reportes de desempeño.
+Metodología: Utilización de un script en Python con la biblioteca psutil para recopilar datos de rendimiento y actividad, que serán almacenados y analizados para generar reportes de desempeño.
 
 ### 1.3 Definiciones, Siglas y Abreviaturas <span id="definiciones" class="anchor"></span>
 
