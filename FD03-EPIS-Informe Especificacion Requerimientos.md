@@ -178,6 +178,8 @@ El rendimiento actual de la red en los laboratorios de la UPT enfrenta limitacio
 ### IV. Especificación de Requerimientos de Software
 
 1. Cuadro de Requerimientos funcionales Inicial
+
+
 | ID     | Descripción                                                             | Prioridad |
 | :----: | :---------------------------------------------------------------------- | :-------: |
 | RF-01  | Monitorear en tiempo real el uso de CPU, RAM, GPU, y tráfico de red.    | Alta      |
