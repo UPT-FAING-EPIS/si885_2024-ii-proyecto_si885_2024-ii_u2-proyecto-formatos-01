@@ -45,19 +45,21 @@ jobs:
           from diagrams import Diagram, Cluster, Node
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
-          from diagrams.aws.network import VPC
-      
+          from diagrams.aws.network import VPC, Subnet
+          from diagrams.aws.security import SecurityGroup  # Agregar SecurityGroup si es necesario
+          
           # Diccionario para almacenar los recursos generados
           resources = {}
-      
+          
           # Diccionario que asocia tipos de recursos con clases de Diagrams
           resource_classes = {
               'aws_instance': EC2,
               'aws_db_instance': RDS,
               'aws_vpc': VPC,
-              'aws_security_group': Node,  # Usamos Node como representación genérica para el Security Group
+              'aws_security_group': SecurityGroup,  # Representar como SecurityGroup
+              'aws_subnet': Subnet,  # Agregar Subnet como clase visual
           }
-      
+          
           # Crear o recuperar un recurso
           def create_or_get_resource(resource_type, name, diagram):
               key = f'{resource_type}_{name}'
@@ -65,7 +67,7 @@ jobs:
                   resource_class = resource_classes.get(resource_type, Node)  # Por defecto, usa Node si no está definido
                   resources[key] = resource_class(name)
               return resources[key]
-      
+          
           # Procesar todos los archivos Terraform en el directorio
           def process_terraform_files(terraform_dir, diagram):
               for root, _, files in os.walk(terraform_dir):
@@ -79,7 +81,7 @@ jobs:
                                   process_resources(terraform_data, diagram)
                               except Exception as e:
                                   print(f'Error al procesar {file}: {e}')
-      
+          
           # Procesar los recursos definidos en un archivo Terraform
           def process_resources(terraform_data, diagram):
               if 'resource' not in terraform_data:
@@ -93,27 +95,58 @@ jobs:
                       for instance_name, resource_details in instances.items():
                           print(f'Creando recurso: {instance_name}')
                           create_or_get_resource(resource_type, instance_name, diagram)
-      
+          
           # Generar el diagrama de infraestructura
           def generate_diagram():
               with Diagram('Infraestructura', show=False, outformat='png', filename='infra_diagram'):
                   with Cluster('VPC'):
+                      vpc = resources.get('aws_vpc_lab_vpc', None)
+                      if vpc:
+                          # Mostrar VPC
+                          vpc_instance = vpc
+                      else:
+                          vpc_instance = Node("VPC")  # Si no se ha procesado, se crea uno genérico para la VPC
+          
+                      # Agregar todos los recursos relacionados con la VPC
                       for key, node in resources.items():
                           if 'aws_instance' in key:
                               ec2_instance = node
-                              for other_key, other_node in resources.items():
-                                  if 'aws_db_instance' in other_key:
-                                      ec2_instance >> other_node
-                                  elif 'aws_security_group' in other_key:
-                                      other_node >> ec2_instance  # Relación SG -> EC2
-                                  elif 'aws_vpc' in other_key:
-                                      other_node >> ec2_instance  # Relación VPC -> EC2
-      
+                              ec2_instance >> vpc_instance  # Relación EC2 -> VPC
+                          elif 'aws_db_instance' in key:
+                              rds_instance = node
+                              rds_instance >> vpc_instance  # Relación RDS -> VPC
+                          elif 'aws_security_group' in key:
+                              sg_instance = node
+                              sg_instance >> vpc_instance  # Relación SG -> VPC
+                          elif 'aws_subnet' in key:
+                              subnet_instance = node
+                              subnet_instance >> vpc_instance  # Relación Subnet -> VPC
+          
+                      # Conectar instancias EC2 con la base de datos RDS
+                      for ec2_key, ec2_node in resources.items():
+                          if 'aws_instance' in ec2_key:
+                              for rds_key, rds_node in resources.items():
+                                  if 'aws_db_instance' in rds_key:
+                                      ec2_node >> rds_node  # Relación EC2 -> RDS
+          
+                      # Conectar el grupo de seguridad a las instancias
+                      for sg_key, sg_node in resources.items():
+                          if 'aws_security_group' in sg_key:
+                              for rds_key, rds_node in resources.items():
+                                  if 'aws_db_instance' in rds_key:
+                                      sg_node >> rds_node  # Relación SG -> RDS
+                              for ec2_key, ec2_node in resources.items():
+                                  if 'aws_instance' in ec2_key:
+                                      sg_node >> ec2_node  # Relación SG -> EC2
+          
           if __name__ == '__main__':
               terraform_dir = 'infra'  # Directorio que contiene los archivos Terraform
               with Diagram('Infraestructura', show=False, outformat='png', filename='infra_diagram') as diagram:
                   process_terraform_files(terraform_dir, diagram)
                   generate_diagram()
+          
+              print("Diagrama generado con éxito.")
+
           " > script.py
 
 
