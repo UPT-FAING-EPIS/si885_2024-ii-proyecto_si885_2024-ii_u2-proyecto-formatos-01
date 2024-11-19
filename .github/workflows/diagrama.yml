@@ -36,12 +36,9 @@ jobs:
             echo "Error: El directorio 'infra' no existe."
             exit 1
           fi
-
-
-
-      - name: Generate Diagram from Terraform Files
+      
+      - name: Crear archivo Python temporal con el código
         run: |
-          # Crear un archivo Python temporal con el código
           cat << EOF > generate_diagram.py
           import os
           import hcl2
@@ -49,43 +46,48 @@ jobs:
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
           from diagrams.aws.network import VPC
-          
+      
           resources = {}
           resource_classes = {
               "aws_instance": EC2,
               "aws_db_instance": RDS,
               "aws_vpc": VPC
           }
-          
+      
           def create_or_get_resource(resource_type, name):
               key = f"{resource_type}_{name}"
               if key not in resources:
                   resource_class = resource_classes.get(resource_type, EC2)
                   resources[key] = resource_class(name)
               return resources[key]
-          
+      
           def process_terraform_files(terraform_dir):
               for root, _, files in os.walk(terraform_dir):
                   for file in files:
                       if file.endswith(".tf"):
                           file_path = os.path.join(root, file)
+                          print(f"Procesando archivo Terraform: {file_path}")
                           with open(file_path, "r") as f:
                               try:
                                   terraform_data = hcl2.load(f)
+                                  print(f"Datos de {file_path}: {terraform_data}")
                                   process_resources(terraform_data)
                               except Exception as e:
                                   print(f"Error al procesar {file}: {e}")
-          
+      
           def process_resources(terraform_data):
               if "resource" not in terraform_data:
+                  print("No se encontraron recursos en el archivo Terraform.")
                   return
               for resource in terraform_data["resource"]:
                   for resource_type, instances in resource.items():
                       if resource_type not in resource_classes:
+                          print(f"Tipo de recurso no soportado: {resource_type}")
                           continue
                       for instance_name, _ in instances.items():
+                          print(f"Creando recurso: {instance_name}")
                           create_or_get_resource(resource_type, instance_name)
-          
+      
           def generate_diagram():
               with Diagram("Infraestructura", show=False, outformat="png", filename="infra_diagram"):
                   with Cluster("VPC"):
@@ -95,15 +97,18 @@ jobs:
                               for other_key, other_node in resources.items():
                                   if "aws_db_instance" in other_key:
                                       ec2_instance >> other_node
-          
+      
           if __name__ == "__main__":
               terraform_dir = "infra/infra"
               process_terraform_files(terraform_dir)
               generate_diagram()
           EOF
-
-          # Ejecutar el script Python generado
+      
+      - name: Ejecutar script Python para generar diagrama
+        run: |
           python generate_diagram.py
+          echo "Diagrama generado con éxito."
+
 
       - name: Commit and Push Diagram
         run: |
