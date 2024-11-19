@@ -55,6 +55,7 @@ jobs:
         run: |
           cd infra
           terraform import aws_security_group.rds_sg sg-07b429862db727709
+          terraform import aws_db_instance labRDS
 
       # Paso 8: Validar la configuración de Terraform
       - name: Validate Terraform configuration
