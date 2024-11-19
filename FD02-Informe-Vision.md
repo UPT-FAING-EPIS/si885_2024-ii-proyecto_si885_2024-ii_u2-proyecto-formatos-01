@@ -115,17 +115,17 @@ e) Estandaraes de calidad y seguridad	](#_toc394513800)42
 **<u>Informe de Visión</u>**
 
 
-## 1. Introducción <span id="introduccion" class="anchor"></span>
+## 1. Introducción
 
-    Este documento de visión presenta el proyecto "Herramienta de Seguimiento y Evaluación del Desempeño de Red en Computadoras UPT", cuyo objetivo es mejorar la gestión y optimización de los recursos tecnológicos en los laboratorios de la Universidad Privada de Tacna. La herramienta permitirá un monitoreo continuo y análisis detallado del rendimiento de la red, proporcionando datos críticos para la toma de decisiones en la administración de la infraestructura tecnológica.
+Este documento de visión presenta el proyecto "Herramienta de Seguimiento y Evaluación del Desempeño de Red en Computadoras UPT", cuyo objetivo es mejorar la gestión y optimización de los recursos tecnológicos en los laboratorios de la Universidad Privada de Tacna. La herramienta permitirá un monitoreo continuo y análisis detallado del rendimiento de la red, proporcionando datos críticos para la toma de decisiones en la administración de la infraestructura tecnológica.
 
-### 1.1 Propósito <span id="proposito" class="anchor"></span>
+### 1.1 Propósito
 
-    Recopilar y analizar datos del sistema: Obtener información detallada sobre el uso de recursos de las computadoras en los laboratorios de la universidad, con el fin de identificar patrones y áreas de mejora.
+Recopilar y analizar datos del sistema: Obtener información detallada sobre el uso de recursos de las computadoras en los laboratorios de la universidad, con el fin de identificar patrones y áreas de mejora.
     
-    Evaluar el rendimiento y el consumo: Identificar el consumo de energía y el rendimiento en términos de uso de CPU, RAM, GPU, así como el consumo de internet, para optimizar la eficiencia operativa.
+Evaluar el rendimiento y el consumo: Identificar el consumo de energía y el rendimiento en términos de uso de CPU, RAM, GPU, así como el consumo de internet, para optimizar la eficiencia operativa.
     
-    Optimización del soporte: Proporcionar datos útiles para mejorar el soporte técnico, el mantenimiento preventivo y correctivo de las computadoras, y asegurar su óptimo funcionamiento.
+Optimización del soporte: Proporcionar datos útiles para mejorar el soporte técnico, el mantenimiento preventivo y correctivo de las computadoras, y asegurar su óptimo funcionamiento.
 
 ### 1.2 Alcance <span id="alcance" class="anchor"></span>
 
