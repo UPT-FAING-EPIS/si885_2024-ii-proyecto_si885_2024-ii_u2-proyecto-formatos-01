@@ -121,27 +121,22 @@ Este documento de visión presenta el proyecto "Herramienta de Seguimiento y Eva
 
 ### 1.1 Propósito <span id="proposito" class="anchor"></span>
 
-Recopilar y analizar datos del sistema: Obtener información detallada sobre el uso de recursos de las computadoras en los laboratorios de la universidad, con el fin de identificar patrones y áreas de mejora.
-    
-Evaluar el rendimiento y el consumo: Identificar el consumo de energía y el rendimiento en términos de uso de CPU, RAM, GPU, así como el consumo de internet, para optimizar la eficiencia operativa.
-    
-Optimización del soporte: Proporcionar datos útiles para mejorar el soporte técnico, el mantenimiento preventivo y correctivo de las computadoras, y asegurar su óptimo funcionamiento.
+Recopilar y analizar datos de red: Obtener información detallada sobre el uso de recursos de red en los laboratorios de la universidad, con el fin de identificar patrones y áreas de mejora.
+
+Evaluar el rendimiento de red: Identificar el consumo de internet y disponibilidad de ancho de banda para optimizar la eficiencia operativa.
+
+Optimización de la conectividad: Proporcionar datos útiles para mejorar el soporte de red, mantenimiento preventivo y asegurar su óptimo funcionamiento.
 
 ### 1.2 Alcance <span id="alcance" class="anchor"></span>
-Área de estudio: Computadoras en los laboratorios de la Universidad Privada de Tacna.
-    
-Datos a recopilar: Temperatura durante las sesiones, número de sesiones, consumo de internet (Mbps), número de clics, programas más utilizados, y software con mayor consumo de recursos (CPU, RAM, GPU).
-    
-Metodología: Utilización de un script en Python con la biblioteca psutil para recopilar datos de rendimiento y actividad, que serán almacenados y analizados para generar reportes de desempeño.
+Área de estudio: Infraestructura de red en los laboratorios de la Universidad Privada de Tacna.
+
+Datos a recopilar: Consumo de internet (Mbps), disponibilidad de red, servicios con mayor consumo de ancho de banda.
+
+Metodología: Utilización de un script en Python para recopilar datos de rendimiento de red, que serán almacenados y analizados para generar reportes de desempeño.
 
 ### 1.3 Definiciones, Siglas y Abreviaturas <span id="definiciones" class="anchor"></span>
+- Ancho de banda: Capacidad máxima de transmisión de datos a través de una conexión de red.
 
-- CPU: Unidad Central de Procesamiento (Central Processing Unit).
-    
-- RAM: Memoria de Acceso Aleatorio (Random Access Memory).
-    
-- GPU: Unidad de Procesamiento Gráfico (Graphics Processing Unit).
-    
 - Mbps: Megabits por segundo, unidad de medida de velocidad de transferencia de datos en redes.
     
 - psutil: Biblioteca de Python para la recopilación de información del sistema y el monitoreo de recursos.
@@ -156,11 +151,11 @@ Metodología: Utilización de un script en Python con la biblioteca psutil para 
 
 ### 1.5 Visión General <span id="vision-general" class="anchor"></span>
 
-- Implementación del script: El script en Python se ejecutará en las computadoras de los laboratorios, capturando datos necesarios para el análisis de rendimiento y consumo de recursos.
-    
-- Análisis de datos: Evaluar los datos recopilados para identificar tendencias, problemas recurrentes y áreas que requieren optimización.
-    
-- Informe de resultados: Presentar un informe detallado con los hallazgos y recomendaciones, facilitando la toma de decisiones para optimizar el uso de los recursos en las computadoras de la universidad.
+- Implementación del script: El script en Python se ejecutará para capturar datos necesarios para el análisis de rendimiento de red.
+  
+- Análisis de datos: Evaluar los datos recopilados para identificar tendencias y problemas en la infraestructura de red.
+  
+- Informe de resultados: Presentar un informe detallado con los hallazgos y recomendaciones para optimizar el uso de los recursos de red.
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
@@ -168,19 +163,20 @@ Metodología: Utilización de un script en Python con la biblioteca psutil para 
 
 ### 2.1 Oportunidad de negocio <span id="oportunidad-de-negocio" class="anchor"></span>
 
-- Optimización de recursos: Mejorar la eficiencia operativa y reducir los costos asociados con el mantenimiento y soporte técnico de los laboratorios de computación.
-    
-- Mejora en la experiencia educativa: Asegurar que los estudiantes cuenten con un entorno de laboratorio confiable y de alto rendimiento, lo que contribuye a una mejor experiencia de aprendizaje.
-    
-- Sostenibilidad: Contribuir a la reducción del consumo energético y al uso eficiente de los recursos tecnológicos en la universidad.
+- Optimización de recursos de red: Mejorar la eficiencia de la infraestructura de conectividad.
+
+- Mejora en la experiencia educativa: Asegurar una conectividad confiable y de alto rendimiento.
+
+- Eficiencia operativa: Reducir costos asociados con problemas de conectividad.
 
 ### 2.2 Definición del problema <span id="definicion-del-problema" class="anchor"></span>
 
-| **LA FALTA** | La ausencia de un sistema automatizado de monitoreo de red en las computadoras del laboratorio conlleva a dificultades para detectar problemas de rendimiento, ineficiencias en la gestión de recursos y mantenimiento reactivo.  |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **LA NECESIDAD** | La necesidad de un monitoreo continuo y detallado se vuelve crucial para asegurar la eficiencia operativa, la optimización de recursos y la reducción de tiempos de inactividad, mejorando la calidad del soporte técnico. |
-| **EL PROBLEMA** | La falta de un sistema de monitoreo automatizado provoca una falta de visibilidad sobre el uso de recursos, lo que puede llevar a un uso ineficiente de las computadoras, mayor consumo de energía, y un soporte técnico reactivo. |
-| **LA SOLUCIÓN** | Implementar una herramienta de monitoreo que permita la evaluación continua del rendimiento de red, proporcionando datos en tiempo real y alertas que faciliten la gestión proactiva y la optimización de recursos. |
+| **LA FALTA** | La ausencia de un sistema automatizado de monitoreo de red conlleva dificultades para detectar problemas de conectividad e ineficiencias en el uso de recursos de red. |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **LA NECESIDAD** | La necesidad de un monitoreo continuo y detallado se vuelve crucial para asegurar la eficiencia de la infraestructura de red. |
+| **EL PROBLEMA** | La falta de un sistema de monitoreo automatizado provoca una falta de visibilidad sobre el uso de recursos de red. |
+| **LA SOLUCIÓN** | Implementar una herramienta de monitoreo que permita la evaluación continua del rendimiento de red, proporcionando datos en tiempo real y alertas. |
+
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
@@ -188,12 +184,13 @@ Metodología: Utilización de un script en Python con la biblioteca psutil para 
 
 ### 3.1 Resumen de los interesados <span id="resumen-interesados" class="anchor"></span>
 
-| **Nombre**      | **Descripción** | **Responsabilidad** |
-|-----------------|-----------------|---------------------|
-| **Área de TI**  | Encargada de la gestión y mantenimiento de la infraestructura tecnológica. | Gestionar y optimizar los recursos tecnológicos, asegurar el funcionamiento continuo de los equipos. |
-| **Soporte Técnico** | Personal que realiza el mantenimiento y soporte de las computadoras en los laboratorios. | Diagnosticar y resolver problemas técnicos, realizar mantenimientos preventivos y correctivos. |
-| **Estudiantes** | Usuarios finales que utilizan las computadoras para sus actividades académicas. | Realizar actividades académicas utilizando los recursos tecnológicos proporcionados. |
-| **Administración** | Encargada de la supervisión general de las operaciones de la universidad. | Optimizar los costos operativos, mejorar la calidad del servicio educativo. |
+| **Nombre**        | **Descripción** | **Responsabilidad** |
+|-------------------|-----------------|---------------------|
+| **Área de TI**    | Encargada de la gestión de la infraestructura de red. | Gestionar y optimizar los recursos de conectividad. |
+| **Soporte Técnico** | Personal que mantiene la infraestructura de red. | Diagnosticar y resolver problemas de conectividad. |
+| **Estudiantes**   | Usuarios finales de los servicios de red. | Utilizar los recursos de conectividad para actividades académicas. |
+| **Administración** | Supervisión general de las operaciones de red. | Optimizar los costos operativos de la infraestructura de red. |
+
 
 ### 3.2 Resumen de los usuarios <span id="resumen-usuarios" class="anchor"></span>
 
@@ -245,10 +242,10 @@ El sistema de monitoreo proporcionará una solución integral para el seguimient
 
 | **Beneficios para el Área de TI y Soporte Técnico** | **Principales características** |
 |----------------------------------------------------|---------------------------------|
-| **Monitoreo en tiempo real** | Permite el seguimiento continuo del rendimiento de CPU, RAM, GPU y red, así como la identificación de posibles cuellos de botella en el uso de recursos. |
-| **Alertas automáticas** | Genera notificaciones en tiempo real ante cualquier anomalía detectada, facilitando una respuesta rápida y efectiva. |
-| **Reportes detallados** | Genera informes automatizados y personalizables sobre el uso de los recursos, el rendimiento de las computadoras y el consumo de ancho de banda, lo que permite una toma de decisiones informada. |
-| **Análisis comparativo** | Posibilidad de comparar el rendimiento entre distintos laboratorios para identificar cuáles hacen un mayor uso del ancho de banda o presentan más problemas técnicos. |
+| **Monitoreo en tiempo real** | Permite el seguimiento continuo del uso de la red, así como la identificación de posibles cuellos de botella en el uso de recursos. |
+| **Alertas automáticas** | Genera notificaciones en tiempo real ante cualquier anomalía detectada en la red, facilitando una respuesta rápida y efectiva. |
+| **Reportes detallados** | Genera informes automatizados y personalizables sobre el uso de la red, lo que permite una toma de decisiones informada. |
+| **Análisis comparativo** | Posibilidad de comparar el rendimiento de la red entre distintos laboratorios para identificar cuáles presentan más problemas de conectividad. |
 
 ### 4.3 Suposiciones y dependencias <span id="suposiciones-dependencias" class="anchor"></span>
 
@@ -278,15 +275,12 @@ Instalación: La instalación del sistema se llevará a cabo en los laboratorios
 
 ## 5. Características del producto <span id="caracteristicas-producto" class="anchor"></span>
 
-Monitoreo en tiempo real: Seguimiento continuo del rendimiento de CPU, RAM, GPU, temperatura y consumo de red en las computadoras de los laboratorios.
+Monitoreo en tiempo real: Seguimiento continuo del consumo de red en las computadoras de los laboratorios.
     
-Evaluación del consumo de energía: Identificación de patrones de consumo energético para optimizar el rendimiento y prevenir sobrecalentamientos.
+Generación de reportes automatizados: Creación de informes personalizados sobre el estado y uso de la red, facilitando la toma de decisiones informadas.
     
-Análisis de la red: Supervisión del uso de internet y ancho de banda, con la capacidad de identificar cuellos de botella y optimizar la conectividad.
-    
-Generación de reportes automatizados: Creación de informes personalizados sobre el estado y uso de los recursos, facilitando la toma de decisiones informadas.
-    
-Alertas automáticas: Notificaciones instantáneas en caso de detectar anomalías en el rendimiento, permitiendo una rápida intervención.
+Alertas automáticas: Notificaciones instantáneas en caso de detectar anomalías en la red, permitiendo una rápida intervención
+
 
 ## 6. Restricciones <span id="restricciones" class="anchor"></span>
 
@@ -295,7 +289,6 @@ Acceso limitado a la infraestructura: El proyecto dependerá del acceso proporci
 Recursos computacionales: El script de monitoreo debe ser lo suficientemente ligero para no afectar negativamente el rendimiento de las computadoras durante su operación.
     
 Compatibilidad de software: La herramienta debe ser compatible con el entorno operativo actual de la universidad, lo que podría restringir las tecnologías y plataformas que pueden ser utilizadas.
-
 ## 7. Rangos de calidad <span id="rangos-calidad" class="anchor"></span>
 
 Exactitud de los datos: Se requiere un nivel alto de precisión en la recopilación y procesamiento de datos para asegurar su utilidad y fiabilidad en la toma de decisiones.
@@ -315,7 +308,6 @@ Escalabilidad: El sistema debe ser escalable para soportar el crecimiento de la 
 | **Administrador**  | 2        | Almacenamiento de datos              | Almacenar los datos recolectados sobre el rendimiento de la red en una base de datos segura.                  |
 | **Administrador**  | 3        | Generación de informes personalizados| Permitir a los administradores crear informes detallados sobre el rendimiento y uso de los recursos.                  |
 | **Soporte Técnico**| 4        | Optimización del soporte técnico     | Usar los datos recolectados para mejorar la eficiencia del soporte técnico mediante diagnósticos rápidos.             |
-| **Administrador**  | 5        | Exportación de datos para Tableau    | Exportar los datos almacenados en formatos compatibles con herramientas de análisis como Tableau.                     |
 
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
@@ -337,38 +329,32 @@ Escalabilidad: El sistema debe ser escalable para soportar el crecimiento de la 
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
-## CONCLUSIONES
-1. **Mejora en la Eficiencia**: La herramienta permitirá una gestión más eficiente de los recursos tecnológicos en los laboratorios, facilitando la identificación y solución de problemas de rendimiento.
+## CONCLUSIONES <span id="conclusiones" class="anchor"></span>
 
-2. **Proactividad en el Soporte Técnico**: Al monitorear continuamente el estado de las computadoras, se podrá anticipar y resolver fallos antes de que afecten a los usuarios, mejorando la experiencia de estudiantes y docentes.
+1. **Monitoreo en tiempo real:** El sistema de monitoreo proporcionará una forma eficiente de supervisar la red en tiempo real, lo que permitirá identificar problemas de conectividad o sobrecarga de los equipos de manera temprana, minimizando el tiempo de inactividad.
 
-3. **Optimización del Consumo Energético**: El sistema ayudará a reducir el consumo de energía al identificar equipos subutilizados o en mal estado, promoviendo prácticas más sostenibles en el uso de recursos.
+2. **Alertas automáticas:** Las alertas automáticas ayudarán a mantener la red optimizada y a detectar problemas de conectividad antes de que se conviertan en fallos graves, mejorando la capacidad de respuesta del personal técnico.
 
-4. **Facilidad de Uso**: La interfaz diseñada para la herramienta será accesible y fácil de usar, permitiendo al personal técnico y administrativo acceder a datos y generar informes sin complicaciones.
+3. **Generación de informes detallados:** Los informes detallados permitirán realizar análisis de rendimiento sobre la red, facilitando la toma de decisiones informadas sobre cómo mejorar la infraestructura tecnológica en base a datos concretos.
 
-5. **Sostenibilidad del Proyecto**: La implementación del sistema asegurará que la gestión de recursos tecnológicos se mantenga actualizada y eficiente a largo plazo.
+4. **Optimización de recursos:** El monitoreo de los recursos de red permitirá optimizar el uso de los equipos, evitando sobrecargas y asegurando que los recursos estén siendo utilizados de manera eficiente, lo que redundará en un mejor desempeño general de la infraestructura tecnológica.
+
+5. **Satisfacción de los usuarios finales:** Al garantizar un mejor desempeño de la red y una experiencia más estable para los usuarios (estudiantes, docentes, etc.), se incrementará la satisfacción de los usuarios finales, lo que también impactará positivamente en la percepción de la calidad del servicio educativo.
+
+6. **Eficiencia operativa:** La recopilación de datos de manera automatizada y la generación de informes periódicos permitirán al personal administrativo tomar decisiones con base en datos y mejorar la eficiencia operativa de los laboratorios, reduciendo posibles ineficiencias o fallos en los procesos tecnológicos.
+
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 ## RECOMENDACIONES <span id="recomendaciones" class="anchor"></span>
 
-- Capacitación continua del personal técnico: Asegúrate de que el equipo de soporte técnico reciba formación continua en el uso y mantenimiento del nuevo sistema. Esto ayudará a maximizar el rendimiento del sistema y a minimizar los tiempos de inactividad.
-    
-- Realizar pruebas piloto antes del despliegue completo: Es recomendable llevar a cabo un despliegue piloto en uno o dos laboratorios antes de implementar el sistema en toda la universidad. Esto permitirá identificar y resolver cualquier problema antes de la implementación a gran escala.
-    
-- Monitoreo constante durante la fase inicial: Durante los primeros meses de operación, se debe realizar un monitoreo continuo del sistema para identificar posibles problemas de rendimiento o compatibilidad. Esto permitirá realizar ajustes y optimizaciones rápidamente.
-    
-- Crear un plan de contingencia: Desarrolla un plan de contingencia para manejar cualquier problema crítico que pueda surgir durante la implementación o operación del sistema. Esto incluiría procedimientos para la recuperación del sistema y la continuidad de las operaciones.
-    
-- Recoger feedback de los usuarios: Es importante recoger el feedback de los usuarios, especialmente del personal de soporte técnico y los estudiantes, para entender cómo el sistema puede mejorar y adaptarse a sus necesidades. Esto puede ayudar a guiar futuras actualizaciones y mejoras.
-    
-- Actualizar la infraestructura según sea necesario: Si se detecta que la infraestructura actual no es suficiente para soportar el sistema de manera óptima, se deben planificar y ejecutar actualizaciones de software para garantizar un rendimiento eficiente.
-    
-- Documentación exhaustiva: Asegúrate de que toda la documentación, tanto para los usuarios como para los técnicos, esté completa y actualizada. Esto facilitará la resolución de problemas y la formación de nuevos usuarios.
-    
-- Evaluar la seguridad periódicamente: Realiza evaluaciones de seguridad periódicas para asegurarte de que los datos y el acceso al sistema están protegidos adecuadamente, y que se cumplen las políticas de seguridad de la universidad.
-    
-- Planificar futuras expansiones: Considera desde el principio la posibilidad de futuras expansiones del sistema, ya sea añadiendo más laboratorios, funciones adicionales, o integraciones con otros sistemas. Esto permitirá que el sistema crezca y evolucione junto con las necesidades de la universidad.
-    
-- Involucrar a los interesados en el proceso: Mantén una comunicación constante con todos los interesados del proyecto, asegurándote de que estén informados sobre el progreso y cualquier cambio significativo. Su participación activa puede facilitar la adopción del sistema y contribuir al éxito general del proyecto.
+1. **Capacitación continua:** Es crucial proporcionar capacitación continua al personal de soporte técnico y administración para garantizar que estén actualizados sobre el funcionamiento del sistema, la interpretación de los informes y la resolución de problemas detectados por el monitoreo.
+
+2. **Evaluaciones periódicas:** Realizar revisiones periódicas del sistema para asegurarse de que se mantenga actualizado y eficiente. Esto incluye comprobar la precisión de las alertas, la fiabilidad de los informes y la capacidad de respuesta ante eventos críticos.
+
+3. **Retroalimentación de usuarios:** Recoger feedback de los usuarios finales (estudiantes, docentes, etc.) para mejorar la funcionalidad y la usabilidad del sistema a lo largo del tiempo. Esto permitirá ajustar el sistema a las necesidades reales de los usuarios.
+
+4. **Mejora de la interfaz de usuario:** Continuar con la mejora de la interfaz del sistema para que sea más intuitiva y fácil de usar, especialmente para el personal que no tiene experiencia técnica. La interfaz debe facilitar la toma de decisiones rápidas y claras basadas en los datos recopilados.
+
+5. **Escalabilidad del sistema:** A medida que la universidad crezca, se deben tomar medidas para asegurar que el sistema de monitoreo sea escalable y pueda soportar un mayor número de equipos sin perder rendimiento ni fiabilidad.
 
