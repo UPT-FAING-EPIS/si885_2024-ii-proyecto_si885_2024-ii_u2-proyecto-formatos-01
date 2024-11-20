@@ -297,6 +297,20 @@ Esta información valida la necesidad del sistema como una solución integral pa
 ### V. Fase de Desarrollo
 
 1. Perfiles de Usuario
+Estudiante (Usuario Final)
+
+Descripción: El Estudiante es el usuario que utiliza los recursos de la red en los laboratorios. Si experimenta un problema con la conexión a la red (por ejemplo, lentitud o desconexión), debe informar al encargado del área de TI.
+
+**Responsabilidades:**
+
+Utilizar los recursos de la red para las actividades académicas en los laboratorios de la universidad.
+Informar al Encargado del Área de TI cuando detecte problemas en la red, como conexión lenta o caída del servicio.
+
+**Interacciones con el Sistema:**
+
+El estudiante no interactúa directamente con el dashboard.
+Informa al encargado de TI sobre los problemas detectados, proporcionando detalles sobre la lentitud de la red o interrupciones en el servicio.
+
 2. Modelo Conceptual
    - Diagrama de Paquetes
    - Diagrama de Casos de Uso
