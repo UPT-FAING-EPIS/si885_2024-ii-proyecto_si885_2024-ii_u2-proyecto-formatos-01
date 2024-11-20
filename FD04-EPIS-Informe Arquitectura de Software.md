@@ -3,33 +3,33 @@
 ![Logo de Mi Empresa](./media/logo-empresa.png)
 ![Logo de mi Cliente](./media/logo-cliente.png)
 
-**UNIVERSIDAD PRIVADA DE TACNA**
+# UNIVERSIDAD PRIVADA DE TACNA  
+## FACULTAD DE INGENIERÍA  
+### Escuela Profesional de Ingeniería de Sistemas
 
-**FACULTAD DE INGENIERIA**
+**Sistema de Monitoreo y Gestión de Red para Laboratorios UPT (SIMGR-UPT)**
 
-**Escuela Profesional de Ingeniería de Sistemas**
+Curso: *Inteligencia de Negocios*  
+Docente: *Mag. Patrick Cuadros Quiroga*
 
-**Proyecto *{Nombre de Proyecto}***
+**Integrantes:**
 
-Curso: *{Nombre de Asignatura}*
+- Escobar Rejas, Carlos Andrés (2021070016)
+- Apaza Ccalle, Albert Kenyi (2021071075)
+- Cutipa Gutierrez, Ricardo (2021069827)
+- Churacutipa Blass, Erick (2020067578)
+- Huallpa Maron, Jesús Antonio (2021071085)
 
-Docente: *{Nombre de Docente}*
-
-Integrantes:
-
-***{Apellidos y Nombres del estudiante (código universitario)}***
-
-**Tacna – Perú**
-
-***{Año}***
+**Tacna – Perú**  
+***2024***
 
 </center>
 
 ---
 
-# Sistema *{Nombre del Sistema}*
+# Sistema de Monitoreo y Gestión de Red para Laboratorios UPT (SIMGR-UPT)*
 
-**Documento de Arquitectura de Software**
+**Documento de Especificación de Requerimientos de Software**
 
 Versión *{1.0}*
 
@@ -37,10 +37,9 @@ Versión *{1.0}*
 
 ## CONTROL DE VERSIONES
 
-| Versión | Hecha por | Revisada por | Aprobada por | Fecha       | Motivo          |
-| ------- | --------- | ------------ | ------------ | ----------- | --------------- |
-| 1.0     | MPV       | ELV          | ARV          | 10/10/2020  | Versión Original |
-
+| Versión | Hecha por | Revisada por | Aprobada por | Fecha      | Motivo           |
+| :-----: | --------- | ------------ | ------------ | ---------- | ---------------- |
+| 1.0     | CER       | RDCG          | AAC         | 18/11/2024 | Versión Original |
 ---
 
 # INDICE GENERAL
