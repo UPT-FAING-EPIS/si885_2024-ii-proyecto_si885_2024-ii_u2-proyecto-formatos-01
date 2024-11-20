@@ -34,7 +34,6 @@ jobs:
           from diagrams.aws.compute import EC2
           from diagrams.aws.database import RDS
           from diagrams.aws.network import VPC, InternetGateway
-          from diagrams.aws.security import SecurityGroup
           
           # Crear un diagrama
           with Diagram('AWS Infrastructure', show=False, filename='diagram'):
@@ -50,14 +49,11 @@ jobs:
               
               # Internet Gateway
               igw = InternetGateway('Internet Gateway\nmy_igw')
-              
-              # Security Group
-              rds_sg = SecurityGroup('RDS Security Group\nPort: 3306 (MySQL)')
           
               # Conexiones
               vpc >> igw >> public_subnet
               vpc >> private_subnet
-              private_subnet >> rds_sg >> private_subnet
+
 
           " > script.py
 
