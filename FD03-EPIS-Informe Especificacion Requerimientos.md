@@ -297,9 +297,11 @@ Esta información valida la necesidad del sistema como una solución integral pa
 ### V. Fase de Desarrollo
 
 1. Perfiles de Usuario
-Estudiante (Usuario Final)
 
-Descripción: El Estudiante es el usuario que utiliza los recursos de la red en los laboratorios. Si experimenta un problema con la conexión a la red (por ejemplo, lentitud o desconexión), debe informar al encargado del área de TI.
+Estudiante
+
+**Descripción:**
+El Estudiante es el usuario que utiliza los recursos de la red en los laboratorios. Si experimenta un problema con la conexión a la red (por ejemplo, lentitud o desconexión), debe informar al encargado del área de TI.
 
 **Responsabilidades:**
 
