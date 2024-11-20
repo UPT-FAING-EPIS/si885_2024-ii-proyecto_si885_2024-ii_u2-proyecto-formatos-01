@@ -168,7 +168,7 @@ Versión *{1.0}*
    |Material|Cantidad|Costo Unitario (S/)|
    | :-: | :- | :- |
    |LAPTOP INTEL CORE I7 3.4 GHZ MONITOR 27'' RAM 16GB DISCO DURO 1TB + SSD 480GB|1|2900.00||
-   |Toshiba Canvio Basics HDTB520XK3AA - Disco duro externo portátil (2 TB), color negro|1|262.00||
+   |Disco de almacenamiento de seguridad (2 TB), color negro|1|262.00||
    |Cooler Laptop|1|60||
    |Total||3,222.00|
 
@@ -179,7 +179,8 @@ Versión *{1.0}*
    
    |Concepto|Costo|
    | :-: | :- |
-   |Viáticos|500.00||
+   |Viáticos|300.00||
+   |Movilidad del equipo de trabajo|200.00||
    |Total|500.00|
 
       4.2.3. Costos del ambiente
@@ -262,67 +263,60 @@ La inversión en este proyecto se justifica con base en los siguientes beneficio
 -Toma de decisiones más informada
 
 ## 5.1.2. Criterios de Inversión
+Costo de inversión del proyecto: 10,172.00
+Tasa de descuento : 9%
+
+**Egresos** (gastos operacionales como parte del funcionamiento del software en la puesta en produccion)
+
+|Gasto|Cantidad|Costo Unitario (S/)|
+   | - | :- | :- |
+   |Viáticos|1|300||
+   |Movilidad del equipo de trabajo|1|200||
+   |Total||3,222.00|
+   
+**Ingreso anual y beneficios del sistema**
+
+|Gasto|Cantidad|Costo Unitario (S/)|
+   | - | :- | :- |
+   |Reducción en pérdidas|50%|2000||
+   |Mejora del sistema|50%|2000||
+   |Total||4000|
+   
+  **Flujo de caja**
+  
+  |Periodo|Ingreso|Egreso|Flujo efectivo
+   | -: | :-: | :-: | :-:
+   |0|||-10 172|
+   |1|4000|500|3500|
+   |3|4000|500|3500
+   |4|4000|500|3500
+   |5|4000|500|3500
+ 
 
 ### 5.1.2.1. Relación Beneficio/Costo (B/C)
 
-En base a los costos y beneficios identificados, se evalúa si es factible el desarrollo del proyecto. Si se presentan varias alternativas de solución, se evaluará cada una de ellas para determinar la mejor solución desde el punto de vista del retorno de la inversión.
 
-La fórmula para calcular el B/C es:
+B/C = 1.34
 
-\[
-B/C = \frac{\text{Beneficios totales}}{\text{Costos totales}}
-\]
-
-- **Beneficios Totales**: S/ 12,000
-- **Costos Totales**: S/ 10,172
-
-\[
-B/C = \frac{12,000}{10,172} = 1.18
-\]
-
-**Interpretación**: Dado que el B/C es mayor a 1 (1.18), el proyecto es financieramente viable y debería aceptarse.
+**Interpretación**: Dado que el B/C es mayor a 1 (1.34), el proyecto es financieramente viable y debería aceptarse y por cada unidad monetaria invertida, se espera obtener aproximadamente 0.34 unidades monetarias de beneficio.
 
 ### 5.1.2.2. Valor Actual Neto (VAN)
 
-El VAN es el valor presente de los flujos de caja futuros generados por el proyecto, descontados al presente. Se calcula de la siguiente manera:
 
-\[
-VAN = \sum \frac{\text{Flujo de Caja}}{(1 + r)^t} - \text{Inversión Inicial}
-\]
-
-- **Tasa de descuento (r)**: 10%
+- **Tasa de descuento (r)**: 9%
 - **Inversión inicial**: S/ 10,172
-- **Flujos de caja proyectados**: S/ 4,000 anuales por 4 años.
+- **Flujos de caja proyectados**: S/ 3500 anuales por 5 años.
+VAN = S/. 13,613.78 - S/ 10,172
+VAN = S/. 3,441.78
 
-\[
-VAN = \frac{4000}{(1 + 0.10)^1} + \frac{4000}{(1 + 0.10)^2} + \frac{4000}{(1 + 0.10)^3} + \frac{4000}{(1 + 0.10)^4} - 10,172
-\]
 
-Calculando:
-
-\[
-VAN = \frac{4000}{1.10} + \frac{4000}{1.21} + \frac{4000}{1.331} + \frac{4000}{1.4641} - 10,172
-\]
-\[
-VAN = 3636.36 + 3305.79 + 3006.77 + 2732.39 - 10,172
-\]
-\[
-VAN = 12,681.31 - 10,172 = 2,509.31
-\]
-
-**Interpretación**: El VAN es positivo (S/ 2,509.31), lo que indica que el proyecto generará un valor adicional neto sobre la inversión inicial, por lo que es viable.
+**Interpretación**: El VAN es positivo (S/. 3,441.78), lo que indica que el proyecto generará un valor adicional neto sobre la inversión inicial, por lo que es viable.
 
 ### 5.1.2.3. Tasa Interna de Retorno (TIR)
 
-La TIR es la tasa porcentual que indica la rentabilidad promedio anual que genera el capital invertido en el proyecto. Se calcula resolviendo la siguiente ecuación:
+TIR = 21%
 
-\[
-0 = \sum \frac{4000}{(1 + TIR)^t} - 10,172
-\]
-
-Usando una aproximación iterativa, se obtiene que la TIR es aproximadamente del 18%.
-
-**Interpretación**: Dado que la TIR (18%) es mayor que la tasa de descuento asumida (10%), el proyecto es rentable.
+**Interpretación**: Dado que la TIR (21%) es mayor que la tasa de descuento asumida (10%), el proyecto es rentable.
 
 ---
 # 6. Conclusiones
