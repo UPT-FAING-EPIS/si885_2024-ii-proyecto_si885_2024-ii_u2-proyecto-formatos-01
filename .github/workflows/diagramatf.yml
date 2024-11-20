@@ -67,6 +67,13 @@ jobs:
         run: |
           git config --local user.name "JesusHuallpa"
           git config --local user.email "jh2021071085@virtual.upt.pe"
-          git add diagram.png
-          git commit -m "Add AWS infrastructure diagram"
-          git push
+          
+          if [ -f "infra_diagram.png" ]; then
+              git checkout diagramaTF || git checkout -b diagramaTF
+              git add infra_diagram.png
+              git commit -m "Actualizar diagrama de infraestructura [skip ci]" || echo "No hay cambios para commit"
+              git push origin diagramaTF --force
+          else
+              echo "Error: infra_diagram.png no se generó."
+              exit 1
+          fi
