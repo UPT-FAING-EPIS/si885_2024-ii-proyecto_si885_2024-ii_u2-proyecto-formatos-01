@@ -240,6 +240,9 @@ Esta información valida la necesidad del sistema como una solución integral pa
 ### III. Análisis de Procesos
 
 - Diagrama del Proceso Actual – Diagrama de actividades
+
+  ![Diagrama](./media/diagrama_actual.png)
+  
 - Diagrama del Proceso Propuesto – Diagrama de actividades Inicial
 
 ### IV. Especificación de Requerimientos de Software
