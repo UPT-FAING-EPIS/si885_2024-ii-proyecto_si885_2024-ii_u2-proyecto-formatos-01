@@ -50,6 +50,15 @@ jobs:
         run: |
           python script.py
 
+      - name: Verificar existencia de diagram.png
+        run: |
+          if [ -f diagram.png ]; then
+            echo "Diagrama generado correctamente"
+          else
+            echo "El archivo diagram.png no se generó. Abortando..."
+            exit 1
+          fi
+
       - name: Commit and Push Diagram
         run: |
           git config --local user.name "JesusHuallpa"
@@ -57,9 +66,3 @@ jobs:
           git add diagram.png
           git commit -m "Add AWS infrastructure diagram"
           git push
-
-      - name: Subir el diagrama generado como artefacto
-        uses: actions/upload-artifact@v3
-        with:
-          name: infrastructure-diagram
-          path: diagram.png
