@@ -313,6 +313,25 @@ Informar al Encargado del Área de TI cuando detecte problemas en la red, como c
 El estudiante no interactúa directamente con el dashboard.
 Informa al encargado de TI sobre los problemas detectados, proporcionando detalles sobre la lentitud de la red o interrupciones en el servicio.
 
+Encargado del Área de TI (Soporte Técnico)
+
+**Descripción:**
+El Encargado del Área de TI es responsable de gestionar el monitoreo de la red en los laboratorios, asegurando que el tráfico de la red sea adecuado para las actividades académicas. Este perfil tiene acceso al dashboard para verificar y analizar el tráfico de la red en tiempo real.
+
+**Responsabilidades:**
+
+Recibir informes de problemas de red del Estudiante.
+Acceder al dashboard para monitorear el rendimiento y tráfico de la red.
+Analizar los gráficos y datos del dashboard para verificar posibles irregularidades en la red (por ejemplo, congestión o lentitud).
+Tomar medidas correctivas o preventivas basadas en los datos visualizados en el dashboard.
+Informar al estudiante sobre la resolución del problema o el estado de la red.
+
+**Interacciones con el Sistema:**
+
+Accede al dashboard de monitoreo de la red para verificar el estado del tráfico.
+Analiza los gráficos y los datos de la red, como el uso del ancho de banda y los tiempos de respuesta.
+Realiza acciones para solucionar los problemas de red (por ejemplo, ajustes de configuración, reinicio de equipos, etc.).
+
 2. Modelo Conceptual
    - Diagrama de Paquetes
    - Diagrama de Casos de Uso
