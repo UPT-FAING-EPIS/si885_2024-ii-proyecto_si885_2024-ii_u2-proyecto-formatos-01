@@ -35,25 +35,15 @@ jobs:
           from diagrams.aws.database import RDS
           from diagrams.aws.network import VPC, InternetGateway
           
-          # Crear un diagrama
           with Diagram('AWS Infrastructure', show=False, filename='diagram'):
-              # VPC
               vpc = VPC('VPC (Virtual Private Cloud)\nCIDR: 10.0.0.0/16')
-              
-              # Subredes
               with Cluster('Public Subnet\nCIDR: 10.0.1.0/24'):
                   public_subnet = EC2('EC2 Instance\nPublic Access')
-              
               with Cluster('Private Subnet\nCIDR: 10.0.2.0/24'):
                   private_subnet = RDS('RDS Instance\nMySQL 5.7')
-              
-              # Internet Gateway
               igw = InternetGateway('Internet Gateway\nmy_igw')
-          
-              # Conexiones
               vpc >> igw >> public_subnet
               vpc >> private_subnet
-
 
           " > script.py
 
