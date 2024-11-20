@@ -59,6 +59,10 @@ jobs:
             exit 1
           fi
 
+      - name: Eliminar archivo temporal script.py
+        run: |
+          rm script.py
+
       - name: Commit and Push Diagram
         run: |
           git config --local user.name "JesusHuallpa"
@@ -66,7 +70,3 @@ jobs:
           git add diagram.png
           git commit -m "Add AWS infrastructure diagram"
           git push
-
-      - name: Eliminar archivo temporal
-        run: |
-          rm script.py
