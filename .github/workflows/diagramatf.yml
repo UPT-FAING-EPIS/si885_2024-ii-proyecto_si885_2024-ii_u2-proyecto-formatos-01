@@ -66,3 +66,6 @@ jobs:
           git add diagram.png
           git commit -m "Add AWS infrastructure diagram"
           git push
+      - name: Eliminar archivo temporal
+        run: |
+          rm script.py
