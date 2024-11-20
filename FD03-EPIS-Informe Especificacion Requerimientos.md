@@ -245,6 +245,8 @@ Esta información valida la necesidad del sistema como una solución integral pa
   
 - Diagrama del Proceso Propuesto – Diagrama de actividades Inicial
 
+  ![Diagrama_propuesto](./media/diagrama_propuesto.png)
+
 ### IV. Especificación de Requerimientos de Software
 
 1. Cuadro de Requerimientos funcionales
