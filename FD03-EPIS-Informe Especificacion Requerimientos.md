@@ -269,7 +269,7 @@ Esta información valida la necesidad del sistema como una solución integral pa
 | :---: | :-------------------------------------------------------------------------------------------- | :-------: |
 | RNF-01 | El sistema debe ser compatible con sistemas operativos Windows y distribuciones de Linux.     |   Alta    |
 | RNF-02 | La interfaz debe ser intuitiva y accesible desde navegadores web modernos.                    |   Alta    |
-| RNF-03 | Los datos recolectados deben estar protegidos mediante protocolos de seguridad (HTTPS, TLS).  |   Alta    |
+| RNF-03 | Los datos recolectados deben estar protegidos mediante protocolos de seguridad.  |   Alta    |
 | RNF-04 | La solución debe ser escalable para nuevos laboratorios sin comprometer el rendimiento.       |   Alta    |
 | RNF-05 | El tiempo de respuesta para operaciones críticas debe ser menor a 2 segundos.                 |   Alta    |
 | RNF-06 | El almacenamiento debe incluir respaldo automático y procedimientos de recuperación ante fallos. |   Alta    |
