@@ -333,6 +333,7 @@ Realiza acciones para solucionar los problemas de red (por ejemplo, ajustes de c
 
 2. Modelo Conceptual
    - Diagrama de Paquetes
+     ![paquete](./media/diagrama_paquete.png)
    - Diagrama de Casos de Uso
    - Escenarios de Caso de Uso (narrativa)
 3. Modelo Lógico
