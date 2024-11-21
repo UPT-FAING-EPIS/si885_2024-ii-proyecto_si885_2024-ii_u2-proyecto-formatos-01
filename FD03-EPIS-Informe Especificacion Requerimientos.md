@@ -254,7 +254,7 @@ Esta información valida la necesidad del sistema como una solución integral pa
 
 |  ID   | Descripción                                                                                           | Prioridad |
 | :---: | :---------------------------------------------------------------------------------------------------- | :-------: |
-| RF-01 | Monitorear en tiempo real el uso de CPU, RAM, GPU, tráfico de red y consumo energético de los equipos. |   Alta    |
+| RF-01 | Monitorear en tiempo real el uso del tráfico de red de los equipos. |   Alta    |
 | RF-02 | Generar reportes detallados y personalizables sobre el rendimiento de los equipos y patrones de uso.   |   Alta    |
 | RF-03 | Detectar, notificar y registrar anomalías en el rendimiento de los recursos tecnológicos.              |   Alta    |
 | RF-04 | Exportar datos en formatos compatibles con Tableau (CSV, Excel) y JSON.                               |   Alta    |
