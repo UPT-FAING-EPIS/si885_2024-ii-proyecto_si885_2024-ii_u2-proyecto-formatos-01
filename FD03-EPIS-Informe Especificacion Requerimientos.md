@@ -335,6 +335,7 @@ Realiza acciones para solucionar los problemas de red (por ejemplo, ajustes de c
    - Diagrama de Paquetes
      ![paquete](./media/diagrama_paquete.png)
    - Diagrama de Casos de Uso
+     ![caso](./media/diagrama_caso_uso.png)
    - Escenarios de Caso de Uso (narrativa)
 3. Modelo Lógico
    - Análisis de Objetos
