@@ -1,0 +1,56 @@
+para la expo
+________________________________________________
+EJECUCION DE AUTOMATIZACION DE RECURSOS		|
+________________________________________________|
+Primero eliminar recursos existentes y volver a armarlo:
+1. Tener los archivos de artefactos:(en tu entorno de trabajo local descargando el repositroio)
+	sqlcsv.py 
+	s3bucket.py
+	requirements.txt
+	lambda_function.zip(este es el datos_combinados.csv con s3bucket.py generalo)
+	datos_combinados.csv
+	y la carpeta data con los sql que transformaremos a csv
+
+2. Debemos ubicarnos donde esta "cd infra" y tener (el main.tf y terraform.tfstate) el tfstate sacar del repositorio(en tal caso da error borrar manualmente del console)
+
+3. aws s3 rm s3://netuptinteligencianegocios --recursive
+   aws glue delete-crawler --name netuptinteligencianegocios-crawler
+
+4. terraform destroy --auto-approve
+
+5. ejecutar el workflow (esperar a que se creen las tablas)
+
+________________________________________________
+CONTROLADOR ODBC CONFIGURACION			|
+________________________________________________|
+6. descargra odbc:https://downloads.athena.us-east-1.amazonaws.com/drivers/ODBC/v2.0.3.0/Windows/AmazonAthenaODBC-2.0.3.0.msi
+
+7. buscar en windwos odbc (hay dos resultados 32bits y 64bits, nuestro controlador es de 64) 
+
+8. le da agregar seleccionan amazon athena
+	DATA SOURCE NAME:athena-in
+	DESCRIPTION : athena-in in power bi
+	REGION : us-east-1
+	CATALOG : AwsDataCatalog
+	DATABASE : default
+	WORKGROUP: primary
+	S3 OUTPUT : s3://netuptinteligencianegocios/athena-output/
+
+	authentication options : DEFAULT CREDENTIALS (recuerda tener tus credenciales configuradas access id token )(eso me lo piden ahora es una fija)
+9. ejecuta el test :
+	Successfully connected to: Athena engine version 3
+	Region: us-east-1
+	Catalog: AwsDataCatalog
+	Workgroup: primary
+	Auth Type: Default Credentials
+________________________________________________
+CARGAR DATOS POWERBI				|
+________________________________________________|
+10.Abrir Powerbi obtener datos de otro origen
+11. buscar y seleccionar "athena amazon"
+12. DSN : athena-in solo colocar y ya cargarian los datos
+13. Expandir AwsDataCatalog---->
+	Expandir tb_"""""---->
+	Seleccionar tabla----->
+	boton verde de cargar---->
+nota :_ hay error en 3 filas por un parentesis borrenlo noma no pasa nada 
