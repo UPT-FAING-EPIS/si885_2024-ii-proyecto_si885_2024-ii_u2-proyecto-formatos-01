@@ -3,10 +3,10 @@ from botocore.exceptions import NoCredentialsError, PartialCredentialsError
 
 s3 = boto3.client('s3', region_name='us-east-1')
 
-file_path = 'datos_combinados.csv'
+file_path = 'datos_combinados.xlsx'
 
 bucket_name = 'netuptinteligencianegocios'
-object_name = 'datos_combinados.csv'
+object_name = 'datos_combinados.xlsx'
 
 def lambda_handler(event, context):
     try:
