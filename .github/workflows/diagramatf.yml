@@ -24,7 +24,7 @@ jobs:
           sudo apt-get install -y graphviz
           python -m pip install --upgrade pip
           pip install diagrams python-hcl2
-          
+
       - name: Crear archivo Python temporal con el código 
         run: |
           echo "
@@ -34,7 +34,8 @@ jobs:
           from diagrams.aws.storage import S3
           from diagrams.aws.analytics import Glue
           from diagrams.aws.compute import Lambda
-          from diagrams.aws.identity import IAM
+          # Eliminar la importación de IAM ya que no es necesario
+          # from diagrams.aws.identity import IAM
       
           with Diagram('AWS Infrastructure', show=False, filename='diagram'):
               # Crear el Bucket S3
@@ -49,8 +50,8 @@ jobs:
               # Crear la función Lambda
               lambda_function = Lambda('Lambda Function\ns3-upload-function')
       
-              # Crear el rol IAM
-              iam_role = IAM('IAM Role\nLabRole')
+              # Crear el rol IAM como un Node genérico
+              iam_role = Node('IAM Role\nLabRole', shape='rect')
       
               # Conexiones
               s3_bucket >> glue_crawler  # El bucket S3 es la fuente para el Crawler
@@ -62,7 +63,6 @@ jobs:
               iam_role >> lambda_function
       
           " > script.py
-
 
       - name: Generar el diagrama
         run: |
