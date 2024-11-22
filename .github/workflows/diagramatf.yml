@@ -24,7 +24,7 @@ jobs:
           sudo apt-get install -y graphviz
           python -m pip install --upgrade pip
           pip install diagrams python-hcl2
-
+          
       - name: Crear archivo Python temporal con el código 
         run: |
           echo "
@@ -35,32 +35,32 @@ jobs:
           from diagrams.aws.analytics import Glue
           from diagrams.aws.compute import Lambda
           from diagrams.aws.identity import IAM
-        
+      
           with Diagram('AWS Infrastructure', show=False, filename='diagram'):
               # Crear el Bucket S3
               s3_bucket = S3('S3 Bucket\nnetuptinteligencianegocios')
-        
+      
               # Crear la base de datos Glue
               glue_database = Glue('Glue Database\ntb_redupt_database')
-        
+      
               # Crear el Crawler Glue
               glue_crawler = Glue('Glue Crawler\nnetuptinteligencianegocios-crawler')
-        
+      
               # Crear la función Lambda
               lambda_function = Lambda('Lambda Function\ns3-upload-function')
-        
+      
               # Crear el rol IAM
               iam_role = IAM('IAM Role\nLabRole')
-        
+      
               # Conexiones
               s3_bucket >> glue_crawler  # El bucket S3 es la fuente para el Crawler
               glue_crawler >> glue_database  # El Crawler almacena los datos en la base de datos de Glue
               glue_crawler >> lambda_function  # El Crawler también activa la función Lambda
-        
+      
               # IAM Role: El rol es utilizado por el Crawler y Lambda
               iam_role >> glue_crawler
               iam_role >> lambda_function
-        
+      
           " > script.py
 
 
