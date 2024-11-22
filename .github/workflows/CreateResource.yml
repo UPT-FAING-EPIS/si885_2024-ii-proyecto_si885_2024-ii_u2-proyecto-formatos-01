@@ -40,12 +40,12 @@ jobs:
 
 
         
-    - name: Execute SQL to xlsx script
+    - name: Execute SQL to csv
       run: |
         cd artefactos
         python3 sqlcsv.py  # Ejecuta el script que convierte los archivos SQL en CSV
 
-    - name: Zip Lambda function and xlsx data
+    - name: Zip Lambda function
       run: |
         cd artefactos
         zip lambda_function.zip s3bucket.py datos_combinados.csv  # Crea un archivo zip con el código Lambda y los datos
