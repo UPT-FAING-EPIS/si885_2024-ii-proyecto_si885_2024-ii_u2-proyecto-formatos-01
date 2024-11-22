@@ -1,0 +1,77 @@
+name: Despliegue automatizado py-Lambda-s3-grawler-glue-databasecatalog-athena-powerbi
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Checkout code
+      uses: actions/checkout@v2  # Añadir este paso para descargar el código
+
+    - name: Install AWS CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y awscli  # Instala AWS CLI
+
+    - name: Install Python and Boto3
+      run: |
+        sudo apt-get install -y python3 python3-pip  # Instala Python y pip
+        pip3 install boto3  # Instala Boto3, la librería de AWS para Python
+
+    - name: Install dependencies from requirements.txt
+      run: |
+        cd artefactos  # Navega a la carpeta de artefactos
+        pip3 install -r requirements.txt  # Instala dependencias de Python desde requirements.txt
+
+
+
+        
+
+
+
+        
+    - name: Execute SQL to CSV script
+      run: |
+        cd artefactos
+        python3 sqlcsv.py  # Ejecuta el script que convierte los archivos SQL en CSV
+
+    - name: Zip Lambda function and CSV
+      run: |
+        cd artefactos
+        zip lambda_function.zip s3bucket.py datos_combinados.csv  # Crea un archivo zip con el código Lambda y los datos
+
+    
+    - name: Set up Terraform
+      run: |
+        cd infra
+        terraform init
+        terraform apply --auto-approve  # Aplica la configuración de Terraform para crear los recursos
+    
+
+
+    - name: Invoke Lambda function to upload to S3
+      run: |
+        aws lambda invoke --function-name s3-upload-function --payload '{}' output.txt  # Invoca la función Lambda para cargar el archivo en S3
+
+    - name: Start Glue Crawler
+      run: |
+        aws glue start-crawler --name netuptinteligencianegocios-crawler  # Inicia el Crawler de Glue
+
+    - name: Wait for Crawler to Finish
+      run: |
+        sleep 150  # Espera de 2 minutos para permitir que el Crawler termine
+
+    - name: Get Table from Glue
+      run: |
+        aws glue get-table --database-name tb_redupt_database --name netuptinteligencianegocios  # Obtiene la tabla de Glue después de que el Crawler haya terminado
+
