@@ -90,12 +90,13 @@ Escalabilidad en el procesamiento: Uso de servicios como AWS Lambda y Athena par
 Integración continua: La incorporación de AWS IAM Roles, Lambda y S3 garantiza la interoperabilidad entre los servicios, mientras que Power BI permite una visualización interactiva y dinámica de los datos.
 El nuevo flujo incluye:
 
-Repositorio (IAM Role): Los archivos CSV se almacenan en un repositorio.
-Procesamiento (Lambda): Los scripts en Python se ejecutan automáticamente en AWS Lambda para procesar los datos.
-Almacenamiento (S3 Bucket): Los datos procesados se almacenan en un bucket S3.
-Configuración (Glue Crawler): AWS Glue configura automáticamente los datos recibidos y genera tablas de metadatos.
-Consulta (Athena): Las tablas se consultan mediante SQL en Athena.
-Visualización (Power BI): Los resultados procesados se integran con Power BI para una visualización avanzada y generación de informes.
+ - Repositorio (IAM Role): Los archivos CSV se almacenan en un repositorio.
+ - Procesamiento (Lambda): Los scripts en Python se ejecutan automáticamente en AWS Lambda para procesar los datos.
+ - Almacenamiento (S3 Bucket): Los datos procesados se almacenan en un bucket S3.
+ - Configuración (Glue Crawler): AWS Glue configura automáticamente los datos recibidos y genera tablas de metadatos.
+ - Consulta (Athena): Las tablas se consultan mediante SQL en Athena.
+ - Visualización (Power BI): Los resultados procesados se integran con Power BI para una visualización avanzada y generación de informes.
+   
 Estas mejoras refuerzan la funcionalidad del sistema y lo alinean con estándares modernos de arquitectura de datos, asegurando un flujo continuo desde la recopilación hasta el análisis.
 
 
