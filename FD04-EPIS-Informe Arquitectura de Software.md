@@ -83,14 +83,20 @@ Versión *{1.0}*
 
 ### 1.1 Propósito (Diagrama 4+1)
 
-La arquitectura del sistema del proyecto "Sistema de Monitoreo y Gestión de Red para Laboratorios UPT" está basada en el modelo 4+1, el cual organiza la descripción de la arquitectura en cinco vistas principales: lógica, de desarrollo, de procesos, de despliegue y de casos de uso. Estas vistas están interrelacionadas y permiten abordar las diferentes preocupaciones de los interesados del sistema (técnicos, administradores y usuarios finales).
+Con la incorporación de nuevas tecnologías y servicios, el propósito del sistema SIMGR-UPT evoluciona para incluir capacidades de procesamiento y análisis de datos basadas en la nube. Estas adiciones permiten:
 
-El propósito de esta arquitectura es proporcionar una solución integral que permita:
+Automatización del flujo de datos: Desde la extracción de datos hasta la generación de reportes listos para análisis en Power BI.
+Escalabilidad en el procesamiento: Uso de servicios como AWS Lambda y Athena para manejar grandes volúmenes de datos de red sin afectar el rendimiento.
+Integración continua: La incorporación de AWS IAM Roles, Lambda y S3 garantiza la interoperabilidad entre los servicios, mientras que Power BI permite una visualización interactiva y dinámica de los datos.
+El nuevo flujo incluye:
 
-- Monitorear y analizar el desempeño de la red en tiempo real.
-- Garantizar la confiabilidad y escalabilidad del sistema.
-- Facilitar el análisis y toma de decisiones a través de reportes personalizados y visualizaciones dinámicas.
-- La arquitectura está influenciada directamente por los requisitos funcionales (como monitoreo de métricas de red y generación de reportes) y los requisitos no funcionales, particularmente los atributos de calidad como confiabilidad, rendimiento y mantenibilidad. Estos elementos guían el diseño del sistema para garantizar que cumpla con los objetivos operativos y técnicos de la Universidad Privada de Tacna (UPT).
+Repositorio (IAM Role): Los archivos CSV se almacenan en un repositorio.
+Procesamiento (Lambda): Los scripts en Python se ejecutan automáticamente en AWS Lambda para procesar los datos.
+Almacenamiento (S3 Bucket): Los datos procesados se almacenan en un bucket S3.
+Configuración (Glue Crawler): AWS Glue configura automáticamente los datos recibidos y genera tablas de metadatos.
+Consulta (Athena): Las tablas se consultan mediante SQL en Athena.
+Visualización (Power BI): Los resultados procesados se integran con Power BI para una visualización avanzada y generación de informes.
+Estas mejoras refuerzan la funcionalidad del sistema y lo alinean con estándares modernos de arquitectura de datos, asegurando un flujo continuo desde la recopilación hasta el análisis.
 
 
 
