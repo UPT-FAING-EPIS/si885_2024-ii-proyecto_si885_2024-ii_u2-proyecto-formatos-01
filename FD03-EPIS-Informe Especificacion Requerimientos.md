@@ -445,6 +445,11 @@ Realiza acciones para solucionar los problemas de red (por ejemplo, ajustes de c
      ![CU04](./media/cu4.png)
    
    - Diagrama de Secuencia
+
+     **Diagrama de secuencia: Monitorear estado de red (CU01)**
+     **Diagrama de secuencia: Generar Reportes de Uso (CU02)**
+     **Diagrama de secuencia: Configurar Dashboard (CU03)**
+     **Diagrama de secuencia: Exportar Datos (CU04)**
    - Diagrama de Clases
 
 ---
