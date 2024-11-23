@@ -313,7 +313,26 @@ El siguiente diagrama de paquetes muestra los límites del sistema, organizando 
    - IAM Roles para gestionar permisos y accesos.
 
 #### 3.2.1 Diagrama de Subsistemas (paquetes)
-[Diagrama mostrando límites del sistema y entidades que interactúan con él.]
+
+El diagrama de subsistemas ilustra los límites del sistema **SIMGR-UPT** y las entidades internas y externas que interactúan con él. Esta vista ayuda a delimitar claramente las responsabilidades de cada componente y su interacción con los servicios externos.
+
+---
+
+## **Descripción del Diagrama**
+
+1. **Límite del Sistema:**
+   - El sistema está compuesto por tres capas principales:
+     - **Capa de Presentación:** Interfaz de usuario que incluye el dashboard y Power BI para visualización de datos.
+     - **Capa de Aplicación:** Gestión de la lógica del negocio y coordinación de operaciones mediante AWS Lambda.
+     - **Capa de Datos:** Manejo de datos utilizando S3 para almacenamiento, Glue para configuración y Athena para consultas.
+
+2. **Interacción con Entidades Externas:**
+   - **Servicios Externos (IAM Roles):** Autorizan el acceso seguro entre los componentes del sistema.
+   - **Usuarios Finales:** Técnicos, administradores y herramientas de análisis interactúan con el sistema mediante Power BI y el dashboard.
+
+3. **Componentes Principales:**
+   - **Dashboard:** Proporciona un punto de acceso para usuarios finales.
+   - **AWS Lambda:** Ejecuta scripts para procesar los datos recibidos.
 
 #### 3.2.2 - 3.2.6 Otros diagramas
 [Incluir diagramas de secuencia, colaboración, objetos, clases y base de datos.]
