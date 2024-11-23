@@ -464,6 +464,8 @@ Realiza acciones para solucionar los problemas de red (por ejemplo, ajustes de c
      
    - Diagrama de Clases
 
+     ![diagram_clase](./media/diagrama_clase.png)
+
 ---
 
 # CONCLUSIONES
