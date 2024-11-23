@@ -396,17 +396,65 @@ El sistema debe cumplir con los requerimientos funcionales, proporcionando monit
 - Exactitud del 99% en los datos procesados.
 
 ### Escenario de Usabilidad
-[Facilidad de uso y aprendizaje del sistema.]
 
+#### **Evaluación:**
+El sistema debe ser fácil de usar, con una interfaz intuitiva y un tiempo de aprendizaje mínimo para los usuarios.
+
+#### **Descripción:**
+1. **Facilidad:** El Dashboard debe presentar gráficos interactivos y opciones claras para generar reportes.
+2. **Accesibilidad:** Compatible con navegadores modernos y ajustable para distintos tamaños de pantalla.
+3. **Soporte:** Incluir documentación y tutoriales básicos para el uso inicial.
+
+#### **Criterios de éxito:**
+- Tiempo de aprendizaje para nuevos usuarios: Menor a 15 minutos.
+- Fluidez en la navegación validada por pruebas de usabilidad.
+- Acceso a todas las funcionalidades principales en menos de 3 clics.
+  
 ### Escenario de Confiabilidad
-[Confidencialidad, integridad y disponibilidad de los datos del sistema.]
 
+#### **Evaluación:**
+El sistema debe garantizar la disponibilidad, integridad y confidencialidad de los datos recolectados.
+
+#### **Descripción:**
+1. **Disponibilidad:** Mínimo 95% del tiempo operativo.
+2. **Confidencialidad:** Uso de IAM Roles y cifrado de datos.
+3. **Integridad:** Garantizar que los datos recolectados no sean alterados durante el procesamiento.
+
+#### **Criterios de éxito:**
+- Respuesta del sistema garantizada incluso durante picos de tráfico.
+- Recuperación automática ante fallos en menos de 5 minutos.
+- Validación de autenticación para cada acceso crítico.
+  
 ### Escenario de Rendimiento
-[Velocidad de procesamiento y uso de recursos.]
 
+#### **Evaluación:**
+El sistema debe procesar grandes volúmenes de datos rápidamente y sin afectar el rendimiento general.
+
+#### **Descripción:**
+1. **Velocidad:** Procesar hasta 10 GB de datos en menos de 10 segundos.
+2. **Eficiencia:** Uso óptimo de los recursos de AWS, como Lambda y Glue.
+3. **Escalabilidad:** Adaptarse al crecimiento de métricas y usuarios sin pérdida de rendimiento.
+
+#### **Criterios de éxito:**
+- Respuesta para consultas en Athena en menos de 2 segundos.
+- Uso de recursos menor al 75% en condiciones normales.
+- Incremento en capacidad de hasta 50% sin reconfiguración.
+  
 ### Escenario de Mantenibilidad
-[Extensibilidad, adaptabilidad y servicialidad del sistema.]
 
+#### **Evaluación:**
+El sistema debe ser fácil de mantener, con soporte para actualizaciones y extensiones.
+
+#### **Descripción:**
+1. **Extensibilidad:** Permitir agregar nuevos laboratorios sin modificar la estructura base.
+2. **Adaptabilidad:** Ajustarse a cambios en los requerimientos de red.
+3. **Servicialidad:** Posibilidad de aplicar correcciones y mejoras sin interrupciones.
+
+#### **Criterios de éxito:**
+- Aplicación de actualizaciones críticas en menos de 30 minutos.
+- Cero interrupciones durante actualizaciones programadas.
+- Compatibilidad con nuevas configuraciones sin rediseñar la arquitectura.
+  
 ### Otros Escenarios
 [Otros atributos de calidad, como rendimiento o performance.]
 
