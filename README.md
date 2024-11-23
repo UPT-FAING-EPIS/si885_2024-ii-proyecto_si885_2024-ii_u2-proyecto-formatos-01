@@ -16,42 +16,23 @@ El **Sistema de Monitoreo y Gestión de Red para Laboratorios UPT (SIMGR-UPT)** 
 | Erick Churacutipa Blass     | (2020067578) |
 | Jesus Huallpa Maron          | (2021071085) |
 
-Aquí tienes un ejemplo de cómo documentar los artefactos mencionados en un archivo `README.md` para tu repositorio. Asegúrate de personalizarlo con detalles adicionales según sea necesario.
+
+Aquí está la documentación con los artefactos presentados en formato de tabla para incluir en tu archivo `README.md`:
 
 ```markdown
 # Proyecto de Automatización AWS
 
-Este repositorio contiene los artefactos necesarios para la automatización de tareas en AWS, así como herramientas de análisis de datos y procesamiento. A continuación, se detallan los archivos y su propósito.
+Este repositorio contiene los artefactos necesarios para la automatización de tareas en AWS, así como herramientas de análisis de datos y procesamiento. A continuación, se detalla cada archivo y su propósito.
 
 ## 📂 Artefactos
 
-### `G02_REDUPT.pbix`
-- **Descripción**: Reporte de análisis de datos desarrollado en Power BI.
-- **Propósito**: Visualización y análisis interactivo de datos procesados en el proyecto.
-- **Notas**: Se requiere Power BI Desktop para abrir este archivo.
-
-### `lambda_function.zip`
-- **Descripción**: Código comprimido de una función Lambda en AWS.
-- **Propósito**: Implementación de lógica de negocio o automatización en la nube utilizando AWS Lambda.
-- **Notas**: Antes de desplegar, asegúrate de configurar las variables de entorno y los permisos necesarios en el entorno Lambda.
-
-### `requirements.txt`
-- **Descripción**: Lista de dependencias de Python para el proyecto.
-- **Propósito**: Facilita la instalación de los paquetes requeridos mediante `pip`.
-- **Uso**: Ejecutar el siguiente comando para instalar las dependencias:
-  ```bash
-  pip install -r requirements.txt
-  ```
-
-### `s3bucket.py`
-- **Descripción**: Script en Python para interactuar con Amazon S3.
-- **Propósito**: Automatización de operaciones relacionadas con almacenamiento en la nube, como la carga o descarga de archivos.
-- **Notas**: Requiere las credenciales de AWS configuradas en el entorno.
-
-### `sqlcsv.py`
-- **Descripción**: Script en Python para convertir datos SQL a formato CSV.
-- **Propósito**: Extraer datos desde una base de datos SQL y transformarlos en archivos CSV para su análisis o almacenamiento.
-- **Notas**: Configurar correctamente la conexión a la base de datos en el script.
+| Archivo              | Descripción                                                                 | Propósito                                                                   | Notas                                                                                       |
+|----------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| **`G02_REDUPT.pbix`** | Reporte de análisis de datos desarrollado en Power BI.                     | Visualización y análisis interactivo de datos.                              | Requiere Power BI Desktop para abrir.                                                      |
+| **`lambda_function.zip`** | Código comprimido de una función Lambda en AWS.                        | Implementación de lógica de negocio o automatización en AWS Lambda.         | Configurar variables de entorno y permisos necesarios antes de desplegar.                  |
+| **`requirements.txt`** | Lista de dependencias de Python.                                          | Facilita la instalación de paquetes requeridos con `pip`.                   | Instalar usando `pip install -r requirements.txt`.                                          |
+| **`s3bucket.py`**     | Script en Python para interactuar con Amazon S3.                           | Automatización de operaciones en S3 como carga o descarga de archivos.      | Requiere credenciales de AWS configuradas en el entorno.                                   |
+| **`sqlcsv.py`**       | Script en Python para convertir datos SQL a formato CSV.                  | Extraer datos de SQL y transformarlos en archivos CSV.                       | Configurar conexión a la base de datos antes de ejecutar.                                  |
 
 ---
 
@@ -92,4 +73,4 @@ Para contribuir, sigue los pasos habituales de creación de un fork, realiza los
 Este proyecto está bajo la licencia [MIT](LICENSE). 
 ```
 
-Si necesitas algo más detallado o específico, dime y lo ajustamos. 😊
+Este formato organizado facilita la lectura y permite encontrar información rápidamente. ¿Quieres añadir algo más? 😊
