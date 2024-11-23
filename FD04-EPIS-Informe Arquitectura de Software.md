@@ -115,7 +115,17 @@ Mayor capacidad para manejar volúmenes crecientes de datos y nuevos requisitos.
 Se omiten vistas o componentes que no estén alineados con este enfoque, como integraciones directas con hardware físico o desarrollo de aplicaciones móviles.
 
 ### 1.3 Definición, siglas y abreviaturas
-[Definiciones de términos, acrónimos y abreviaturas utilizados en el documento, ordenados alfabéticamente.]
+
+|  Término/Acrónimo  | Definición                                                                                  |
+| :-----------------: | :------------------------------------------------------------------------------------------ |
+| IAM Role           | Rol de identidad y acceso en AWS que otorga permisos para interactuar con recursos en la nube. |
+| Lambda             | Servicio sin servidor de AWS que ejecuta scripts en respuesta a eventos.                    |
+| S3 Bucket          | Servicio de almacenamiento en la nube de AWS utilizado para guardar y recuperar datos.      |
+| Glue Crawler       | Herramienta de AWS Glue que escanea datos y genera automáticamente metadatos para su análisis. |
+| Athena             | Servicio de consultas SQL sin servidor en AWS que permite explorar datos almacenados en S3. |
+| Power BI           | Herramienta de Microsoft para la visualización interactiva y generación de informes.         |
+| CSV                | Formato de archivo que almacena datos tabulares separados por comas.                        |
+
 
 ### 1.4 Organización del documento
 [Descripción de la organización del proyecto.]
