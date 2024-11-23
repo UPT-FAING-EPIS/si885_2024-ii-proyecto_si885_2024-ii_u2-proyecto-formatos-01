@@ -293,7 +293,7 @@ El siguiente diagrama muestra una visión global de las interacciones entre los 
 
 El siguiente diagrama de paquetes muestra los límites del sistema, organizando los componentes principales y las entidades que interactúan con él:
 
-![paquete](./media/diagrama_paquete.png)
+![paquete](./media/diagrama_paquete2.0.png)
 
 ### **Descripción**
 1. **Capa de Presentación:**
