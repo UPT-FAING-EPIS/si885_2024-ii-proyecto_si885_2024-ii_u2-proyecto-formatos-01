@@ -167,7 +167,38 @@ El documento incluye ahora los nuevos flujos y tecnologías integrados en el sis
 | RNF-07 | El consumo de recursos del sistema debe ser mínimo para no afectar el rendimiento de los equipos monitorizados. |  Media    |
 
 ### 2.3 Restricciones
-[Restricciones específicas del proyecto.]
+
+### **Restricciones Tecnológicas**
+- El sistema debe ser implementado utilizando servicios de AWS, como Lambda, S3, Glue, y Athena, para el procesamiento y almacenamiento de datos.
+- El script de monitoreo debe desarrollarse en Python y ejecutarse en un entorno sin servidor (AWS Lambda).
+- Las métricas y reportes generados deben ser compatibles con herramientas de visualización como Power BI y Tableau.
+- El sistema debe ser compatible únicamente con sistemas operativos Windows y distribuciones de Linux en los laboratorios de la universidad.
+
+### **Restricciones de Infraestructura**
+- El almacenamiento de datos debe estar centralizado en un bucket S3 de AWS y seguir las políticas de gestión de datos definidas por la UPT.
+- Las computadoras de los laboratorios deben tener conectividad constante con la red universitaria para garantizar la recolección continua de datos.
+- La infraestructura de red existente en los laboratorios debe soportar el flujo de datos requerido para la recolección y transmisión hacia AWS.
+
+### **Restricciones de Seguridad**
+- El acceso al sistema debe estar limitado a personal autorizado, utilizando autenticación basada en IAM Roles de AWS.
+- Los datos recolectados y procesados deben cumplir con la Ley de Protección de Datos Personales de Perú (Ley N° 29733).
+- Todas las transmisiones de datos entre los componentes del sistema deben estar cifradas mediante HTTPS y TLS.
+
+### **Restricciones Financieras**
+- El presupuesto asignado debe contemplar el uso de servicios en la nube de AWS bajo el modelo de pago por uso, evitando costos innecesarios.
+- No se debe adquirir infraestructura física adicional; el proyecto debe operar completamente sobre soluciones en la nube.
+
+### **Restricciones de Tiempo**
+- La implementación inicial del sistema debe completarse en un período de seis meses, incluyendo el desarrollo, pruebas y despliegue.
+- Las fases de pruebas deben garantizar un tiempo máximo de inactividad de los servicios menor al 5% del tiempo total del proyecto.
+
+### **Restricciones Operativas**
+- El sistema debe operar sin interrupciones en horarios laborales (de 8:00 AM a 8:00 PM), con disponibilidad mínima del 95%.
+- El panel de control y reportes deben estar disponibles en tiempo real con un tiempo de respuesta no mayor a 2 segundos para consultas críticas.
+
+### **Restricciones de Escalabilidad**
+- El sistema debe ser capaz de integrar nuevos laboratorios o áreas sin necesidad de rediseñar la arquitectura base.
+- El flujo de datos debe manejar un crecimiento del 50% en el volumen de métricas recolectadas durante los próximos dos años.
 
 ---
 
