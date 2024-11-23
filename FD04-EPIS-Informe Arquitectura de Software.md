@@ -334,8 +334,13 @@ El diagrama de subsistemas ilustra los límites del sistema **SIMGR-UPT** y las 
    - **Dashboard:** Proporciona un punto de acceso para usuarios finales.
    - **AWS Lambda:** Ejecuta scripts para procesar los datos recibidos.
 
-#### 3.2.2 - 3.2.6 Otros diagramas
-[Incluir diagramas de secuencia, colaboración, objetos, clases y base de datos.]
+#### 3.2.2. Diagrama de Secuencia (vista de diseño)
+#### 3.2.3. Diagrama de Colaboración (vista de diseño)
+#### 3.2.4. Diagrama de Objetos
+#### 3.2.5. Diagrama de Clases
+#### 3.2.6. Diagrama de Base de datos (relacional o no relacional)
+
+
 
 ### 3.3 Vista de Implementación (vista de desarrollo)
 [Mapa de los subsistemas, paquetes y clases de la Vista Lógica.]
