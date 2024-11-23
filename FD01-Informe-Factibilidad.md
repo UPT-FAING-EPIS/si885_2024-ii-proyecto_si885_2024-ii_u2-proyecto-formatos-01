@@ -1,5 +1,6 @@
 <center>
 
+
 ![./media/logo-upt.png](./media/logo-upt.png)
 
 **UNIVERSIDAD PRIVADA DE TACNA**
@@ -19,13 +20,14 @@ Integrantes:
 Escobar Rejas, Carlos Andrés (2021070016)  
 Apaza Ccalle, Albert Kenyi   (2021071075)  
 Cutipa Gutierrez, Ricardo    (2021069827)  
+Churacutipa Blass, Erick     (2020067578)  
 Churacutipa Blas, Erick     (2020067578)  
 Huallpa Maron, Jesus Antonio (2021071085) 
 
 **Tacna – Perú**
 
 2024
- 
+
 
 **  
 **
@@ -79,9 +81,9 @@ Versión *{1.0}*
 1. <span id="_Toc52661346" class="anchor"></span>**Descripción del Proyecto**
 
 1.1. Nombre del proyecto
-   
+
 "Herramienta de Seguimiento y Evaluación del Desempeño en Redes de Computadoras UPT"
-    
+
 1.2. Duración del proyecto
 
 Empieza el 13 de agosto y termina el 13 diciembre
@@ -93,45 +95,46 @@ El proyecto "Herramienta de Seguimiento y Evaluación del Desempeño de Red en C
 1.4. Objetivos
 
 1.4.1 Objetivo general
-   
+
 - Desarrollar e implementar un sistema robusto que permita la recopilación y supervisión de la red en las computadoras en los laboratorios de la UPT.
 
 1.4.2 Objetivos Específicos
-            
-- Diseñar un script para la recolección de datos que monitorice el rendimiento de la red de cada computadora en los laboratorios.
-- Establecer un mecanismo eficiente para enviar los datos recopilados a una base de datos centralizada, asegurando un almacenamiento adecuado para su análisis posterior. 
-- Facilitar la comprensión de la información recopilada mediante la organización de datos que permitan su visualización clara y efectiva.
-- Analizar el tráfico de red en el laboratorio A para identificar las horas de mayor actividad, facilitando la optimización del uso de recursos en los laboratorios.
-- Evaluar el consumo de internet diario para establecer patrones de uso y detectar posibles congestiones en la red.
-- Identificar las direcciones IP con mayor tráfico de red, permitiendo a los administradores detectar equipos o usuarios que puedan estar consumiendo excesivos recursos.
-- Determinar los docentes que generan mayor tráfico de red, lo cual puede ayudar en la planificación de recursos y en la mejora del servicio durante las clases.
-- Establecer qué clases presentan mayor tráfico de red, proporcionando información valiosa para la gestión de recursos durante los períodos de mayor demanda.
-- Apoyar al área de soporte proporcionando información detallada a través de reportes o un dashboard interactivo, lo que permitirá una gestión más proactiva y eficiente de los recursos tecnológicos, facilitando la identificación y resolución de problemas de la red.
-    
+
+    -Diseñar un script para la recolección de datos que monitorice el rendimiento de la red de cada computadora en los laboratorios.
+    -Establecer un mecanismo eficiente para enviar los datos recopilados a una base de datos centralizada, asegurando un almacenamiento adecuado para su análisis posterior. 
+    -Facilitar la comprensión de la información recopilada mediante la organización de datos que permitan su visualización clara y efectiva.
+    -Analizar el tráfico de red en el laboratorio A para identificar las horas de mayor actividad, facilitando la optimización del uso de recursos en los laboratorios.
+    -Evaluar el consumo de internet diario para establecer patrones de uso y detectar posibles congestiones en la red.
+    -Identificar las direcciones IP con mayor tráfico de red, permitiendo a los administradores detectar equipos o usuarios que puedan estar consumiendo excesivos recursos.
+    -Determinar los docentes que generan mayor tráfico de red, lo cual puede ayudar en la planificación de recursos y en la mejora del servicio durante las clases.
+    -Establecer qué clases presentan mayor tráfico de red, proporcionando información valiosa para la gestión de recursos durante los períodos de mayor demanda.
+    -Apoyar al área de soporte proporcionando información detallada a través de reportes o un dashboard interactivo, lo que permitirá una gestión más proactiva y eficiente de los recursos tecnológicos, facilitando la identificación y resolución de problemas de la red.
+
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 2. <span id="_Toc52661347" class="anchor"></span>**Riesgos**
 
     -Retrasos en el Cronograma: Los retrasos en el desarrollo, pruebas o implementación podrían afectar la fecha de finalización del proyecto, especialmente si dependen de factores externos como la disponibilidad de recursos o la integración con sistemas existentes.
-   
+
     -Definición Inadecuada de Requisitos: Cambios en los requisitos durante el desarrollo podrían llevar a la necesidad de rediseñar partes del sistema, afectando el alcance y el tiempo del proyecto.  
-   
+
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 3. <span id="_Toc52661348" class="anchor"></span>**Análisis de la Situación actual**
 
     3.1. Planteamiento del problema
 
-La Universidad Privada de Tacna (UPT) enfrenta desafíos significativos en la gestión del rendimiento de su red. En el entorno actual, los administradores de TI lidian con la falta de herramientas adecuadas para monitorear y evaluar el estado y desempeño de los recursos tecnológicos. La ausencia de una solución integral limita la capacidad para identificar y solucionar problemas de manera proactiva, afectando la operación eficiente de la red.
+      La Universidad Privada de Tacna (UPT) enfrenta desafíos significativos en la gestión del rendimiento de su red. En el entorno actual, los administradores de TI lidian con la falta de herramientas adecuadas para monitorear y evaluar el estado y desempeño de los recursos tecnológicos. La ausencia de una solución integral limita la capacidad para identificar y solucionar problemas de manera proactiva, afectando la operación eficiente de la red.
 
- Actualmente, la supervisión del rendimiento se realiza de manera fragmentada y manual, lo que resulta en un seguimiento inadecuado de los recursos tecnológicos. Esto genera dificultades para mantener las computadoras en un nivel óptimo de operación y para asegurar un funcionamiento continuo de la red. Además, la falta de análisis detallado y de datos en tiempo real impide una gestión efectiva del rendimiento y la identificación de patrones de uso, lo que podría llevar a problemas recurrentes no detectados a tiempo.
+   Actualmente, la supervisión del rendimiento se realiza de manera fragmentada y manual, lo que resulta en un seguimiento inadecuado de los recursos tecnológicos. Esto genera dificultades para mantener las computadoras en un nivel óptimo de operación y para asegurar un funcionamiento continuo de la red. Además, la falta de análisis detallado y de datos en tiempo real impide una gestión efectiva del rendimiento y la identificación de patrones de uso, lo que podría llevar a problemas recurrentes no detectados a tiempo.
 
-Para abordar estas deficiencias, es esencial desarrollar una herramienta de seguimiento y evaluación que permita un análisis detallado y en tiempo real del desempeño de la red. Esta solución permitirá a los administradores de TI tomar decisiones informadas, identificar problemas potenciales antes de que se conviertan en fallos graves, y proponer mejoras basadas en datos concretos, optimizando así el rendimiento general de la infraestructura tecnológica de la UPT.
+   Para abordar estas deficiencias, es esencial desarrollar una herramienta de seguimiento y evaluación que permita un análisis detallado y en tiempo real del desempeño de la red. Esta solución permitirá a los administradores de TI tomar decisiones informadas, identificar problemas potenciales antes de que se conviertan en fallos graves, y proponer mejoras basadas en datos concretos, optimizando así el rendimiento general de la infraestructura tecnológica de la UPT.
 
-3.2. Consideraciones de software
 
-Para el proyecto "Herramienta de Seguimiento y Evaluación del Desempeño de Red en Computadoras UPT", se utilizará Python 3.12.5 por su estabilidad y compatibilidad, y Tableau 2021.4 para visualizaciones avanzadas. Estas tecnologías, ampliamente reconocidas y estandarizadas en la industria, ofrecerán un entorno de desarrollo robusto y confiable.
+    3.2. Consideraciones de software
+
+   Para el proyecto "Herramienta de Seguimiento y Evaluación del Desempeño de Red en Computadoras UPT", se utilizará Python 3.12.5 por su estabilidad y compatibilidad, y Tableau 2021.4 para visualizaciones avanzadas. Estas tecnologías, ampliamente reconocidas y estandarizadas en la industria, ofrecerán un entorno de desarrollo robusto y confiable.
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
@@ -142,16 +145,16 @@ Para el proyecto "Herramienta de Seguimiento y Evaluación del Desempeño de Red
 
     4.1. <span id="_Toc52661350" class="anchor"></span>Factibilidad Técnica
 
-   
-Infraestructura de Red:
-• Conectividad a Internet: La UPT cuenta con conectividad a internet mediante fibra óptica, ofreciendo alta velocidad y estabilidad para la transferencia de datos en tiempo real.
-• Red Física: La infraestructura de red incluye routers, switches y puntos de acceso inalámbricos distribuidos por el campus. Esta red está diseñada para soportar múltiples dispositivos conectados simultáneamente, facilitando la recolección de datos de diferentes puntos sin sobrecargar los recursos.
-   
-Dominio y Gestión de Red:
-• Dominio Institucional: La UPT dispone de un dominio institucional que permite la administración centralizada de las aplicaciones y herramientas de monitoreo. Esto facilita la integración del sistema y su gestión a nivel de toda la red universitaria.
+
+         Infraestructura de Red:
+         • Conectividad a Internet: La UPT cuenta con conectividad a internet mediante fibra óptica, ofreciendo alta velocidad y estabilidad para la transferencia de datos en tiempo real.
+         • Red Física: La infraestructura de red incluye routers, switches y puntos de acceso inalámbricos distribuidos por el campus. Esta red está diseñada para soportar múltiples dispositivos conectados simultáneamente, facilitando la recolección de datos de diferentes puntos sin sobrecargar los recursos.
+
+         Dominio y Gestión de Red:
+         • Dominio Institucional: La UPT dispone de un dominio institucional que permite la administración centralizada de las aplicaciones y herramientas de monitoreo. Esto facilita la integración del sistema y su gestión a nivel de toda la red universitaria.
 
 
-4.2. <span id="_Toc52661351" class="anchor"></span>Factibilidad Económica
+    4.2. <span id="_Toc52661351" class="anchor"></span>Factibilidad Económica
 
    El propósito del estudio de viabilidad económica, es determinar los beneficios económicos del proyecto o sistema propuesto para la organización, en contraposición con los costos.
         Como se mencionó anteriormente en el estudio de factibilidad técnica wvaluar si la institución (departamento de TI) cuenta con las herramientas necesarias para la implantación del sistema y evaluar si la propuesta requiere o no de una inversión inicial en infraestructura informática.
@@ -163,7 +166,7 @@ Dominio y Gestión de Red:
       4.2.1. Costos Generales
 
       Los costos generales son todos los gastos realizados en accesorios y material de oficina y de uso diario, necesarios para los procesos, tales como, papeles, plumas, cartuchos de impresora, marcadores, computadora etc. Colocar tabla de costos.
-   
+
    |Material|Cantidad|Costo Unitario (S/)|
    | :-: | :- | :- |
    |LAPTOP INTEL CORE I7 3.4 GHZ MONITOR 27'' RAM 16GB DISCO DURO 1TB + SSD 480GB|1|2900.00||
@@ -173,9 +176,9 @@ Dominio y Gestión de Red:
 
 
       4.2.2. Costos operativos durante el desarrollo 
-        
+
       Evaluar costos necesarios para la operatividad de las actividades de la empresa durante el periodo en el que se realizara el proyecto. Los costos de operación pueden ser renta de oficina, agua, luz, teléfono, etc.
-   
+
    |Concepto|Costo|
    | :-: | :- |
    |Viáticos|300.00||
@@ -185,7 +188,7 @@ Dominio y Gestión de Red:
       4.2.3. Costos del ambiente
 
       Evaluar si se cuenta con los requerimientos técnicos para la implantación del software como el dominio, infraestructura de red, acceso a internet, etc.
-   
+
    |Concepto|Costo|
    | :-: | :- |
    |Servicio VPS (Nube)|350.00||
@@ -201,7 +204,7 @@ Dominio y Gestión de Red:
       Incluir tabla que muestra los gastos correspondientes al personal.
 
       Indicar organización y roles. Indicar horario de trabajo del personal.
-   
+
    |Rol|Personas|Salario Mensual|Horas Mensuales|
    | :-: | :- | :- | :- |
    |Desarrollador|4|1000|60|
@@ -210,7 +213,7 @@ Dominio y Gestión de Red:
       4.2.5.  Costos totales del desarrollo del sistema
 
       {Totalizar costos y realizar resumen de costo final del proyecto y la forma de pago.
-   
+
    |Concepto|Costo Total (S/)|
    | :-: | :- |
    |Costos Generales|3,222.00|
@@ -224,7 +227,7 @@ Dominio y Gestión de Red:
          -Optimización de Recursos: La herramienta ayudará a optimizar la utilización de los recursos tecnológicos al proporcionar datos detallados sobre el uso de la red. Esta información permitirá a la universidad tomar decisiones informadas sobre el mantenimiento, la actualización o la redistribución de recursos.
          -Mejora en la Toma de Decisiones: Al disponer de información precisa y actualizada sobre el desempeño de la infraestructura tecnológica, los administradores podrán tomar decisiones basadas en datos para mejorar la eficiencia operativa y la calidad del servicio ofrecido a los estudiantes y personal académico.
          -Facilidad de Uso e Integración: La herramienta está diseñada para ser fácil de usar e integrarse con los sistemas existentes, lo que reduce la curva de aprendizaje para el personal y minimiza el impacto en las operaciones diarias.
-   
+
     4.4. <span id="_Toc52661353" class="anchor"></span>Factibilidad Legal
 
          -Protección de Datos Personales: La recopilación y análisis de datos debe cumplir con las leyes de protección de datos personales en Perú, como la Ley de Protección de Datos Personales (Ley N° 29733). La herramienta debe garantizar que cualquier dato personal recogido sea anonimizado y utilizado exclusivamente con fines académicos y de mejora del desempeño de los equipos.
@@ -271,7 +274,7 @@ Tasa de descuento : 9%
    |Viáticos|1|300||
    |Movilidad del equipo de trabajo|1|200||
    |Total||3,222.00|
-   
+
 **Ingreso anual y beneficios del sistema**
 
 |Gasto|Cantidad|Costo Unitario (S/)|
@@ -279,9 +282,9 @@ Tasa de descuento : 9%
    |Reducción en pérdidas|50%|2000||
    |Mejora del sistema|50%|2000||
    |Total||4000|
-   
+
   **Flujo de caja**
-  
+
   |Periodo|Ingreso|Egreso|Flujo efectivo
    | -: | :-: | :-: | :-:
    |0|||-10 172|
@@ -289,7 +292,7 @@ Tasa de descuento : 9%
    |3|4000|500|3500
    |4|4000|500|3500
    |5|4000|500|3500
- 
+
 
 ### 5.1.2.1. Relación Beneficio/Costo (B/C)
 
