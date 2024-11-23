@@ -360,6 +360,8 @@ El diagrama de subsistemas ilustra los límites del sistema **SIMGR-UPT** y las 
 #### 3.3.1 Diagrama de arquitectura software (paquetes)
 [Descripción de la arquitectura del sistema, distribución y funciones.]
 
+#### 3.3.2. Diagrama de arquitectura del sistema (Diagrama de componentes)
+
 ### 3.4 Vista de procesos
 [Descomposición del sistema en procesos pesados y su interacción.]
 
