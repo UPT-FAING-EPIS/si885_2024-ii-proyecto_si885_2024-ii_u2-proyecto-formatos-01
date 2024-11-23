@@ -264,7 +264,7 @@ La vista de caso de uso describe las principales funcionalidades del sistema des
 
 El siguiente diagrama muestra una visión global de las interacciones entre los actores principales (Técnico de Soporte, Administrador del Sistema y Estudiante) y las funcionalidades clave del sistema **SIMGR-UPT**:
 
-![Diagrama General de Casos de Uso](diagrama_caso_uso.png)
+![caso](./media/diagrama_caso_uso.png)
 
 #### **Descripción de los Escenarios**
 1. **Monitorear Estado de la Red (CU01):**
