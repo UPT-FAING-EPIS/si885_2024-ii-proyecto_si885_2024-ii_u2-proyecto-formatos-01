@@ -128,7 +128,14 @@ Se omiten vistas o componentes que no estén alineados con este enfoque, como in
 
 
 ### 1.4 Organización del documento
-[Descripción de la organización del proyecto.]
+
+El documento incluye ahora los nuevos flujos y tecnologías integrados en el sistema, con la siguiente estructura:
+
+INTRODUCCIÓN: Contexto del proyecto, propósito, alcance y definiciones clave.
+OBJETIVOS Y RESTRICCIONES ARQUITECTÓNICAS: Actualizado para incluir los nuevos servicios y tecnologías implementados.
+REPRESENTACIÓN DE LA ARQUITECTURA DEL SISTEMA: Diagramas UML actualizados, como diagramas de flujo de datos, vistas lógicas, de procesos y físicas.
+ATRIBUTOS DE CALIDAD DEL SOFTWARE: Evaluación del impacto de las nuevas tecnologías en la funcionalidad, confiabilidad y rendimiento.
+CONCLUSIONES Y RECOMENDACIONES: Beneficios de la integración con AWS y sugerencias para futuras mejoras.
 
 ---
 
