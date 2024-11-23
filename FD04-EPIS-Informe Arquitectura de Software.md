@@ -205,7 +205,60 @@ El documento incluye ahora los nuevos flujos y tecnologías integrados en el sis
 # REPRESENTACIÓN DE LA ARQUITECTURA DEL SISTEMA
 
 ### 3.1 Vista de Caso de uso
-[Descripción de casos de uso del sistema, actores y funcionalidades.]
+
+La vista de caso de uso describe las principales funcionalidades del sistema desde la perspectiva de los actores involucrados y las interacciones con el sistema. Estos casos de uso representan el núcleo funcional del sistema **SIMGR-UPT (Sistema de Monitoreo y Gestión de Red de la UPT)**.
+
+### **Actores**
+1. **Técnico de Soporte:**
+   - Responsable del monitoreo en tiempo real de las métricas de red.
+   - Detecta y soluciona problemas de conectividad utilizando las alertas generadas por el sistema.
+   - Genera reportes personalizados para analizar tendencias y patrones de uso.
+
+2. **Administrador del Sistema:**
+   - Configura y administra el sistema, incluyendo usuarios, permisos y parámetros operativos.
+   - Supervisa el almacenamiento de datos históricos y la integración con otros sistemas.
+   - Utiliza reportes analíticos para planificar mejoras y estrategias de mantenimiento.
+
+3. **Estudiante/Usuario Final:**
+   - Beneficiario indirecto de un sistema de red optimizado.
+   - Reporta problemas de conectividad al técnico de soporte.
+
+### **Casos de Uso Principales**
+1. **CU01: Monitorear Estado de la Red**
+   - **Descripción:** El técnico de soporte accede al sistema para monitorear en tiempo real las métricas de red, como velocidad, uso de ancho de banda y conexiones activas.
+   - **Flujo Principal:**
+     1. El técnico inicia sesión en el sistema.
+     2. Accede al dashboard para visualizar métricas de red en tiempo real.
+     3. Identifica posibles problemas mediante alertas visuales.
+     4. Realiza acciones correctivas según sea necesario.
+   - **Actor Principal:** Técnico de Soporte.
+   - **Precondición:** El sistema debe estar operativo, y las métricas de red deben ser accesibles.
+
+2. **CU02: Generar Reportes de Uso**
+   - **Descripción:** Permite al técnico o administrador generar reportes detallados sobre el desempeño de la red.
+   - **Flujo Principal:**
+     1. El usuario selecciona el rango de fechas y las métricas deseadas.
+     2. El sistema procesa los datos y genera un informe personalizado.
+     3. El usuario descarga el informe en formato CSV o Excel.
+   - **Actor Principal:** Técnico de Soporte, Administrador del Sistema.
+   - **Precondición:** Los datos históricos deben estar almacenados y organizados.
+
+3. **CU03: Configurar Dashboard**
+   - **Descripción:** El administrador personaliza el dashboard seleccionando las métricas y visualizaciones a mostrar.
+   - **Flujo Principal:**
+     1. El administrador accede a la configuración del dashboard.
+     2. Selecciona y organiza los widgets y gráficos.
+     3. Guarda los cambios y visualiza una vista previa.
+   - **Actor Principal:** Administrador del Sistema.
+   - **Precondición:** El administrador debe tener permisos suficientes para realizar cambios en el sistema.
+
+4. **CU04: Exportar Datos**
+   - **Descripción:** Permite exportar datos procesados a formatos estándar para integrarlos con otras herramientas, como Power BI.
+   - **Flujo Principal:**
+     1. El usuario selecciona los datos y el formato de exportación (CSV, JSON, Excel).
+     2. El sistema genera el archivo y lo descarga en el dispositivo.
+   - **Actor Principal:** Técnico de Soporte, Administrador del Sistema.
+   - **Precondición:** Los datos deben estar disponibles en el sistema.
 
 #### 3.1.1 Diagramas de Casos de uso
 [Escenarios representados mediante diagramas de casos de uso.]
