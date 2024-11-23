@@ -290,7 +290,27 @@ El siguiente diagrama muestra una visión global de las interacciones entre los 
 ---
 
 ### 3.2 Vista Lógica
-[Representación de los requerimientos funcionales del sistema.]
+
+El siguiente diagrama de paquetes muestra los límites del sistema, organizando los componentes principales y las entidades que interactúan con él:
+
+![paquete](./media/diagrama_paquete.png)
+
+### **Descripción**
+1. **Capa de Presentación:**
+   - Contiene la interfaz del usuario, como el dashboard interactivo para monitorear métricas y generar reportes.
+   - Incluye la integración con Power BI para la visualización de datos.
+
+2. **Capa de Aplicación:**
+   - Gestiona la lógica de negocio y las interacciones entre los usuarios y el sistema.
+   - Procesa solicitudes para monitorear métricas y ejecutar scripts.
+
+3. **Capa de Datos:**
+   - Responsable del almacenamiento y manejo de datos históricos en AWS S3.
+   - Incluye Glue y Athena para la configuración y consulta de datos.
+
+4. **Servicios Externos:**
+   - AWS Lambda para ejecutar scripts en Python.
+   - IAM Roles para gestionar permisos y accesos.
 
 #### 3.2.1 Diagrama de Subsistemas (paquetes)
 [Diagrama mostrando límites del sistema y entidades que interactúan con él.]
