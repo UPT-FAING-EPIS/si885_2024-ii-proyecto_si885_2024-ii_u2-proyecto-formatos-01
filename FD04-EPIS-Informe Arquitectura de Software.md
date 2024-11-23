@@ -143,10 +143,28 @@ El documento incluye ahora los nuevos flujos y tecnologías integrados en el sis
 # OBJETIVOS Y RESTRICCIONES ARQUITECTÓNICAS
 
 ### 2.1 Requerimientos Funcionales
-[Tabla con ID, descripción y prioridad de los requerimientos funcionales.]
+
+|  ID   | Descripción                                                                                           | Prioridad |
+| :---: | :---------------------------------------------------------------------------------------------------- | :-------: |
+| RF-01 | Monitorear en tiempo real el uso del tráfico de red de los equipos. |   Alta    |
+| RF-02 | Generar reportes detallados y personalizables sobre el rendimiento de los equipos y patrones de uso.   |   Alta    |
+| RF-03 | Detectar, notificar y registrar anomalías en el rendimiento de los recursos tecnológicos.              |   Alta    |
+| RF-04 | Exportar datos en formatos compatibles con Tableau (CSV, Excel) y JSON.                               |   Alta    |
+| RF-05 | Almacenar datos históricos para análisis a largo plazo y comparativas de rendimiento.                  |   Alta    |
+| RF-06 | Proporcionar un panel de control interactivo para visualizar datos clave en tiempo real.               |   Alta    |
+| RF-07 | Permitir la integración con otros sistemas de gestión de la universidad mediante API REST.             |  Media    |
 
 ### 2.2 Requerimientos No Funcionales – Atributos de Calidad
-[Tabla con ID, descripción y prioridad de los atributos de calidad (QAs).]
+
+|  ID   | Descripción                                                                                   | Prioridad |
+| :---: | :-------------------------------------------------------------------------------------------- | :-------: |
+| RNF-01 | El sistema debe ser compatible con sistemas operativos Windows y distribuciones de Linux.     |   Alta    |
+| RNF-02 | La interfaz debe ser intuitiva y accesible desde navegadores web modernos.                    |   Alta    |
+| RNF-03 | Los datos recolectados deben estar protegidos mediante protocolos de seguridad.  |   Alta    |
+| RNF-04 | La solución debe ser escalable para nuevos laboratorios sin comprometer el rendimiento.       |   Alta    |
+| RNF-05 | El tiempo de respuesta para operaciones críticas debe ser menor a 2 segundos.                 |   Alta    |
+| RNF-06 | El almacenamiento debe incluir respaldo automático y procedimientos de recuperación ante fallos. |   Alta    |
+| RNF-07 | El consumo de recursos del sistema debe ser mínimo para no afectar el rendimiento de los equipos monitorizados. |  Media    |
 
 ### 2.3 Restricciones
 [Restricciones específicas del proyecto.]
