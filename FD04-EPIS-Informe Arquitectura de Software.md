@@ -335,9 +335,21 @@ El diagrama de subsistemas ilustra los límites del sistema **SIMGR-UPT** y las 
    - **AWS Lambda:** Ejecuta scripts para procesar los datos recibidos.
 
 #### 3.2.2. Diagrama de Secuencia (vista de diseño)
+
+![paquete](./media/diagrama_secuencia.png)
+
 #### 3.2.3. Diagrama de Colaboración (vista de diseño)
+
+![paquete](./media/diagrama_colaboración.png)
+
 #### 3.2.4. Diagrama de Objetos
+
+![paquete](./media/diagrama_objetos.png)
+
 #### 3.2.5. Diagrama de Clases
+
+![paquete](./media/diagrama_clase.png)
+
 #### 3.2.6. Diagrama de Base de datos (relacional o no relacional)
 
 
