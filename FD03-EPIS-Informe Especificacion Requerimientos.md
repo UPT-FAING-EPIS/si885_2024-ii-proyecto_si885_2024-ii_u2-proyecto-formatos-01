@@ -354,6 +354,63 @@ Realiza acciones para solucionar los problemas de red (por ejemplo, ajustes de c
 | 3. Selecciona un filtro en algún gráfico.             | 4. Presenta gráficos y datos en tiempo real sobre el estado de la red.                                  |
 | 5. Analiza las métricas presentadas.                             | 6. Resalta alertas en caso de detectar problemas o anomalías en la red.                                 |
 
+---
+
+**Caso de Uso: Generar Reportes de Uso (CU02)**
+
+**Actores:** Técnico de Soporte, Administrador del Sistema  
+**Descripción:** Permitir al usuario generar reportes detallados sobre el uso de la red, incluyendo análisis históricos, tendencias de consumo y métricas clave para la gestión eficiente de recursos.  
+**Precondiciones:** Los datos deben estar disponibles en la base de datos y el usuario debe contar con permisos para acceder a esta funcionalidad.  
+
+| **Caso de Uso**  | Generar Reportes de Uso (CU02)                                                                                              |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------|
+| **Actores**       | Técnico de Soporte, Administrador del Sistema                                                                              |
+| **Descripción**   | Permitir al usuario generar reportes detallados sobre el uso de la red, incluyendo análisis históricos, tendencias de consumo y métricas clave para la gestión eficiente de recursos. |
+| **Precondiciones**| Los datos deben estar disponibles en la base de datos y el usuario debe contar con permisos para acceder a esta funcionalidad. |
+| **Flujo Normal**  |    |
+| **Acción del Actor**                                             | **Curso del Sistema**                                                                                   |
+| 1. Accede a la funcionalidad de generación de reportes.          | 2. Presenta opciones de configuración del reporte, como período de tiempo, métricas deseadas y formato de exportación. |
+| 3. Selecciona los filtros y configuraciones para el reporte.     | 4. Genera el reporte basado en los parámetros definidos por el usuario.                                 |
+| 5. Descarga o visualiza el reporte generado.                     | 6. Ofrece opciones para exportar el reporte en formatos como PDF, Excel o JSON.                         |
+
+---
+
+**Caso de Uso: Configurar Dashboard (CU03)**
+
+**Actores:** Administrador del Sistema  
+**Descripción:** Permitir al administrador del sistema personalizar el dashboard seleccionando las métricas y gráficos que se mostrarán, según las necesidades del área de soporte.  
+**Precondiciones:** El usuario debe tener permisos administrativos para realizar configuraciones.  
+
+| **Caso de Uso**  | Configurar Dashboard (CU03)                                                                                                 |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------|
+| **Actores**       | Administrador del Sistema                                                                                                 |
+| **Descripción**   | Permitir al administrador del sistema personalizar el dashboard seleccionando las métricas y gráficos que se mostrarán, según las necesidades del área de soporte. |
+| **Precondiciones**| El usuario debe tener permisos administrativos para realizar configuraciones.                                             |
+| **Flujo Normal**  |    |
+| **Acción del Actor**                                             | **Curso del Sistema**                                                                                   |
+| 1. Ingresa a la configuración del dashboard desde el menú principal. | 2. Muestra una lista de métricas disponibles y opciones de configuración de gráficos.                   |
+| 3. Selecciona las métricas y los gráficos a incluir en el dashboard. | 4. Actualiza en tiempo real la configuración del dashboard.                                              |
+| 5. Guarda los cambios realizados.                                | 6. Presenta una vista previa del dashboard personalizado.                                               |
+
+---
+
+**Caso de Uso: Exportar Datos (CU04)**
+
+**Actores:** Técnico de Soporte, Administrador del Sistema  
+**Descripción:** Permitir exportar los datos recopilados del sistema en formatos estándar como CSV, Excel o JSON, para análisis externo o integración con otras herramientas.  
+**Precondiciones:** Los datos deben estar organizados y listos para exportarse.  
+
+| **Caso de Uso**  | Exportar Datos (CU04)                                                                                                       |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------|
+| **Actores**       | Técnico de Soporte, Administrador del Sistema                                                                              |
+| **Descripción**   | Permitir exportar los datos recopilados del sistema en formatos estándar como CSV, Excel o JSON, para análisis externo o integración con otras herramientas. |
+| **Precondiciones**| Los datos deben estar organizados y listos para exportarse.                                                               |
+| **Flujo Normal**  |    |
+| **Acción del Actor**                                             | **Curso del Sistema**                                                                                   |
+| 1. Accede a la funcionalidad de exportación de datos.           | 2. Presenta los formatos disponibles para la exportación.                                               |
+| 3. Selecciona el formato deseado (CSV, Excel o JSON).           | 4. Genera el archivo en el formato seleccionado y lo descarga en el dispositivo del usuario.            |
+| 5. Verifica el archivo exportado.                              | 6. Confirma que los datos exportados son correctos y completos.                                         |
+
 3. Modelo Lógico
    - Análisis de Objetos
    - Diagrama de Actividades con objetos
