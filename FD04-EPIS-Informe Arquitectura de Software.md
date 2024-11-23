@@ -82,7 +82,17 @@ Versión *{1.0}*
 # INTRODUCCIÓN
 
 ### 1.1 Propósito (Diagrama 4+1)
-[Descripción de la arquitectura del sistema y objetivos generales del diseño. Incluye influencias con los requisitos funcionales y no funcionales.]
+
+La arquitectura del sistema del proyecto "Herramienta de Seguimiento y Evaluación del Desempeño de Red en Computadoras UPT" está basada en el modelo 4+1, el cual organiza la descripción de la arquitectura en cinco vistas principales: lógica, de desarrollo, de procesos, de despliegue y de casos de uso. Estas vistas están interrelacionadas y permiten abordar las diferentes preocupaciones de los interesados del sistema (técnicos, administradores y usuarios finales).
+
+El propósito de esta arquitectura es proporcionar una solución integral que permita:
+
+- Monitorear y analizar el desempeño de la red en tiempo real.
+- Garantizar la confiabilidad y escalabilidad del sistema.
+- Facilitar el análisis y toma de decisiones a través de reportes personalizados y visualizaciones dinámicas.
+- La arquitectura está influenciada directamente por los requisitos funcionales (como monitoreo de métricas de red y generación de reportes) y los requisitos no funcionales, particularmente los atributos de calidad como confiabilidad, rendimiento y mantenibilidad. Estos elementos guían el diseño del sistema para garantizar que cumpla con los objetivos operativos y técnicos de la Universidad Privada de Tacna (UPT).
+
+
 
 ### 1.2 Alcance
 [Desarrollar la vista lógica del framework. Se omiten vistas no pertinentes.]
