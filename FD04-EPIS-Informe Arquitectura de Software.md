@@ -101,7 +101,18 @@ Estas mejoras refuerzan la funcionalidad del sistema y lo alinean con estándare
 
 
 ### 1.2 Alcance
-[Desarrollar la vista lógica del framework. Se omiten vistas no pertinentes.]
+El sistema ahora incluye los siguientes componentes clave:
+
+Repositorio inicial: Recepción de datos en formato CSV desde distintas fuentes.
+AWS Lambda: Ejecución automatizada de scripts en Python para procesar los datos de red.
+AWS S3 y Glue: Almacenamiento y configuración automática de los datos, generando tablas para consulta y análisis.
+AWS Athena: Plataforma de consulta para procesar los datos mediante SQL y generar métricas clave.
+Power BI: Visualización avanzada e interactiva de los datos en tiempo real.
+El alcance sigue centrado en el análisis del desempeño de la red en los laboratorios, pero ahora abarca:
+
+Automatización del flujo de datos en la nube.
+Mayor capacidad para manejar volúmenes crecientes de datos y nuevos requisitos.
+Se omiten vistas o componentes que no estén alineados con este enfoque, como integraciones directas con hardware físico o desarrollo de aplicaciones móviles.
 
 ### 1.3 Definición, siglas y abreviaturas
 [Definiciones de términos, acrónimos y abreviaturas utilizados en el documento, ordenados alfabéticamente.]
