@@ -83,7 +83,7 @@ Versión *{1.0}*
 
 ### 1.1 Propósito (Diagrama 4+1)
 
-La arquitectura del sistema del proyecto "Herramienta de Seguimiento y Evaluación del Desempeño de Red en Computadoras UPT" está basada en el modelo 4+1, el cual organiza la descripción de la arquitectura en cinco vistas principales: lógica, de desarrollo, de procesos, de despliegue y de casos de uso. Estas vistas están interrelacionadas y permiten abordar las diferentes preocupaciones de los interesados del sistema (técnicos, administradores y usuarios finales).
+La arquitectura del sistema del proyecto "Sistema de Monitoreo y Gestión de Red para Laboratorios UPT" está basada en el modelo 4+1, el cual organiza la descripción de la arquitectura en cinco vistas principales: lógica, de desarrollo, de procesos, de despliegue y de casos de uso. Estas vistas están interrelacionadas y permiten abordar las diferentes preocupaciones de los interesados del sistema (técnicos, administradores y usuarios finales).
 
 El propósito de esta arquitectura es proporcionar una solución integral que permita:
 
