@@ -417,6 +417,15 @@ Realiza acciones para solucionar los problemas de red (por ejemplo, ajustes de c
      **Entidades**
      
      ![entidad](./media/entidades.png)
+
+     **Frontera**
+     
+     ![frontera](./media/frontera.png)
+
+     **Control**
+     
+     ![entidad](./media/control.png)
+     
    - Diagrama de Actividades con objetos
    - Diagrama de Secuencia
    - Diagrama de Clases
