@@ -144,12 +144,12 @@ Para el proyecto "Herramienta de Seguimiento y Evaluación del Desempeño de Red
     4.1. <span id="_Toc52661350" class="anchor"></span>Factibilidad Técnica
 
    
-         Infraestructura de Red:
-         • Conectividad a Internet: La UPT cuenta con conectividad a internet mediante fibra óptica, ofreciendo alta velocidad y estabilidad para la transferencia de datos en tiempo real.
-         • Red Física: La infraestructura de red incluye routers, switches y puntos de acceso inalámbricos distribuidos por el campus. Esta red está diseñada para soportar múltiples dispositivos conectados simultáneamente, facilitando la recolección de datos de diferentes puntos sin sobrecargar los recursos.
+Infraestructura de Red:
+• Conectividad a Internet: La UPT cuenta con conectividad a internet mediante fibra óptica, ofreciendo alta velocidad y estabilidad para la transferencia de datos en tiempo real.
+• Red Física: La infraestructura de red incluye routers, switches y puntos de acceso inalámbricos distribuidos por el campus. Esta red está diseñada para soportar múltiples dispositivos conectados simultáneamente, facilitando la recolección de datos de diferentes puntos sin sobrecargar los recursos.
    
-         Dominio y Gestión de Red:
-         • Dominio Institucional: La UPT dispone de un dominio institucional que permite la administración centralizada de las aplicaciones y herramientas de monitoreo. Esto facilita la integración del sistema y su gestión a nivel de toda la red universitaria.
+Dominio y Gestión de Red:
+• Dominio Institucional: La UPT dispone de un dominio institucional que permite la administración centralizada de las aplicaciones y herramientas de monitoreo. Esto facilita la integración del sistema y su gestión a nivel de toda la red universitaria.
 
 
     4.2. <span id="_Toc52661351" class="anchor"></span>Factibilidad Económica
