@@ -142,13 +142,13 @@ El documento incluye ahora los nuevos flujos y tecnologías integrados en el sis
 
 # OBJETIVOS Y RESTRICCIONES ARQUITECTÓNICAS
 
-### Requerimientos Funcionales
+### 2.1 Requerimientos Funcionales
 [Tabla con ID, descripción y prioridad de los requerimientos funcionales.]
 
-### Requerimientos No Funcionales – Atributos de Calidad
+### 2.2 Requerimientos No Funcionales – Atributos de Calidad
 [Tabla con ID, descripción y prioridad de los atributos de calidad (QAs).]
 
-### Restricciones
+### 2.3 Restricciones
 [Restricciones específicas del proyecto.]
 
 ---
