@@ -366,13 +366,15 @@ El diagrama de subsistemas ilustra los límites del sistema **SIMGR-UPT** y las 
 La vista de procesos descompone el sistema en procesos críticos y describe su interacción. Este enfoque permite identificar las operaciones pesadas y cómo se manejan en el flujo general del sistema.
 
 #### 3.4.1 Diagrama de Procesos del sistema
-[Diagrama mostrando actividades del sistema propuesto.]
+
+![paquete](./media/diagrama_procesos.png)
 
 ### 3.5 Vista de Despliegue (vista física)
 La vista de despliegue muestra la distribución física de los componentes del sistema y la comunicación entre nodos. Refleja cómo los contenedores interactúan dentro de la infraestructura de la nube.
 
 #### 3.5.1 Diagrama de despliegue
-[Diagrama de despliegue mostrando contenedores del sistema.]
+
+![paquete](./media/diagrama_despliegue.png)
 
 ---
 
