@@ -381,7 +381,19 @@ La vista de despliegue muestra la distribución física de los componentes del s
 # ATRIBUTOS DE CALIDAD DEL SOFTWARE
 
 ### Escenario de Funcionalidad
-[Evaluación de características y capacidades del sistema.]
+
+#### **Evaluación:**
+El sistema debe cumplir con los requerimientos funcionales, proporcionando monitoreo en tiempo real, generación de reportes y alertas automáticas.
+
+#### **Descripción:**
+1. **Característica:** Monitoreo en tiempo real de métricas de red.
+2. **Capacidad:** Generar reportes personalizados basados en datos históricos.
+3. **Requerimiento clave:** Detectar anomalías en el rendimiento y notificar automáticamente a los técnicos.
+
+#### **Criterios de éxito:**
+- Visualización en el Dashboard en menos de 2 segundos.
+- Generación de alertas sin retrasos perceptibles.
+- Exactitud del 99% en los datos procesados.
 
 ### Escenario de Usabilidad
 [Facilidad de uso y aprendizaje del sistema.]
