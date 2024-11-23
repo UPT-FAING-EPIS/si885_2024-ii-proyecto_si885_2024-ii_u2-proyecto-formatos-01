@@ -430,14 +430,19 @@ Realiza acciones para solucionar los problemas de red (por ejemplo, ajustes de c
      
      **Diagrama de actividades: Monitorear estado de red (CU01)**
 
+     ![CU01](./media/cu1.png)
 
      **Diagrama de actividades: Generar Reportes de Uso (CU02)**
-
+  
+     ![CU02](./media/cu2.png)
 
      **Diagrama de actividades: Configurar Dashboard (CU03)**
-
+  
+     ![CU03](./media/cu3.png)
 
      **Diagrama de actividades: Exportar Datos (CU04)**
+     
+     ![CU04](./media/cu4.png)
    
    - Diagrama de Secuencia
    - Diagrama de Clases
