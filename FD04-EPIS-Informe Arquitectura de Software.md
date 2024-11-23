@@ -261,7 +261,33 @@ La vista de caso de uso describe las principales funcionalidades del sistema des
    - **Precondición:** Los datos deben estar disponibles en el sistema.
 
 #### 3.1.1 Diagramas de Casos de uso
-[Escenarios representados mediante diagramas de casos de uso.]
+
+El siguiente diagrama muestra una visión global de las interacciones entre los actores principales (Técnico de Soporte, Administrador del Sistema y Estudiante) y las funcionalidades clave del sistema **SIMGR-UPT**:
+
+![Diagrama General de Casos de Uso](diagrama_caso_uso.png)
+
+#### **Descripción de los Escenarios**
+1. **Monitorear Estado de la Red (CU01):**
+   - **Actor Principal:** Técnico de Soporte.
+   - **Descripción:** Permite supervisar en tiempo real las métricas de red y recibir alertas sobre posibles problemas.
+   - **Relaciones:** Incluye casos de uso secundarios, como detección de anomalías y generación de alertas automáticas.
+
+2. **Generar Reportes de Uso (CU02):**
+   - **Actor Principal:** Técnico de Soporte, Administrador del Sistema.
+   - **Descripción:** Generación de informes detallados sobre métricas de red y patrones históricos para análisis posterior.
+   - **Relaciones:** Extiende la funcionalidad del monitoreo con la opción de analizar datos históricos.
+
+3. **Configurar Dashboard (CU03):**
+   - **Actor Principal:** Administrador del Sistema.
+   - **Descripción:** Permite personalizar la visualización del sistema seleccionando métricas clave y gráficos relevantes.
+   - **Relaciones:** Relacionado con la vista y manipulación de datos del sistema.
+
+4. **Exportar Datos (CU04):**
+   - **Actor Principal:** Técnico de Soporte, Administrador del Sistema.
+   - **Descripción:** Permite exportar los datos en formatos como CSV, Excel o JSON para análisis externo.
+   - **Relaciones:** Complementa los reportes y análisis con opciones de integración con otras herramientas.
+
+---
 
 ### 3.2 Vista Lógica
 [Representación de los requerimientos funcionales del sistema.]
