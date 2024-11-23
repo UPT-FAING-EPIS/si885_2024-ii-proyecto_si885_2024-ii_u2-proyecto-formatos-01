@@ -343,7 +343,6 @@ Realiza acciones para solucionar los problemas de red (por ejemplo, ajustes de c
 **Descripción:** Permitir al técnico de soporte acceder al sistema para monitorear en tiempo real el estado de la red, visualizando métricas clave como uso de ancho de banda, velocidad de conexión y conexiones activas.  
 **Precondiciones:** El sistema debe estar operativo y el técnico debe contar con credenciales válidas.  
 
-## Flujo Normal
 | **Caso de Uso**  | Monitorear Estado de la Red (CU01)                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------|
 | **Actores**       | Técnico de Soporte                                                                                                         |
