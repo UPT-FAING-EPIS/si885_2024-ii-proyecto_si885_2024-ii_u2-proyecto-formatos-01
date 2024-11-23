@@ -340,7 +340,7 @@ El diagrama de subsistemas ilustra los límites del sistema **SIMGR-UPT** y las 
 
 #### 3.2.3. Diagrama de Colaboración (vista de diseño)
 
-![paquete](./media/diagrama_colaboración.png)
+![paquete](./media/diagrama_colaboracion.png)
 
 #### 3.2.4. Diagrama de Objetos
 
