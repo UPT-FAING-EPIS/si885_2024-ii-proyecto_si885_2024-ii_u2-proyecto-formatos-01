@@ -1,4 +1,4 @@
-"id","fecha","ip","clase","horario","dia","turno","laboratorio","total_enviado_mb","total_recibido_mb","tema","navegador","seccion","docente","total_mbps","total_GB","tiempo_sesion","consumo_energia_kwh"
+"`id`","`fecha`","`ip`","`clase`","`horario`","`dia`","`turno`","`laboratorio`","`total_enviado_mb`","`total_recibido_mb`","`tema`","`navegador`","`seccion`","`docente`","`total_mbps`","`total_GB`","`tiempo_sesion`","`consumo_energia_kwh`"
 "14","2024-09-23","172.30.107.16","PROGRAMACION I","9:40-11:20","Lunes","MAÑANA","LAB-A (P-306)","27.15","345.58","OSCURO","MSEdgeHTM","A","I.CHAPARRO","372.730000","0.360000","NULL","NULL"
 "15","2024-09-23","172.30.107.16","PROGRAMACION I","9:40-11:20","Lunes","MAÑANA","LAB-A (P-306)","78.12","1463.15","OSCURO","MSEdgeHTM","A","I.CHAPARRO","1541.270000","1.510000","NULL","NULL"
 "16","2024-09-23","172.30.107.16","PROGRAMACION I","9:40-11:20","Lunes","MAÑANA","LAB-A (P-306)","27.15","345.58","OSCURO","MSEdgeHTM","A","I.CHAPARRO","372.730000","0.360000","NULL","NULL"
