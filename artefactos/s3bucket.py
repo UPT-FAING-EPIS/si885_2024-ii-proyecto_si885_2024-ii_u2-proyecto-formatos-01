@@ -4,7 +4,7 @@ from botocore.exceptions import NoCredentialsError, PartialCredentialsError
 s3 = boto3.client('s3', region_name='us-east-1')
 
 bucket_name = 'netuptinteligencianegocios'
-folder_name = 'datosimportantes/'  # Carpeta virtual (nota el '/' al final)
+folder_name = 'netuptinteligencianegocios/'  # Carpeta virtual (nota el '/' al final)
 file_name = 'datos_combinados.csv'  # El nombre del archivo a subir
 file_path = './datos_combinados.csv'  # Asumiendo que el archivo está en el mismo directorio que el script
 
