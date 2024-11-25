@@ -3,17 +3,14 @@ from botocore.exceptions import NoCredentialsError, PartialCredentialsError
 
 s3 = boto3.client('s3', region_name='us-east-1')
 
-file_path = 'datos_combinados.csv'
-
 bucket_name = 'netuptinteligencianegocios'
-object_name = 'datos_combinados.csv'
+folder_name = 'datosimportantes/'  # Carpeta virtual (nota el '/' al final)
 
 def lambda_handler(event, context):
     try:
-        s3.upload_file(file_path, bucket_name, object_name)
-        print(f'Archivo {file_path} cargado con éxito a S3://{bucket_name}/{object_name}')
-    except FileNotFoundError:
-        print(f'El archivo {file_path} no fue encontrado.')
+        # Crear un objeto vacío con el nombre de la carpeta
+        s3.put_object(Bucket=bucket_name, Key=folder_name)
+        print(f'Carpeta "{folder_name}" creada con éxito en el bucket {bucket_name}.')
     except NoCredentialsError:
         print('No se encontraron credenciales de AWS.')
     except PartialCredentialsError:
