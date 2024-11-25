@@ -23,7 +23,7 @@ resource "aws_glue_crawler" "netuptinteligencianegocios_crawler" {
   database_name = aws_glue_catalog_database.albertapaza_database.name
 
   s3_target {
-    path = "s3://netuptinteligencianegocios/datosimportantes/"
+    path = "s3://netuptinteligencianegocios/netuptinteligencianegocios/"
   }
 
   recrawl_policy {
