@@ -47,23 +47,28 @@ jobs:
       - name: Generate Terraform Plan
         run: |
           cd terraform_repo
-           terraform init
-           terraform validate
-           terraform plan -out=tfplan \
-             -var="api_gateway_name=testing_gateway" \
-             -var="flutter_app_bucket_name=testing_flutter_bucket" \
-             -var="grafana_cloud_api_key=testing_grafana_key" \
-             -var="mongodb_atlas_org_id=testing_org_id" \
-             -var="mongodb_atlas_private_key=testing_private_key" \
-             -var="mongodb_atlas_public_key=testing_public_key" \
-             -var="mongodb_cluster_name=testing_cluster_name" \
-             -var="mongodb_database_name=testing_database" \
-             -var="mongodb_password=testing_password" \
-             -var="mongodb_project_name=testing_project" \
-             -var="mongodb_username=testing_username" \
-             -var="react_app_bucket_name=testing_react_bucket" \
-             -var="ec2_key_name=testing_ec2_key"
-           terraform show -json tfplan > tfplan.json
+          terraform init
+          terraform validate
+          terraform plan -out=tfplan \
+            -var="aws_region=us-east-1" \
+            -var="s3_storage_gb=100" \
+            -var="s3_put_requests=1000" \
+            -var="s3_get_requests=1000" \
+            -var="crawler_hours=24" \
+            -var="lambda_requests=10000" \
+            -var="lambda_execution_time_gb_seconds=1000" \
+            -var="bucket_name=netuptinteligencianegocios" \
+            -var="glue_database_name=tb_redupt_database" \
+            -var="glue_crawler_name=netuptinteligencianegocios-crawler" \
+            -var="lambda_function_name=s3-upload-function" \
+            -var="lambda_runtime=python3.8" \
+            -var="lambda_timeout=30" \
+            -var="lambda_memory_size=128" \
+            -var="lambda_function_zip="../artefactos/lambda_function.zip" \
+            -var="role_name=LabRole" \
+            -var="policy_name=InRol" \
+            -var="role_policy_arn=arn:aws:iam::571600849867:role/LabRole"
+          terraform show -json tfplan > tfplan.json
       - name: Run Terravision to Generate Diagram
         run: |
           cd terravision
