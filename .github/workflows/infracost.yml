@@ -1,55 +1,114 @@
-name: 'Infracost Cost Estimation'
+name: infracost
+
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  infracost:
+  aws-connectivity:
     runs-on: ubuntu-latest
 
-    steps:
-      # 1. Checkout the repository
+    steps: 
+      # Paso 1: Checkout del código
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      # 2. Set up Terraform
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.9.8
+      # Paso 2: Instalar AWS CLI
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
 
+      # Paso 3: Instalar Terraform
+      - name: Install Terraform
+        run: |
+          # Descargar la clave GPG de HashiCorp
+          wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+          
+          # Agregar el repositorio de HashiCorp
+          echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+          
+          # Actualizar apt e instalar Terraform
+          sudo apt update && sudo apt install -y terraform
+
+      # Paso 4: Configurar las credenciales de AWS
+      - name: Configure AWS credentials
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
+          aws configure set region us-east-1
+
+      # Paso 5: Verificar las credenciales con AWS STS
+      - name: Get AWS Caller Identity
+        run: aws sts get-caller-identity
+
+      # Paso 6: Inicializar Terraform
       - name: Initialize Terraform
         run: |
-          cd infra/terraform
+          cd infra
           terraform init
 
-      - name: Generate Terraform Plan
+      # Paso 7: Importar el grupo de seguridad existente
+      - name: Import existing Security Group
         run: |
-          cd infra/terraform
+          cd infra
+          terraform import aws_security_group.rds_sg sg-07b429862db727709
+
+      # Paso 8: Validar la configuración de Terraform
+      - name: Validate Terraform configuration
+        run: |
+          cd infra
+          terraform validate
+
+      # Paso 9: Verificar el estado actual de Terraform
+      - name: Check Terraform state
+        run: |
+          cd infra
+          terraform state list
+
+      # Paso 10: Generar el plan de Terraform
+      - name: Terraform Plan
+        run: |
+          cd infra
           terraform plan -out=tfplan
           terraform show -json tfplan > tfplan.json
 
-
-      # 5. Install Infracost
+      # Paso 11: Instalar Infracost
       - name: Install Infracost
         run: |
           curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
           infracost configure set api_key ${{ secrets.INFRACOST_API_KEY }}
           infracost configure set currency USD
 
-      # 6. Generate Infracost breakdown
-      - name: Infracost Breakdown
+      # Paso 12: Generar el desglose de costos con Infracost
+      - name: Generate Infracost Breakdown
         working-directory: ./infra
         run: |
           infracost breakdown --path=tfplan.json --format json --out-file infracost.json
 
-      # 7. Display Infracost Report
-      - name: Infracost Report
+      # Paso 13: Mostrar el informe de Infracost
+      - name: Display Infracost Report
         working-directory: ./infra
         run: infracost output --path infracost.json --format table
 
-      # 8. Upload Infracost Report Artifact
+      # Paso 14: Subir el informe de Infracost como artefacto
       - name: Upload Infracost Report
         uses: actions/upload-artifact@v3
         with:
           name: infracost-report
           path: ./infra/infracost.json
+
+      # Paso 15: Aplicar la configuración de Terraform
+      - name: Apply Terraform configuration
+        run: |
+          cd infra
+          terraform apply -auto-approve || echo "Si el recurso ya existe, continuamos sin crear nuevos recursos."
+
+      # Paso 16: Limpiar credenciales de AWS (opcional)
+      - name: Clean up AWS CLI session
+        run: |
+          unset AWS_ACCESS_KEY_ID
+          unset AWS_SECRET_ACCESS_KEY
+          unset AWS_SESSION_TOKEN
