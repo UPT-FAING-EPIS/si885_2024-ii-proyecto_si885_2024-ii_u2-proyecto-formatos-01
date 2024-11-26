@@ -75,23 +75,34 @@ jobs:
           infracost configure set api_key ${{ secrets.INFRACOST_API_KEY }}
           infracost configure set currency USD
 
-      # Paso 12: Generar el desglose de costos con Infracost
+      # Paso 12: Generar el desglose de costos con Infracost (incluyendo cálculo anual)
       - name: Generate Infracost Breakdown
         working-directory: ./infra
         run: |
+          # Generar el desglose mensual
           infracost breakdown --path=tfplan.json --format json --out-file infracost.json
-
-      # Paso 13: Mostrar el informe de Infracost
-      - name: Display Infracost Report
+          # Generar el desglose anual basado en el desglose mensual
+          infracost output --path infracost.json --format table > infracost_monthly.txt
+          infracost output --path infracost.json --format json | jq '.projects[0].breakdown.totalMonthlyCost * 12' > infracost_annual.txt
+      
+      # Paso 13: Mostrar el informe de costos mensuales y anuales
+      - name: Display Infracost Reports
         working-directory: ./infra
-        run: infracost output --path infracost.json --format table
-
-      # Paso 14: Subir el informe de Infracost como artefacto
-      - name: Upload Infracost Report
+        run: |
+          echo "COSTOS MENSUALES:"
+          cat infracost_monthly.txt
+          echo "COSTO ANUAL ESTIMADO:"
+          cat infracost_annual.txt
+      
+      # Paso 14: Subir informes de costos como artefactos
+      - name: Upload Infracost Reports
         uses: actions/upload-artifact@v3
         with:
-          name: infracost-report
-          path: ./infra/infracost.json
+          name: infracost-reports
+          path: |
+            ./infra/infracost.json
+            ./infra/infracost_monthly.txt
+            ./infra/infracost_annual.txt
 
       # Paso 15: Aplicar la configuración de Terraform
       - name: Apply Terraform configuration
