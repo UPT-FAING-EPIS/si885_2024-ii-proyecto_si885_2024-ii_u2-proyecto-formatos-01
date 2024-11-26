@@ -49,12 +49,6 @@ jobs:
           cd infra
           terraform init
 
-      # Paso 7: Importar el grupo de seguridad existente
-      - name: Import existing Security Group
-        run: |
-          cd infra
-          terraform import aws_security_group.rds_sg sg-07b429862db727709
-
       # Paso 8: Validar la configuración de Terraform
       - name: Validate Terraform configuration
         run: |
