@@ -17,17 +17,17 @@ jobs:
         with:
           terraform_version: 1.9.8
 
-      # 3. Initialize Terraform
-      - name: Terraform Init
-        working-directory: ./infra
-        run: terraform init
-
-      # 4. Generate Terraform Plan
-      - name: Terraform Plan
-        working-directory: ./infra
+      - name: Initialize Terraform
         run: |
+          cd infra/terraform
+          terraform init
+
+      - name: Generate Terraform Plan
+        run: |
+          cd infra/terraform
           terraform plan -out=tfplan
           terraform show -json tfplan > tfplan.json
+
 
       # 5. Install Infracost
       - name: Install Infracost
