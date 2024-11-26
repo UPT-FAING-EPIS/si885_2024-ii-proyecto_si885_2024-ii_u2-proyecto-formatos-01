@@ -1,0 +1,55 @@
+name: 'Infracost Cost Estimation'
+on:
+  workflow_dispatch:
+
+jobs:
+  infracost:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Set up Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.8
+
+      # 3. Initialize Terraform
+      - name: Terraform Init
+        working-directory: ./terraform
+        run: terraform init
+
+      # 4. Generate Terraform Plan
+      - name: Terraform Plan
+        working-directory: ./terraform
+        run: |
+          terraform plan -out=tfplan
+          terraform show -json tfplan > tfplan.json
+
+      # 5. Install Infracost
+      - name: Install Infracost
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
+          infracost configure set api_key ${{ secrets.INFRACOST_API_KEY }}
+          infracost configure set currency USD
+
+      # 6. Generate Infracost breakdown
+      - name: Infracost Breakdown
+        working-directory: ./terraform
+        run: |
+          infracost breakdown --path=tfplan.json --format json --out-file infracost.json
+
+      # 7. Display Infracost Report
+      - name: Infracost Report
+        working-directory: ./terraform
+        run: infracost output --path infracost.json --format table
+
+      # 8. Upload Infracost Report Artifact
+      - name: Upload Infracost Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: infracost-report
+          path: ./terraform/infracost.json
